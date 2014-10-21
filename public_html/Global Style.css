@@ -1,0 +1,45 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background-image: linear-gradient(#b0d6f0, #dde8f0);
+}
+
+#titlez {
+    font-family: "Calibri", sans-serif;
+    color: #87a8c6;
+    font-weight: bold;
+}
+
+.button {
+    text-align: center;
+    font-weight: bold;
+}
+
+input, .button:focus {
+    outline: none;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: #7aaaca;
+}
+
+input:focus {
+    border-color: #7aaaca !important;
+    color: #7aaaca !important;
+}
+
+.button:hover{
+    color: #7aaaca;
+    border-color: #7aaaca;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 0px .9vw #7aaaca;
+}
+

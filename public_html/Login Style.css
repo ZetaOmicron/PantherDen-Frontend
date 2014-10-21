@@ -1,0 +1,130 @@
+#titlez {
+    text-align: center;
+    font-size: 7vw;
+    padding-top: 1.2vw;
+    padding-bottom: 3vw;
+}
+
+#gap {
+    line-height: 4vw;
+}
+
+.loginbox {
+    position: relative;
+    background-color: #f0f1f3;
+    -webkit-border-radius: .5vw;
+    border-radius: .5vw;
+    width: 47.2vw;
+    height: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 0px 0px .9vw #7aaaca;
+    top: -1vw;
+}
+
+.dottedline {
+    margin-left: auto;
+    margin-right: auto;
+    width: 45.8vw;
+    height: 28.5vw;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: dashed .15vw #bababa;
+}
+
+#logintype{
+    text-align: center;
+    font-family: "Calibri", sans-serif;
+    color: #959595;
+    font-weight: bold;
+    font-size: 3.5vw;
+    position: relative;
+    top: -1vw;
+
+}
+
+#username, #password {
+    width: 32vw;
+    height: 3.7vw;
+    padding-left: 1.2vw;
+    display: block;
+    top: -2.5vw;    
+}
+
+#username, #password, .button {
+    position: relative;
+    border: solid .25vw #cecfd1;
+    border-radius: .5vw;
+    background-color: #fefefe;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.3vw;
+    color: #a5a5a5;
+}
+
+.bl {
+    height: 3.7vw;
+    width: 12vw;
+    top: -1vw;
+    display: inline-block;
+}
+
+.at {
+    display: block;
+    height: 7.2vw;
+    width: 32vw;
+    font-size: 3.5vw;
+    top: 5vw;
+}
+
+#wrapper {
+    width: 26vw;
+    margin: 0 auto;
+}
+
+.flip-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    perspective: 1000;
+    transform-style: preserve-3d;
+}
+
+.flipper.flip .back {
+    transform: rotateY(0deg);
+}
+
+.flipper.flip .front {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    width: 47.2vw;
+    height: 30vw;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(-180deg);
+}
