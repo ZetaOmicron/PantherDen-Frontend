@@ -5,43 +5,51 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
+    <head>  
+        <link href="bootstrap-3.3.0-dist/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="Global Style.css" type="text/css"/>
         <link rel="stylesheet" href="Search Style.css" type="text/css"/>
         <title>Panther Den - Search</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../vendor/jquery/jquery.js" ></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
     </head>
-    <body>
-        <div id="header_wrapper">
-            <div id="titlez">PANTHER DEN</div>
-            <div class="headerbox shadow">
-                <ul id="navcontainer">
-                    <li>
-                        <a href="">Account</a>
-                    </li>
-                    <li>
-                        <a href="">My Den</a>
-                    </li>
-                    <li>
-                        <a href="">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="Login Page.html">Sign Out</a>
-                    </li>
-                </ul>
-            </div>
+<body>
+    <div id="header_wrapper">
+        <div id="titlez">PANTHER DEN</div>
+        <div class="headerbox shadow">
+            <ul id="navcontainer">
+                <li>
+                    <a href="">Account</a>
+                </li>
+                <li>
+                    <a href="">My Den</a>
+                </li>
+                <li>
+                    <a href="">Calendar</a>
+                </li>
+                <li>
+                    <a href="Login Page.html">Sign Out</a>
+                </li>
+            </ul>
         </div>
+    </div>
         <form id="searchcontainer">
             <input type="text" id="search" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
         </form>
         <div id="mainbox" class="shadow">
             <table class="table" id="results">
-                <tr>
-                    <td>Poop</td>
-                    <td>Poop</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Home Room</th>
+                        <th>Current Room</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                </tbody>
             </table>
         </div>
     </body>
