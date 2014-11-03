@@ -10,7 +10,8 @@
 .headerbox {
     position: relative;
     float: right;
-    background-color: #f0f1f3;
+    //background-color: #f0f1f3;
+    background-color: #f6ff31;
     -webkit-border-radius: 0 0 0 1vw;
     border-radius: 0 0 0 1vw;
     width: 59.1vw;
@@ -35,11 +36,13 @@
 a {
     text-decoration: none;
     font-family: "Calibri", sans-serif;
-    color: #959595;
+    //color: #959595;
+    color: black;
 }
 
 a:hover {
-    color: #7aaaca;
+    //color: #7aaaca;
+    color: gold;
 }
 
 #search {
@@ -63,7 +66,8 @@ a:hover {
 
 
 #mainbox {
-    background-color: #f0f1f3;
+    //background-color: #f0f1f3;
+    background-color: #f6ff31;
     -webkit-border-radius: 1vw;
     border-radius: 1vw;
     width: 59.1vw;
