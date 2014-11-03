@@ -1,3 +1,3 @@
-Panther Den Shell
+Panther-Den
 =================
-This is simply the design of the Panther Den website.
+This project is created for the school's problem of scheduling and tracking students during the study hall known as Panther Den.
