@@ -3,12 +3,14 @@ html {
 }
 
 body {
-    background-image: linear-gradient(#b0d6f0, #dde8f0);
+    //background-image: linear-gradient(#b0d6f0, #dde8f0);
+    background-color: black;
 }
 
 #titlez {
     font-family: "Calibri", sans-serif;
-    color: #87a8c6;
+    //color: #87a8c6;
+    color: gold;
     font-weight: bold;
 }
 
@@ -21,18 +23,28 @@ input, .button:focus {
     outline: none;
 }
 
+input::-webkit-input-placeholder{
+    color: black;
+}
+
 input:focus::-webkit-input-placeholder {
-    color: #7aaaca;
+    //color: #7aaaca;
+    color: gold;
 }
 
 input:focus {
-    border-color: #7aaaca !important;
-    color: #7aaaca !important;
+    //border-color: #7aaaca !important;
+    border-color: gold !important;
+    //color: #7aaaca !important;
+    color: gold !important;
 }
 
 .button:hover{
-    color: #7aaaca;
-    border-color: #7aaaca;
+    //color: #7aaaca;
+    color: gold;
+    //border-color: #7aaaca;
+    border-color: gold;
+
 }
 
 .button:hover{
@@ -40,6 +52,7 @@ input:focus {
 }
 
 .shadow {
-    -webkit-box-shadow: 0px 0px .9vw #7aaaca;
+    //-webkit-box-shadow: 0px 0px .9vw #7aaaca;
+    -webkit-box-shadow: 0px 0px .9vw goldenrod;
 }
 
