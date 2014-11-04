@@ -2,8 +2,21 @@
     font-family: "Calibri",  sans-serif;
     color: #87a8c6;
     font-weight: bold;
-    
 }
+
 .hidden{
     display: none;
+}
+#actionLabelWrapper{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.alright{
+    float: right;
+    margin-right: auto;
+}
+
+#tablewrapper{
+    padding-top: 1.5%;
 }
