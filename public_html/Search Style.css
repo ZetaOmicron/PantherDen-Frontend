@@ -45,7 +45,7 @@ a:hover {
     color: gold;
 }
 
-#search {
+#query-box {
     position: relative;
     width: 32vw;
     height: 3.7vw;
@@ -59,7 +59,7 @@ a:hover {
     left: -2vw;
 }
 
-#search:focus {
+#query-box:focus {
     border-color: #7aaaca;
     color: #7aaaca;
 }

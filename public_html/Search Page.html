@@ -12,7 +12,8 @@ and open the template in the editor.
         <title>Panther Den - Search</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+        <script src="../vendor/jquery/jquery.js"></script>
+        <script src="ajax_helpers.js"></script>
     </head>
 <body>
     <div id="header_wrapper">
@@ -34,21 +35,21 @@ and open the template in the editor.
             </ul>
         </div>
     </div>
-        <form id="searchcontainer">
-            <input type="text" id="search" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
+        <form id="searchcontainer" onsubmit="appendSearchResults($('#search-table'),$('#search-results'),'student','lastname',$('#query-box').val(),'1')">
+            <input type="text" id="query-box" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
         </form>
         <div id="mainbox" class="shadow">
-            <table class="table" id="results">
+            <table class="table" id="search-table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
                         <th>Home Room</th>
-                        <th>Current Room</th>
                     </tr>
                 </thead>
-                <tbody>
-            
+                <tbody id="search-results">
+
                 </tbody>
             </table>
         </div>
