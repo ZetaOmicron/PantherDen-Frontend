@@ -1,8 +1,0 @@
-{
-    "elements": {},
-    "attributes": {
-        "ontouchstart": {
-            "context": "div"
-        }
-    }
-}
