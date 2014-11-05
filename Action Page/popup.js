@@ -1,13 +1,13 @@
 $(document).ready(function () {
-    $("#welcome").hide();
+    $("#actionLabelWrapper").hide();
 
-    
     $("#actionbutton").click(function () {
-
-        $("#welcome").show();
+        $("#actionLabelWrapper").show();
     });
 
     $("#actionDropDown").click(function () {
         $(this).dropdown();
     });
+
+
 });
