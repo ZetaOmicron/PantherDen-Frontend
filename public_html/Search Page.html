@@ -35,7 +35,7 @@ and open the template in the editor.
             </ul>
         </div>
     </div>
-        <form id="searchcontainer" onsubmit="appendSearchResults($('#search-table'),$('#search-results'),'student','lastname',$('#query-box').val(),'1')">
+        <form id="searchcontainer" action="#" onsubmit="appendSearchResults($('#search-table'),$('#search-results'),'student','lastname',$('#query-box').val(),'1')">
             <input type="text" id="query-box" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
         </form>
         <div id="mainbox" class="shadow">
@@ -46,10 +46,10 @@ and open the template in the editor.
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>Home Room</th>
+                        <th><input type="checkbox"></th>
                     </tr>
                 </thead>
                 <tbody id="search-results">
-
                 </tbody>
             </table>
         </div>

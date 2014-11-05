@@ -11,16 +11,16 @@
 
 .loginbox {
     position: relative;
-    //background-color: #f0f1f3;
-    background-color: #f6ff31;
+    background-color: #f0f1f3;
+    //background-color: #f6ff31;
     -webkit-border-radius: .5vw;
     border-radius: .5vw;
     width: 47.2vw;
     height: 30vw;
     margin-left: auto;
     margin-right: auto;
-    //-webkit-box-shadow: 0px 0px .9vw #7aaaca;
-    -webkit-box-shadow: 0px 0px .9vw goldenrod;
+    -webkit-box-shadow: 0px 0px .9vw #7aaaca;
+    //-webkit-box-shadow: 0px 0px .9vw goldenrod;
     top: -1vw;
 }
 
@@ -39,9 +39,9 @@
 #logintype{
     text-align: center;
     font-family: "Calibri", sans-serif;
-    //color: #959595;
+    color: #959595;
     //color: gold;
-    color: black;
+    //color: black;
     font-weight: bold;
     font-size: 3.5vw;
     position: relative;
@@ -59,18 +59,18 @@
 
 #username, #password, .button {
     position: relative;
-    //border: solid .25vw #cecfd1;
+    border: solid .25vw #cecfd1;
     //border: solid .25vw gold;
-    border: solid .25vw black;
+    //border: solid .25vw black;
     border-radius: .5vw;
     //background-color: #fefefe;
     background-color: #fefefe;
     margin-left: auto;
     margin-right: auto;
     font-size: 2.3vw;
-    //color: #a5a5a5;
+    color: #a5a5a5;
     //color: gold;
-    color: black;
+    //color: black;
 }
 
 .bl {
