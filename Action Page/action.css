@@ -14,11 +14,19 @@
 }
 #actionLabelWrapper{
 
-    padding-left: 30%;        
-    padding-right: 30%;
-    position: absolute;
+    width: 40vw;
+    margin: 0 auto;
+    position: relative;
     z-index: 100;
 
+}
+
+#cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    z-index: 50;
 }
 
 .alright{
