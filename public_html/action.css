@@ -1,0 +1,39 @@
+#title{
+    font-family: "Calibri",  sans-serif;
+    color: #87a8c6;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
+#actionbutton{
+    z-index: 1;
+    position: absolute;
+    padding-top: .8%;
+}
+#actionLabelWrapper{
+
+    width: 40vw;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+
+}
+
+#cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    z-index: 50;
+}
+
+.alright{
+    float: right;
+    margin-right: auto;
+}
+
+#tablewrapper{
+    padding-top: 1.5%;
+}
