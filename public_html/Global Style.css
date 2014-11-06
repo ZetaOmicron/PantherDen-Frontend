@@ -52,7 +52,6 @@ input:focus {
 }
 
 .shadow {
-    -webkit-box-shadow: 0px 0px .9vw #7aaaca;
-    //-webkit-box-shadow: 0px 0px .9vw goldenrod;
+    box-shadow: 0px 0px .9vw #7aaaca;
 }
 

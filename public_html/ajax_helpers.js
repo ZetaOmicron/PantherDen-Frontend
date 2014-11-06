@@ -1,12 +1,20 @@
 var server_location ="http://localhost:8000/";
+var headers = {student:[{title: "ID", valuename: "id"},
+                           {title: "Last Name", valuename: "lastname"},
+                           {title: "First Name", valuename: "firstname"},
+                           {title: "Homeroom", valuename: "homeroomid"}],
+               teacher:[{title: "ID", valuename: "id"},
+                         {title: "Last Name", valuename: "lastname"},
+                         {title: "First Name", valuename: "firstname"},
+                         {title: "Homeroom", valuename: "roomid"}]};
 
-function appendSearchResults($table, $searchtable, model, field, query, page){
+function appendSearchResults($table,model, field, query, page){
     var req = $.ajax({
         type:'GET',
         url: server_location+model+'/search/?f='+field+'&q='+query+'&p='+page,
         dataType: 'json',
         success: function (data) {
-            appendRes($table, $searchtable, model, data);
+            appendRes($table, model, data);
         },
         error: function(err){
             console.log(err);
@@ -14,22 +22,31 @@ function appendSearchResults($table, $searchtable, model, field, query, page){
     });
 }
 
-function appendRes($table, $searchtable, model, data){
-    console.log(data);
-    list = data[model + "s"];
-    reshtml = "";
+function appendRes($table, model, data){
+    var $results = $table.find("tbody");
+    var heads = headers[model];
+    updateHeader($table, model);
+    var list = data[model + "s"];
+    var reshtml = "";
     for (var i = 0; i < list.length; i++) {
         li = list[i];
         treshtml = "<tr>";
-        treshtml += '<td>' + li['id'] + '</td>';
-        treshtml += '<td>' + li['lastname'] + '</td>';
-        treshtml += '<td>' + li['firstname'] + '</td>';
-        treshtml += '<td>' + li['homeroomid'] + '</td>';
+        for(var j=0; j< heads.length; j++){
+            treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
+        }
         treshtml += "</tr>";
         reshtml += treshtml;
     }
-    $searchtable.html(reshtml);
-    //TODO: Fix things below
-    $table.append(data["amount"]);
-    $table.append(data["page"]);
+    $results.html(reshtml);
+}
+
+function updateHeader($table, model){
+    var $header = $table.find("thead");
+    var $results = $table.find("tbody");
+    var heads = headers[model];
+    var hhtml = "";
+    for(var i=0; i<heads.length; i++){
+        hhtml+="<th>"+heads[i]["title"]+"</th>";
+    }
+    $header.html(hhtml);
 }

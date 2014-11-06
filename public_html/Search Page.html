@@ -35,23 +35,24 @@ and open the template in the editor.
             </ul>
         </div>
     </div>
-        <form id="searchcontainer" action="#" onsubmit="appendSearchResults($('#search-table'),$('#search-results'),'student','lastname',$('#query-box').val(),'1')">
+        <form id="searchcontainer" action="#">
             <input type="text" id="query-box" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
         </form>
-        <div id="mainbox" class="shadow">
+        <div id="mainbox" class="shadow" style="padding: 2vw;">
             <table class="table" id="search-table">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Home Room</th>
-                        <th><input type="checkbox"></th>
-                    </tr>
                 </thead>
-                <tbody id="search-results">
+                <tbody>
                 </tbody>
             </table>
         </div>
+    <script>
+        $(document).ready(function(){
+            updateHeader($("#search-table"),"student");
+            $("#searchcontainer").submit(function(){
+                appendSearchResults($('#search-table'),'student','lastname',$('#query-box').val(),'1');
+            });
+        });
+    </script>
     </body>
 </html>
