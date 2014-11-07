@@ -19,7 +19,8 @@
     margin: 0 auto;
     position: fixed;
     top: 25vh;
-    left: 25vw;
+    left: 50vw;
+    margin-left: -20vw;
     z-index: 100;
 
 }
