@@ -4,13 +4,13 @@ $(document).ready(function () {
     var flag = 0;
     $("#buttonwrapper").click(function () {
         flag = 1;
-        $("#actionLabelWrapper").show();
-        $("#cover").show();
+        $("#actionLabelWrapper").fadeIn(300);
+        $("#cover").fadeIn(300);
     });
 
     $("#cover").click(function () {
-        $("#actionLabelWrapper").hide();
-        $("#cover").hide();
+        $("#actionLabelWrapper").fadeOut(300);
+        $("#cover").fadeOut(300);
     });
 
 

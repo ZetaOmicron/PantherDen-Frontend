@@ -21,15 +21,16 @@
 
 #navcontainer {
     list-style-type: none;
-    text-align: center;
-    padding: 0px;
+    height: 100%;
+    padding-top: 1vw;
+    top: 2vw;
     overflow: hidden;
 }
 
 #navcontainer li {
     display: inline-block;
     font-size: 3vw;
-    width: 14vw;
+    width: 13.5vw;
 }
 
 a {
@@ -40,6 +41,7 @@ a {
 }
 
 a:hover {
+    text-decoration: none;
     color: #7aaaca;
     //color: gold;
 }
