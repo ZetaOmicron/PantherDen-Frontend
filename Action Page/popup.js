@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#actionLabelWrapper").hide();
     $("#cover").hide();
-    var flag = 0;
+    var flag = 0; 
     $("#buttonwrapper").click(function () {
         flag = 1;
         $("#actionLabelWrapper").show();
