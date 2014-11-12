@@ -7,7 +7,12 @@ var headers = {student:[{title: "ID", valuename: "id"},
                          {title: "Last Name", valuename: "lastname"},
                          {title: "First Name", valuename: "firstname"},
                          {title: "Homeroom", valuename: "roomid"}]};
-var $checkbox = "<div class='checkbox'><input type='checkbox' value='None' id='checkmark' name='check' /><label for='checkmark'></label></div>";
+
+
+
+function genCheckBox(num){
+    return "<div class='checkbox'><input type='checkbox' value='None' name='check' id='checkbox"+num+"'/><label for='checkbox"+num+"'></label></div>"
+}
 function appendSearchResults($table,model, field, query, page){
     var req = $.ajax({
         type:'GET',
@@ -34,7 +39,7 @@ function appendRes($table, model, data){
         for(var j=0; j< heads.length; j++){
             treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
         }
-        treshtml += "<td>" + $checkbox + "</td>";
+        treshtml += "<td>" + genCheckBox(i+1)+ "</td>";
         treshtml += "</tr>";
         reshtml += treshtml;
     }
@@ -49,6 +54,6 @@ function updateHeader($table, model){
     for(var i=0; i<heads.length; i++){
         hhtml+="<th>"+heads[i]["title"]+"</th>";
     }
-    hhtml+="<th>" + $checkbox + "</th>";
+    hhtml+="<th>" + genCheckBox(0) + "</th>";
     $header.html(hhtml);
 }
