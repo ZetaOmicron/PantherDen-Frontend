@@ -61,12 +61,10 @@ input[type=checkbox] {
 }
 
 .checkbox {
-    width: 28px;
-    height: 28px;
-    background: rgba(163, 164, 166, 1.0);
-    margin: 10px auto;
-    position: relative;
-    border-radius: 4px;
+    width: 26px;
+    height: 26px;
+    background: rgba(165, 165, 165, 1.0);
+    border-radius: 6px;
 }
 
 .checkbox label {
@@ -74,22 +72,22 @@ input[type=checkbox] {
     position: absolute;
     width: 20px;
     height: 20px;
-    left: 4px;
-    top: 4px;
-    background: darkblue;
-    border-radius: 2px;
+    left: 3.1px;
+    top: 3.2px;
+    background: rgb(223,223,223);
+    border-radius: 3px;
 }
 
 .checkbox label:after {
     opacity: 0;
     content: "";
     position: absolute;
-    width: 13px;
+    width: 15px;
     height: 8px;
     background: transparent;
-    top: 4px;
-    left: 4px;
-    border: 3px solid #ffffff;
+    top: 5px;
+    left: 2px;
+    border: 3px solid rgba(165, 165, 165, 1.0);
     border-top: none;
     border-right: none;
     -webkit-transform: rotate(-45deg);
