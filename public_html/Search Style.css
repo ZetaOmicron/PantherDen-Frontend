@@ -16,7 +16,6 @@
     width: 59.1vw;
     height: 5.8vw;
     top: -8px;
-    right: -8px;
 }
 
 #navcontainer {
@@ -75,4 +74,11 @@ a:hover {
     height: 470px;
     margin: 0 auto;
 
+}
+
+#search-table th {
+    font-family: "Calibri", sans-serif;
+    font-size: 1.7vw;
+    color: #959595;
+    padding: 0 35px;
 }
