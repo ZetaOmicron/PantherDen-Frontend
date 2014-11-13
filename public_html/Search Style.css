@@ -76,9 +76,9 @@ a:hover {
 
 }
 
-#search-table th {
+#search-table th, #search-table td {
     font-family: "Calibri", sans-serif;
     font-size: 1.7vw;
     color: #959595;
-    padding: 0 35px;
+    padding: 0 2.34375vw;
 }
