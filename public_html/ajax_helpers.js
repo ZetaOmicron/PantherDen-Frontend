@@ -1,12 +1,12 @@
 var server_location ="http://localhost:8000/";
 var headers = {student:[{title: "ID", valuename: "id"},
-                           {title: "Last Name", valuename: "lastname"},
-                           {title: "First Name", valuename: "firstname"},
-                           {title: "Homeroom", valuename: "homeroomid"}],
+                           {title: "Last Name", valuename: "last_name"},
+                           {title: "First Name", valuename: "first_name"},
+                           {title: "Homeroom Teacher", valuename: "home_room_teacher_id"}],
                teacher:[{title: "ID", valuename: "id"},
-                         {title: "Last Name", valuename: "lastname"},
-                         {title: "First Name", valuename: "firstname"},
-                         {title: "Homeroom", valuename: "roomid"}]};
+                         {title: "Last Name", valuename: "last_name"},
+                         {title: "First Name", valuename: "first_name"},
+                         {title: "Homeroom", valuename: "room_id"}]};
 
 
 
