@@ -32,6 +32,10 @@ function appendRes($table, model, data){
     var heads = headers[model];
     updateHeader($table, model);
     var list = data[model + "s"];
+    if(list.length==0){
+        $results.html("No Results Found");
+        return;
+    }
     var reshtml = "";
     for (var i = 0; i < list.length; i++) {
         li = list[i];
