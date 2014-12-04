@@ -8,12 +8,13 @@
     display: none;
 }
 #actionbutton{
-    font-size: 24px;
+    font-size: 2vw;
+    width: 10vw;
+    height: 4vw;
 }
 #buttonwrapper{
-
-    z-index: 4;
     
+    z-index: 4;
     padding-right: 20%;
     padding-top: 3%;
     float: right;

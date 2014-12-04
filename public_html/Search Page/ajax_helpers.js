@@ -11,7 +11,7 @@ var headers = {student:[{title: "ID", valuename: "id"},
 
 
 function genCheckBox(num){
-    return "<div class='checkbox'><input type='checkbox' value='None' name='check' id='checkbox"+num+"'/><label for='checkbox"+num+"'></label></div>"
+    return "<div class='checkboxp'><input type='checkbox' value='None' name='check' id='checkbox"+num+"'/><label for='checkbox"+num+"'></label></div>";
 }
 function appendSearchResults($table,model, field, query, page){
     var req = $.ajax({

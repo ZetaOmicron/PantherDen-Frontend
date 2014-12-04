@@ -57,44 +57,10 @@ input:focus {
 
 /* CheckBox */
 input[type=checkbox] {
-    visibility: hidden;
-}
-
-.checkbox {
-    width: 26px;
-    height: 26px;
-    background: rgba(165, 165, 165, 1.0);
-    border-radius: 6px;
-}
-
-.checkbox label {
-    cursor: pointer;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 3.1px;
-    top: 3.2px;
-    background: rgb(223,223,223);
-    border-radius: 3px;
-}
-
-.checkbox label:after {
-    opacity: 0;
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 8px;
-    background: transparent;
-    top: 5px;
-    left: 2px;
-    border: 3px solid rgba(165, 165, 165, 1.0);
-    border-top: none;
-    border-right: none;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
 }
 
 .checkbox label:hover:after {
@@ -103,4 +69,9 @@ input[type=checkbox] {
 
 .checkbox input[type=checkbox]:checked + label:after {
     opacity: 1;
+}
+
+.glyphicon-log-out {
+    float: right;
+    left: -2vw;
 }
