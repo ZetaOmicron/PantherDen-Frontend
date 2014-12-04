@@ -8,17 +8,19 @@
 }
 
 .headerbox {
-    position: relative;
+    
     float: right;
     background-color: #f0f1f3;
     -webkit-border-radius: 0 0 0 1vw;
     border-radius: 0 0 0 1vw;
-    width: 59.1vw;
+    width: 59.1%;
     height: 5.8vw;
     top: -8px;
 }
 
 #navcontainer {
+    min-width: 55vw;
+
     list-style-type: none;
     height: 100%;
     padding-top: 1vw;
@@ -30,6 +32,7 @@
     display: inline-block;
     font-size: 3vw;
     width: 13.5vw;
+    
 }
 
 a {
