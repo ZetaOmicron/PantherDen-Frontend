@@ -8,11 +8,16 @@
     display: none;
 }
 #actionbutton{
-    z-index: 2;
-    position: fixed;
-    top: 25vh;
+    font-size: 24px;
 }
+#buttonwrapper{
 
+    z-index: 4;
+    
+    padding-right: 20%;
+    padding-top: 3%;
+    float: right;
+}
 #actionLabelWrapper{
 
     width: 40vw;

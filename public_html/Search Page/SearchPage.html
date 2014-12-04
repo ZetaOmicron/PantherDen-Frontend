@@ -9,6 +9,7 @@ and open the template in the editor.
         <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
         <link rel="stylesheet" href="SearchStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="action.css" type="text/css"/>
         <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
         <title>Panther Den - Search</title>
         <meta charset="UTF-8">
@@ -40,15 +41,21 @@ and open the template in the editor.
                     <a href="">Calendar</a>
                 </li>
                 <li>
-                    <a href="../Login%20Page/LoginPage.html">Sign Out</a>
+                    <a href="../Login%20Page/LoginPage.html"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
                 </li>
             </ul>
         </div>
 
-
+        <div id="buttonwrapper">
+            <button class="btn btn-info" id = "actionbutton">
+                Submit
+            </button>
+        </div>
+        <!--Work area for back end: /-->
         <form id="searchcontainer" action="#">
             <input type="text" id="query-box" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
         </form>
+
         <div id="cover"></div>
         <div id = "actionLabelWrapper">
             <div class="panel panel-default">
@@ -93,14 +100,8 @@ and open the template in the editor.
                 </div>
             </div> 
         </div>
-        <!--<div id="buttonwrapper">
-            <button id = "actionbutton">
-                <a>
-                    Test Button
-                </a>    
-            </button>
-        </div>
-        -->
+
+
 
         <!--        <div class="checkbox">
                     <input type="checkbox" value="None" id="checkmark" name="check" />
