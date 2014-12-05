@@ -78,7 +78,7 @@ var defaults = {
 		next: "next",
 		prevYear: "prev year",
 		nextYear: "next year",
-		today: 'today',
+		today: 'Today',
 		month: 'month',
 		week: 'week',
 		day: 'day'
@@ -154,7 +154,7 @@ var langOptionHash = {
 // right-to-left defaults
 var rtlDefaults = {
 	header: {
-		left: 'next,prev today',
+		left: 'next,prev Today',
 		center: '',
 		right: 'title'
 	},
@@ -879,10 +879,10 @@ function Calendar(element, instanceOptions) {
 	function updateTodayButton() {
 		var now = t.getNow();
 		if (now.isWithin(currentView.intervalStart, currentView.intervalEnd)) {
-			header.disableButton('today');
+			header.disableButton('Today');
 		}
 		else {
-			header.enableButton('today');
+			header.enableButton('Today');
 		}
 	}
 	
