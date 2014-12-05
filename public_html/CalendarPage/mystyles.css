@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 17, 2014, 12:21:24 PM
+    Author     : s542530
+*/
+
+body{
+    //background-color: #D6D6FF;
+    white-space: nowrap;
+}
+
+header{
+    text-align: center;
+    font-size: 10vw;
+    font-family: cursive;
+    color: #ADADFF;
+}
+
+
+/*Panther Den Table Title Styles*/
+.PDTT{
+    /* Table colum titles border settings*/
+    border-color: black;
+    border-width: 2px;
+    border-bottom-style: solid;
+    
+    /*Table colum titles color settings*/
+    color: #B9B9B9;
+    
+    /*Table colum font settings*/
+    font-family: cursive;
+    text-align: center;
+    font-size: 2em;
+    
+    border-right-color: black;
+    border-right-style: solid;
+    
+    padding: 1% 0% 1% 0%;
+}
+
+#EveryCheck{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#clock{
+    width: 180px;
+    border-radius:5px;
+}
+
+/*Panther Den Table*/
+.PDTable{
+    border-radius: 30vm;
+    background-color: #F5F5F5;
+    padding: 2%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: -1.5vw;
+    position: relative;
+        
+    width: 80%;
+    
+    /*Adds Shaddow effect around table  http://css3gen.com/box-shadow/*/
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(16, 0, 14, 1);
+    -moz-box-shadow:    0px 0px 20px 0px rgba(16, 0, 14, 1);
+    box-shadow:         0px 0px 25px 0px rgba(16, 0, 14, 1);
+    
+    white-space: nowrap;
+}
+
+.ActionMenu{
+    font-family: cursive;
+    text-align: center;
+    font-size: 1.5em;
+    background-color:#F5F5F5;
+    margin: 20vw 0vw 0vw 0vw;
+    border-radius: 10px;
+    border-style: groove;
+    
+}
+
+
+.SearchBar {
+    
+    border-radius: 12px;
+    width:30vw;
+    font-size: 2em;
+    text-align: center;
+    font-family:cursive;
+    margin: 10vw auto  0% auto;
+    position: relative;
+   /**/
+   -webkit-box-shadow: 0px 0px 10px 0px rgba(16, 0, 14, 1);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(16, 0, 14, 1);
+    box-shadow:         0px 0px 10px 0px rgba(16, 0, 14, 1);
+}
+.SearchBar:read-write{
+    background: #cccccc;
+    color:#666666;
+    z-index: 1;
+    display:block;
+}
+.SearchBar:focus{
+    background-color: white;
+    color:black;
+}
+
+tr:hover{
+    background-color: #E5E4E2;
+}
