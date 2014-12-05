@@ -61,13 +61,13 @@ and open the template in the editor.
         </div>
 
         <!--Work area for back end: /-->
-            <form id="searchcontainer" action="#">
+            
                  <h2 style="margin-top: 0; color: #3a3a3a;">
-                     <div id="titlemyden">Students In My Den Today
+                     <div id="titlemyden">
+                        Students In My Den Today
                      </div>
-                     </h2>
-             </form>
-       
+                 </h2>
+                    
 
 
         <!--        <div class="checkboxp">
@@ -87,9 +87,9 @@ and open the template in the editor.
         <script>
             $(document).ready(function () {
                 
-               if(readCookie("user")==null){
-                  location.href="../LoginPage/LoginPage.html";
-               }
+               //if(readCookie("user")==null){
+                //  location.href="../LoginPage/LoginPage.html";
+              // }
                 var user = readJSONCookie("user");
                 $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
                 updateHeader($("#search-table"), "student", "Absent");

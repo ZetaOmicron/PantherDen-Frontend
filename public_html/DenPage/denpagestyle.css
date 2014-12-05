@@ -2,7 +2,10 @@
 	 font-family: "Calibri", sans-serif;
     color: #87a8c6;
     font-weight: bold;
-    font-size: 48px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 44px;
+    z-index: 500;
+    margin: 0 auto;
+    padding-left: -15%;
+
+
 }
