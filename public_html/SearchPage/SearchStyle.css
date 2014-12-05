@@ -34,12 +34,15 @@ a {
 }
 #welcome-user{
     font-size: 15px;
+    text-wrap: normal;
+    width: 12vw;
+    line-height: 1.8vw;
 }
 #navcontainer li {
     display: inline-block;
     font-size: 24px;
     padding-right: 3%;
-    
+    vertical-align: middle;
 }
 
 
