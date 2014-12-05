@@ -32,17 +32,26 @@ and open the template in the editor.
         </div>
         <div class="headerbox shadow">
             <ul id="navcontainer">
-                <li>
-                    <a href="">Account</a>
+                <li id="welcome-user">
                 </li>
                 <li>
-                    <a href="">My Den</a>
+                    <a href="">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        My Den
+                    </a>
                 </li>
                 <li>
-                    <a href="">Calendar</a>
+                    <a href="">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        Calendar
+                    </a>
                 </li>
                 <li>
-                    <a href="../LoginPage/LoginPage.html" onclick="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+                    <a href="../LoginPage/LoginPage.html" onclick="logout()">
+                          
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                          Sign Out
+                    </a>
                 </li>
             </ul>
         </div>
@@ -120,10 +129,12 @@ and open the template in the editor.
 
         <script>
             $(document).ready(function () {
+                
                 if(readCookie("user")==null){
-                    location.href="../LoginPage/LoginPage.html";
+                  location.href="../LoginPage/LoginPage.html";
                 }
                 var user = readJSONCookie("user");
+                $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
                 updateHeader($("#search-table"), "student");
                 $("#searchcontainer").submit(function () {
                     appendSearchResults($('#search-table'), 'student', 'last_name', $('#query-box').val(), '1');

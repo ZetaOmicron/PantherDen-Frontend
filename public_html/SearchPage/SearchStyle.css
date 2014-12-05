@@ -6,6 +6,12 @@
     float: left;
     vertical-align: text-top;
 }
+a {
+    text-decoration: none;
+    font-family: "Calibri", sans-serif;
+    color: #959595;
+    //color: black;
+}
 
 .headerbox {
     
@@ -19,28 +25,24 @@
 }
 
 #navcontainer {
-    min-width: 55vw;
-
+    min-width: 40%;
     list-style-type: none;
     height: 100%;
     padding-top: 1vw;
     top: 2vw;
     overflow: hidden;
 }
-
+#welcome-user{
+    font-size: 15px;
+}
 #navcontainer li {
     display: inline-block;
-    font-size: 3vw;
-    width: 13.5vw;
+    font-size: 24px;
+    padding-right: 5%;
     
 }
 
-a {
-    text-decoration: none;
-    font-family: "Calibri", sans-serif;
-    color: #959595;
-    //color: black;
-}
+
 
 a:hover {
     text-decoration: none;
