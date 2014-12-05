@@ -37,7 +37,7 @@ function checkIfUserAndStoreCookie(){
         dataType: 'json',
         success: function (data) {
             createJSONCookie("user",data,5);
-            location.href="../SearchPage/SearchPage.html";
+            location.href="../DenPage/DenPage.html";
         },
         error: function(err){
             $("#error-container").html("No teacher with the id of "+tid+" was found.");

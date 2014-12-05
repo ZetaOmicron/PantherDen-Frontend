@@ -28,7 +28,7 @@ a {
     min-width: 40%;
     list-style-type: none;
     height: 100%;
-    padding-top: 1vw;
+    padding-top: 1.5vw;
     top: 2vw;
     overflow: hidden;
 }
@@ -38,7 +38,7 @@ a {
 #navcontainer li {
     display: inline-block;
     font-size: 24px;
-    padding-right: 5%;
+    padding-right: 3%;
     
 }
 
