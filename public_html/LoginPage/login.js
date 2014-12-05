@@ -2,7 +2,7 @@ var server_location = "http://localhost:8000";
 
 $(document).ready(function () {
     if(readCookie("user")!=null){
-        location.href="../Search%20Page/SearchPage.html";
+        location.href="../SearchPage/SearchPage.html";
         return;
     }
     $('#admin').on('click', function () {
@@ -36,8 +36,8 @@ function checkIfUserAndStoreCookie(){
         url: server_location+"/teacher/"+tid,
         dataType: 'json',
         success: function (data) {
-            createCookie("user",JSON.stringify(data),5);
-            location.href="../Search%20Page/SearchPage.html";
+            createJSONCookie("user",data,5);
+            location.href="../SearchPage/SearchPage.html";
         },
         error: function(err){
             $("#error-container").html("No teacher with the id of "+tid+" was found.");

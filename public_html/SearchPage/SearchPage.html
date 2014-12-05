@@ -42,7 +42,7 @@ and open the template in the editor.
                     <a href="">Calendar</a>
                 </li>
                 <li>
-                    <a href="../Login%20Page/LoginPage.html" onclick="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+                    <a href="../LoginPage/LoginPage.html" onclick="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
                 </li>
             </ul>
         </div>
@@ -90,7 +90,7 @@ and open the template in the editor.
                     </table>
                     <div class="alright">
                         <!-- Place ajax requests here: /-->
-                        <button type="button" href = "" class="btn btn-info">
+                        <button type="button" href="" class="btn btn-info">
                             Request
                             <span class ="glyphicon glyphicon-chevron-right">
 
@@ -123,6 +123,7 @@ and open the template in the editor.
                 if(readCookie("user")==null){
                     location.href="../LoginPage/LoginPage.html";
                 }
+                var user = readJSONCookie("user");
                 updateHeader($("#search-table"), "student");
                 $("#searchcontainer").submit(function () {
                     appendSearchResults($('#search-table'), 'student', 'last_name', $('#query-box').val(), '1');
