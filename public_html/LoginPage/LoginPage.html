@@ -12,6 +12,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../../vendor/jquery/jquery.js" ></script>
+        <script src="../cookies.js"></script>
         <script src="login.js"></script>
     </head>
     <body>
@@ -21,20 +22,23 @@ and open the template in the editor.
                 <div class="front">
                     <div class="loginbox shadow">
                         <div class="dottedline">
-                            <button class="button at" id="admin">ADMINISTRATOR</button>
-                            <br id="gap">
                             <button class="button at" id="teach">TEACHER</button>
+                            <br id="gap">
+                            <button class="button at" id="admin">ADMINISTRATOR</button>
                         </div>
                     </div>
                 </div>
                 <div class="back">
                     <div class="loginbox shadow">
                         <div class="dottedline">
-                            <form id="login" action="../Search%20Page/SearchPage.html">
-                                <p id="logintype">Administrator Login</p>
+                            <form id="login" action="../Search%20Page/SearchPage.html" onsubmit="return checkIfUserAndStoreCookie()">
+                                <p id="logintype">Teacher Login</p>
                                 <input id="username" placeholder="Username" autocomplete="off" required="" >
-                                <br id="userpassgap">
-                                <input type="password" id="password" placeholder="Password" autocomplete="off" required="">
+                                <!--<br id="userpassgap">
+                                <input type="password" id="password" placeholder="Password" autocomplete="off" required="">-->
+
+                                <!--Remove the inline css later -Davis-->
+                                <h3 style="color: red;text-align: center;" id="error-container"></h3>
                                 <br>
                                 <div id="wrapper" style="text-align: center">
                                     <input type="button" id="Back" class="button bl" style="float: left;" value="Back" name="back" />

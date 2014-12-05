@@ -15,6 +15,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../../vendor/jquery/jquery.js"></script>
+        <script src="../cookies.js"></script>
         <script src="ajax_helpers.js"></script>
         <script src ="popup.js"></script>
     </head>
@@ -41,7 +42,7 @@ and open the template in the editor.
                     <a href="">Calendar</a>
                 </li>
                 <li>
-                    <a href="../Login%20Page/LoginPage.html"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+                    <a href="../Login%20Page/LoginPage.html" onclick="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
                 </li>
             </ul>
         </div>
@@ -119,6 +120,9 @@ and open the template in the editor.
 
         <script>
             $(document).ready(function () {
+                if(readCookie("user")==null){
+                    location.href="../LoginPage/LoginPage.html";
+                }
                 updateHeader($("#search-table"), "student");
                 $("#searchcontainer").submit(function () {
                     appendSearchResults($('#search-table'), 'student', 'last_name', $('#query-box').val(), '1');

@@ -61,3 +61,8 @@ function updateHeader($table, model){
     hhtml+="<th>" + genCheckBox(0) + "</th>";
     $header.html(hhtml);
 }
+
+function logout(){
+    eraseCookie("user");
+    location.href="../LoginPage/LoginPage.html";
+}
