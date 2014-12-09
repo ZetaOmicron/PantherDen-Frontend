@@ -10,23 +10,35 @@ $(document).ready(function() {
         eventColor: 'red',
         events: [
             {
-                title: "Classroom", 
-                start: "2014-12-2", 
-                allDay: false, 
-                editable: false}],
+                title: "Classroom",
+                start: $.fullCalendar.moment().get('year')+"-"+($.fullCalendar.moment().get('month')+1)+"-"+$.fullCalendar.moment().get('day'),
+                allDay: false,
+                editable: false
+            }
+        ],
         hiddenDays: [1, 3],
         weekends: false,
-        fixedWeekCount: true,
-        dayClick: function(date, jsEvent, view) {
-        }
+        fixedWeekCount: true
     });
-
+    
 
     /*Get desired date to display on table function*/
     $('#Goto').click(function() {
-        var desiredDate = $('#desiredDate').val();
+        
+        
+
+        var desiredDate = $('#datepicker').val();
         var getDate = $.fullCalendar.moment(desiredDate);
-        $('#calendar').fullCalendar('gotoDate', getDate);
+        
+        /*checks to see if date is an actual date*/
+        if (getDate.day() === 1 || getDate.day() ===  3 || getDate.day() === 6 || getDate.day() === 7) {
+            $('#idiot').html('There is no Panther Den on desired date.');
+        } else if (getDate.isValid() === false){
+            $('#idiot').html('This is an invalid date. Please choose another date');
+        }else {
+            $('#calendar').fullCalendar('gotoDate', getDate);
+        }
+
     });
 
     /*upadtes clock with current time when fucntions update() is called*/
