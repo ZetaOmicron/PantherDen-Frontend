@@ -1,0 +1,13 @@
+#datepicker {
+    display: table-cell;
+    background: blue;
+    text-align: center;
+    vertical-align: middle;
+    width: 30vw;
+    height: 3vw;
+    background-color: #f0f1f3;
+    -webkit-border-radius: .5vw;
+    border-radius: .5vw;
+    margin: 0 auto;
+    font-family: "Calibri", sans-serif;
+}

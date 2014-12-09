@@ -28,40 +28,9 @@ and open the template in the editor.
 
 
 
-        <div id="titlez">
-            PANTHER DEN
-        </div>
-        <div class="headerbox shadow">
-            <ul id="navcontainer">
-                <li id="welcome-user">
-                </li>
-                <li>
-                    <a href="../DenPage/DenPage.html">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        My Den
-                    </a>
-                </li>
-                <li>
-                    <a href="../SearchPage/SearchPage.html">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        Search
-                    </a>
-                </li>
-                <li>
-                    <a href="../CalendarPage/calendar.html">
-                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        Calendar
-                    </a>
-                </li>
-                <li>
-                    <a href="../LoginPage/LoginPage.html" onclick="logout()">
-                          
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                          Sign Out
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <?php
+        include("../Header.html");
+        ?>
 
         <div id="buttonwrapper">
             <button class="btn btn-info" id = "actionbutton">
@@ -136,7 +105,7 @@ and open the template in the editor.
 
         <script>
             $(document).ready(function () {
-                
+           /*
                 if(readCookie("user")==null){
                   location.href="../LoginPage/LoginPage.html";
                 }
