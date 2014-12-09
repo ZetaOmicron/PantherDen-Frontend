@@ -2,7 +2,7 @@ var server_location = "http://localhost:8000";
 
 $(document).ready(function () {
     if(readCookie("user")!=null){
-        location.href="../SearchPage/SearchPage.php";
+        location.href="../SearchPage/SearchPage.html";
         return;
     }
     $('#admin').on('click', function () {
