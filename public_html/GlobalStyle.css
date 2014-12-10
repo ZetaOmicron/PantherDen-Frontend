@@ -97,6 +97,19 @@ a {
     width: 12vw;
     line-height: 1.8vw;
 }
+
+
+#main_div {
+    background-color: #f0f1f3;
+//background-color: #f6ff31;
+    -webkit-border-radius: 1vw;
+    border-radius: 1vw;
+    width: 59.1vw;
+    height: auto;
+    margin: 0 auto;
+
+}
+
 #navcontainer li {
     display: inline-block;
     font-size: 24px;

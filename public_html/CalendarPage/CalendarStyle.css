@@ -11,3 +11,17 @@
     margin: 0 auto;
     font-family: "Calibri", sans-serif;
 }
+
+#titlemyden{
+	 font-family: "Calibri", sans-serif;
+    color: #87a8c6;
+    font-weight: bold;
+    font-size: 44px;
+    z-index: 500;
+}
+
+#titlewrapperp{
+    display: table;
+    text-align: center;
+    width: 100vw;
+}

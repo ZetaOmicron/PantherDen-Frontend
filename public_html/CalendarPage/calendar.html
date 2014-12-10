@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
 <HTML>
-	<HEAD>
-			<link rel='stylesheet' href='fullcalendar.css' />
+    <HEAD>
+        <link rel='stylesheet' href='fullcalendar.css' />
+        <link rel='stylesheet' href='CalendarStyle.css' />
 
-			<script src='../../vendor/jquery/jquery.min.js'></script>
-			
-            <script src='moment.min.js'></script>
-			<script src='fullcalendar.js'></script>
-            <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src='../../vendor/jquery/jquery.min.js'></script>
+
+        <script src='moment.min.js'></script>
+        <script src='fullcalendar.js'></script>
+        <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="denpagestyle.css" type="text/css"/>
         <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
         <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
@@ -16,11 +17,11 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
         <script src="../cookies.js"></script>
         <script src="../ajax_helpers.js"></script>
-	</HEAD>
-	<BODY>
+    </HEAD>
+    <BODY>
 
         <div id="titlez">
             PANTHER DEN
@@ -56,39 +57,40 @@
             </ul>
         </div>
 
-	<!--Work area for back end: /-->
-            <div id="titlewrapperp">
-                     <div id="titlemyden">
-                        Students In My Den Today
-                     </div>
+        <!--Work area for back end: /-->
+        <div id="titlewrapperp">
+            <div id="titlemyden">
+                Students In My Den On Daily
             </div>
+        </div>
 
 
-		<div id="mainbox" class="shadow" style = 'padding:2vw'>
-             		<div id='calendar'></div></div>
-		</div>
-			<script>
-				$(document).ready(function(){
-					 $("#calendar").fullCalendar({
-        eventColor: 'red',
-        events: [
-            {
-                title: "Classroom",
-                start: $.fullCalendar.moment().get('year')+"-"+($.fullCalendar.moment().get('month')+1)+"-"+$.fullCalendar.moment().get('day'),
-                allDay: false,
-                editable: false
-            }
-        ],
-        hiddenDays: [1, 3],
-        weekends: false,
-        fixedWeekCount: true
-    });
+        <div id="main_div" class="shadow" style = 'padding:2vw'>
+            <div id='calendar'></div>
+        </div>
 
-var user = readJSONCookie("user");
-                $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
+        <script>
+            $(document).ready(function() {
+                $("#calendar").fullCalendar({
+                    eventColor: 'red',
+                    events: [
+                        {
+                            title: "Classroom",
+                            start: $.fullCalendar.moment().get('year') + "-" + ($.fullCalendar.moment().get('month') + 1) + "-" + $.fullCalendar.moment().get('day'),
+                            allDay: false,
+                            editable: false
+                        }
+                    ],
+                    hiddenDays: [1, 3],
+                    weekends: false,
+                    fixedWeekCount: true
+                });
+
+                var user = readJSONCookie("user");
+                $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
                 updateHeader($("#search-table"), "student", "Absent");
                 getRoster($("#search-table"), user.id);
-				});
-			</script>
-	</BODY>
+            });
+        </script>
+    </BODY>
 </HTML>
