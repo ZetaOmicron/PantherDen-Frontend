@@ -1,9 +1,14 @@
-#titlep {
-    font-family: "Calibri", sans-serif;
+#titlep{
+     font-family: "Calibri", sans-serif;
+    color: #87a8c6;
+    font-weight: bold;
+    font-size: 120px;
+    z-index: 100000;
     text-align: center;
-    font-size: 7vw;
-    padding-top: 1.2vw;
-    padding-bottom: 3vw;
+    display: table;
+    width: 100vw;
+    padding-bottom:2%;
+    padding-top: 2%;
 }
 
 #gap {
