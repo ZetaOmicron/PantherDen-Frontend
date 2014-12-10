@@ -1,34 +1,93 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>Calendar Page</title>
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+			<link rel='stylesheet' href='fullcalendar.css' />
+			<script src='jquery.min.js'></script>
+			<script src='moment.min.js'></script>
+			<script src='fullcalendar.js'></script>
+
+<link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="denpagestyle.css" type="text/css"/>
+        <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
+
+        <title>Panther Den - Search</title>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-        <link rel="stylesheet" href="../GlobalStyle.css">
-        <link rel='stylesheet' href='fullcalendar.css'/>
-        <link rel="stylesheet" href="CalendarStyle.css">
-        <script src='jquery.min.js'></script>
-        <script src='moment.min.js'></script>
-        <link rel='stylesheet' href='fullcalendar.css' />
-        <script src='../../vendor/jquery/jquery.js'></script>
-        <script src='../../vendor/monument/moment.min.js'></script>
-=======
-        <link rel='stylesheet' href='fullcalendar.css' />
-        <script src='jquery.min.js'></script>
-        <script src='moment.min.js'></script>
->>>>>>> 6c00780a59fe7606dde00dc5458476152b9d1127
-        <script src='fullcalendar.js'></script>
-        <script language="javascript" src="javascripting.js"></script>
-    </head>
-    <body>
-        Choose Date:<input type = "date" id = "desiredDate" ><input type = 'button' value = "Goto" id = "Goto"><div id = 'idiot'></div>
-        <div id = 'clock'></div>
-        <div id ='calendar'></div>
-    </body>
-</html>
+ 
+        <script src="../cookies.js"></script>
+        <script src="../ajax_helpers.js"></script>
+	</HEAD>
+	<BODY>
+
+        <div id="titlez">
+            PANTHER DEN
+        </div>      
+        <div class="headerbox shadow">
+            <ul id="navcontainer">
+                <li id="welcome-user">
+                </li>
+                <li>
+                    <a href="../DenPage/DenPage.html">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        My Den
+                    </a>
+                </li>
+                <li>
+                    <a href="../SearchPage/SearchPage.html">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        Search
+                    </a>
+                </li>
+                <li>
+                    <a href="../CalendarPage/calendar.html">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        Calendar
+                    </a>
+                </li>
+                <li>
+                    <a href="../LoginPage/LoginPage.html" onclick="logout()">  
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        Sign Out
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+	<!--Work area for back end: /-->
+            <div id="titlewrapperp">
+                     <div id="titlemyden">
+                        Students In My Den Today
+                     </div>
+            </div>
+
+
+		<div id="mainbox" class="shadow" style = 'padding:2vw'>
+             		<div id='calendar'></div></div>
+		</div>
+			<script>
+				$(document).ready(function(){
+					 $("#calendar").fullCalendar({
+        eventColor: 'red',
+        events: [
+            {
+                title: "Classroom",
+                start: $.fullCalendar.moment().get('year')+"-"+($.fullCalendar.moment().get('month')+1)+"-"+$.fullCalendar.moment().get('day'),
+                allDay: false,
+                editable: false
+            }
+        ],
+        hiddenDays: [1, 3],
+        weekends: false,
+        fixedWeekCount: true
+    });
+
+var user = readJSONCookie("user");
+                $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
+                updateHeader($("#search-table"), "student", "Absent");
+                getRoster($("#search-table"), user.id);
+				});
+			</script>
+	</BODY>
+</HTML>
