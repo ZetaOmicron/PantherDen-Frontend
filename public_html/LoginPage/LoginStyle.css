@@ -27,9 +27,10 @@
     margin-right: auto;
     -webkit-box-shadow: 0px 0px .9vw #7aaaca;
     //-webkit-box-shadow: 0px 0px .9vw goldenrod;
-    top: -1vw;
 }
-
+#logintype{
+    padding-top: 10%;
+}
 .dottedline {
     margin-left: auto;
     margin-right: auto;
@@ -51,8 +52,7 @@
     font-weight: bold;
     font-size: 3.5vw;
     position: relative;
-    top: -1vw;
-
+    padding-top: 2%;
 }
 
 #username, #password {
@@ -142,4 +142,13 @@
 
 .back {
     transform: rotateY(-180deg);
+}
+#login-interaction-wrapper{
+    padding-top: 10%;
+
+}
+#error-container{
+    font-size: 18px;
+    text-align: center;
+
 }

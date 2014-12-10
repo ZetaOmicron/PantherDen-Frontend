@@ -1,6 +1,7 @@
 var server_location = "http://localhost:8000";
 
 $(document).ready(function () {
+    init();
     if(readCookie("user")!=null){
         location.href="../SearchPage/SearchPage.html";
         return;
@@ -28,6 +29,11 @@ $(document).ready(function () {
     });
 });
 
+//initializes elements in their proper starting positions
+function init(){
+    $("#error-container").hide();
+}
+
 function checkIfUserAndStoreCookie(){
     var form = $("#login");
     var tid = form.find("#username").val();
@@ -40,7 +46,8 @@ function checkIfUserAndStoreCookie(){
             location.href="../DenPage/DenPage.html";
         },
         error: function(err){
-            $("#error-container").html("No teacher with the id of "+tid+" was found.");
+            $("#error-container").fadeIn(600);
+            $("#error-container").html('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>  No teacher with the id of <strong>'+tid+'</strong> was found.');
         }
     });
     return false;

@@ -7,6 +7,8 @@ and open the template in the editor.
 <html>
     <head>
         <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
+        <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+       
         <link rel="stylesheet" href="LoginStyle.css" type="text/css"/>
         <title>Panther Den</title>
         <meta charset="UTF-8">
@@ -32,20 +34,22 @@ and open the template in the editor.
                     <div class="loginbox shadow">
                         <div class="dottedline">
                             <form id="login" action="../Search%20Page/SearchPage.html" onsubmit="return checkIfUserAndStoreCookie()">
-                                <p id="logintype">Teacher Login</p>
-                                <input id="username" placeholder="Username" autocomplete="off" required="" >
-                                <!--<br id="userpassgap">
-                                <input type="password" id="password" placeholder="Password" autocomplete="off" required="">-->
-
-                                <!--Remove the inline css later -Davis-->
                                 
-                                <h3 style="color: red;text-align: center;" id="error-container">
-                                    
-                                </h3>
-                                <br>
-                                <div id="wrapper" style="text-align: center">
-                                    <input type="button" id="Back" class="button bl" style="float: left;" value="Back" name="back" />
+                                <p id="logintype">Teacher Login</p>
+                                    <div id="login-interaction-wrapper">
+                                    <input id="username" placeholder="Username" autocomplete="off" required="" >
+                                    <!--<br id="userpassgap">
+                                    <input type="password" id="password" placeholder="Password" autocomplete="off" required="">-->
+
+                                    <!--Remove the inline css later -Davis-->
+                                
+                                    <div id ="error-container" class="alert alert-danger" role="alert"></div>
+                                    <br>
+                                    <div id="wrapper" style="text-align: center">
+                                        <input type="button" id="Back" class="button bl" style="float: left;" value="Back" name="back">
+
                                         <input type="submit" id="Loginbutton" class="button bl" style="float: right;" value="Login" name="login" />
+                                    </div>
                                 </div>
                             </form>
                         </div>
