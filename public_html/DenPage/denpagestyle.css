@@ -5,7 +5,7 @@
 }
 
 #titlemyden{
-	 font-family: "Calibri", sans-serif;
+    font-family: "Calibri", sans-serif;
     color: #87a8c6;
     font-weight: bold;
     font-size: 44px;
@@ -29,4 +29,5 @@
 #attendancewrapper {
     width: 59.1vw;
     margin: 0 auto;
+    padding: 2px;
 }

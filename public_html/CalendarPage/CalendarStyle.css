@@ -1,10 +1,19 @@
-#datepicker {
+#titlemycal{
+    font-family: "Calibri", sans-serif;
+    color: #87a8c6;
+    font-weight: bold;
+    font-size: 35px;
+    z-index: 500;
+    height: 6vw;
+}
+
+#datepicker{
     display: table-cell;
     background: blue;
     text-align: center;
     vertical-align: middle;
-    width: 30vw;
-    height: 3vw;
+    width: 24vw;
+    height: 4.3vw;
     background-color: #f0f1f3;
     -webkit-border-radius: .5vw;
     border-radius: .5vw;
@@ -12,12 +21,18 @@
     font-family: "Calibri", sans-serif;
 }
 
-#titlemyden{
-	 font-family: "Calibri", sans-serif;
-    color: #87a8c6;
-    font-weight: bold;
-    font-size: 44px;
-    z-index: 500;
+#datepickerbutton {
+    display: table-cell;
+    background: blue;
+    text-align: center;
+    vertical-align: middle;
+    width: 10vw;
+    height: 4vw;
+    background-color: #f0f1f3;
+    -webkit-border-radius: .5vw;
+    border-radius: .5vw;
+    margin: 0 auto;
+    font-family: "Calibri", sans-serif;
 }
 
 #titlewrapperp{
@@ -25,3 +40,4 @@
     text-align: center;
     width: 100vw;
 }
+
