@@ -54,5 +54,49 @@
     height: 20px;
     color:  #FF9696;
     background-color: #96FFFF;
+    font-weight: bold;
 }
 
+#changebox {
+    height: 300px;
+    width: 500px;
+    z-index: 50;
+    position: absolute;
+    top:300px;
+    left: 30vw;
+    background-color:#96FFFF;
+    border-radius: .5vw;
+    padding: 10px;
+}
+
+#savebutton{
+    clear: both;
+    float:right;
+}
+
+#numberstudents{
+    width: 30px;
+}
+
+#actionLabelWrapper{
+
+    width: 40vw;
+    margin: 0 auto;
+    position: fixed;
+    top: 25vh;
+    left: 50vw;
+    margin-left: -20vw;
+    z-index: 100;
+
+}
+
+#cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    left:0;
+
+    z-index: 50;
+}
