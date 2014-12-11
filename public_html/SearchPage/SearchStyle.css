@@ -11,7 +11,10 @@
     color: #a5a5a5;
     left: -2vw;
 }
-
+#none-found-wrapper{
+    text-align: center;
+    font-size: 24px;
+}
 #query-box:focus {
     border-color: #7aaaca;
     color: #7aaaca;

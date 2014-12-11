@@ -77,7 +77,14 @@ function appendRes($table, model, data) {
     updateHeader($table, model);
     var list = data[model + "s"];
     if (list.length == 0) {
-        $results.html("No Results Found");
+        $results.html('<div id="none-found-wrapper">
+                        <div class="alert alert-warning" role="alert">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true">
+
+                            </span>
+                               No Results Found
+                         </div>
+                    </div>');
         return;
     }
     var reshtml = "";

@@ -127,6 +127,7 @@ and open the template in the editor.
                 <thead>
                 </thead>
                 <tbody>
+
                 </tbody>
             </table>
         </div>
@@ -136,7 +137,7 @@ and open the template in the editor.
            /*
                 if(readCookie("user")==null){
                   location.href="../LoginPage/LoginPage.html";
-                }
+                }*/
                 var user = readJSONCookie("user");
                 $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
                 updateHeader($("#search-table"), "student");
