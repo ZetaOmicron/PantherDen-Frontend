@@ -59,8 +59,12 @@
 
         <!--Work area for back end: /-->
         <div id="titlewrapperp">
-           <div id = 'titlemycal'> Choose Date: <input type = 'date' id = 'datepicker'><input type= 'button' id = 'datepickerbutton' value = 'Pick'></div>
+            <div id = 'titlemycal'> Choose Date: <input type = 'date' id = 'datepicker'><input type= 'button' id = 'datepickerbutton' value = 'Pick'></div>
+            <div id = 'errordisplay'>
+                You have input a date with no Panther Den. Please input another date.
+            </div>
         </div>
+
 
 
         <div id="main_div" class="shadow" style = 'padding:2vw'>
@@ -69,6 +73,7 @@
 
         <script>
             $(document).ready(function() {
+                $('#errordisplay').hide();
                 $("#calendar").fullCalendar({
                     eventColor: 'red',
                     events: [
@@ -91,9 +96,11 @@
 
                     /*checks to see if date is an actual date*/
                     if (getDate.day() === 1 || getDate.day() === 3 || getDate.day() === 6 || getDate.day() === 7) {
-                        alert('There is no Panther Den on desired date.');
+                        $('#errordisplay').slideDown(700);
+                        $('#errordisplay').delay(3000).slideUp(1000);
                     } else if (getDate.isValid() === false) {
-                        alert('This is an invalid date. Please choose another date');
+                        $('#errordisplay').slideDown(700);
+                        $('#errordisplay').delay(3000).slideUp(1000);
                     } else {
                         $('#calendar').fullCalendar('gotoDate', getDate);
                     }

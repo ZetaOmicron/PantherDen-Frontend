@@ -12,13 +12,17 @@
     background: blue;
     text-align: center;
     vertical-align: middle;
-    width: 24vw;
-    height: 4.3vw;
-    background-color: #f0f1f3;
+    width: 20vw;
+    height: 3.7vw;
+    //background-color: #f0f1f3;
+    background-color: #fefefe;
+    border: solid .25vw #cecfd1;
     -webkit-border-radius: .5vw;
     border-radius: .5vw;
     margin: 0 auto;
     font-family: "Calibri", sans-serif;
+    font-size: 2.3vw;
+    color: #a5a5a5;
 }
 
 #datepickerbutton {
@@ -39,5 +43,16 @@
     display: table;
     text-align: center;
     width: 100vw;
+}
+
+#errordisplay {
+    position: relative;
+    top:-20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    color:  #FF9696;
+    background-color: #96FFFF;
 }
 
