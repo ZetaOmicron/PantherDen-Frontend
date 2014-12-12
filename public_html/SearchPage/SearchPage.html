@@ -68,6 +68,15 @@ and open the template in the editor.
         <!--Work area for back end: /-->
         <form id="searchcontainer" action="#">
             <input type="text" id="query-box" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
+            <!-- TODO: Style these to put them in the right place. -->
+            <select name="model" id="select-model">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+            <select name="property" id="select-property">
+                <option value="last_name">Last Name</option>
+                <option value="first_name">First Name</option>
+            </select>
         </form>
 
         <div id="cover"></div>
@@ -130,6 +139,7 @@ and open the template in the editor.
 
                 </tbody>
             </table>
+            <div id="error-handle"></div>
         </div>
 
         <script>
@@ -142,7 +152,8 @@ and open the template in the editor.
                 $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
                 updateHeader($("#search-table"), "student");
                 $("#searchcontainer").submit(function () {
-                    appendSearchResults($('#search-table'), 'student', 'last_name', $('#query-box').val(), '1');
+                    appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
+                    return false;
                 });
             });
         </script>

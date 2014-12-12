@@ -12,6 +12,15 @@ var headers = {student: [
         {title: "Homeroom", valuename: "room_id"}
     ]};
 
+function setNoneFound($table){
+    $("#error-handle").html('<div class="alert alert-warning" role="alert" id="none-found-wrapper">'+
+            '<span class="glyphicon glyphicon-question-sign" aria-hidden="true">'+
+            '</span>'+
+            'No Results Found'+
+            '</div>'
+    );
+    $table.find("tbody").html("");
+}
 
 function genCheckBox(num, disable) {
     return "<div class='checkboxp'><input type='checkbox' value='None' name='check' id='checkbox" + num + "' "
@@ -26,6 +35,7 @@ function appendSearchResults($table, model, field, query, page) {
             appendRes($table, model, data);
         },
         error: function (err) {
+            setNoneFound($table);
             console.log(err);
         }
     });
@@ -63,7 +73,7 @@ function appendHRRes($table, data) {
                 treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
             }
             treshtml += "<td>" + genCheckBox(c, ps[0]=="moved") + "</td>";
-            c+=1
+            c+=1;
             treshtml += "</tr>";
             reshtml += treshtml;
         }
@@ -77,16 +87,10 @@ function appendRes($table, model, data) {
     updateHeader($table, model);
     var list = data[model + "s"];
     if (list.length == 0) {
-        $results.html('<div id="none-found-wrapper">
-                        <div class="alert alert-warning" role="alert">
-                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true">
-
-                            </span>
-                               No Results Found
-                         </div>
-                    </div>');
+        setNoneFound($table);
         return;
     }
+    $("#error-handle").html("");
     var reshtml = "";
     for (var i = 0; i < list.length; i++) {
         li = list[i];
