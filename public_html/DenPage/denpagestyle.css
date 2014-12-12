@@ -8,26 +8,35 @@
     font-family: "Calibri", sans-serif;
     color: #87a8c6;
     font-weight: bold;
-    font-size: 44px;
+    font-size: 4vw;
     z-index: 500;
 }
 
 #submission{
-    background-color: blue;
-    width: 100%;
+    width: 59.1vw;
     height: 4vw;
     position: relative;
     border: none;
-    border-radius: .5vw;
+    border-radius: 0 0 1vw 1vw;
     background-color: #fefefe;
     margin-left: auto;
     margin-right: auto;
     font-size: 2.3vw;
     color: #a5a5a5;
+    top: 24vw;
+    left: -2vw;
+    bottom: 0;
+}
+
+#submission:hover {
+    background-color: #e2e2e2;
 }
 
 #attendancewrapper {
     width: 59.1vw;
     margin: 0 auto;
-    padding: 2px;
+}
+
+#navcontainer li a{
+    font-size: 1.8vw;
 }
