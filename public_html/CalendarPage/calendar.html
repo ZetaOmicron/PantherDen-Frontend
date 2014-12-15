@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<HTML>
+<HTML style="overflow: hidden;">
     <HEAD>
         <link rel='stylesheet' href='fullcalendar.css' />
         <link rel='stylesheet' href='CalendarStyle.css' />
@@ -61,14 +61,25 @@
     </div>
 
         <!--Work area for back end: /-->
-        <div id="titlewrapperp">
+   <!--     <div id="titlewrapperp">
             <div id = 'titlemycal'> Choose Date: <input type = 'date' id = 'datepicker'><input type= 'button' id = 'datepickerbutton' value = 'Pick' onclick = 'gotodate()'></div>
             <div id = 'errordisplay'>
                 You have input a date with no Panther Den. Please input another date.
             </div>
+        </div> -->
+    <div id="searchwrapper" class="shadow">
+        <div id="buttonwrapper">
+            <button id = 'datepickerbutton' value = 'Pick' onclick = 'gotodate()'>Pick</button>
         </div>
+            <div name="model" id="select-model">Date:</div>
+            <input type = 'date' id = 'query-box'>
+    </div>
+    <div id = 'errordisplay'>
+        You have input a date with no Panther Den. Please input another date.
+    </div>
 
-        <div id="cover"></div>
+
+    <div id="cover"></div>
         <div id="actionLabelWrapper" style="display: block;">
             <div class="panel panel-default">
                 <div class="panel-body">

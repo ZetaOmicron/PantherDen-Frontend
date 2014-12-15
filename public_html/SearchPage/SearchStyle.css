@@ -82,3 +82,14 @@ input::-webkit-input-placeholder{
 //color: black;
     color: #7aaaca !important;
 }
+
+/*Info Popup*/
+
+#infowrapper {
+    z-index: 101;
+    position: fixed;
+    width: 30vw;
+    top: 25vh;
+    left: 50vw;
+    margin-left: -15vw;
+}
