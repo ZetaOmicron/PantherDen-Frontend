@@ -45,12 +45,21 @@ function clickAll(){
 
 function setNoneFound($table){
     $("#error-handle").html('<div class="alert alert-warning none-found-wrapper" role="alert">'+
-            '<span class="glyphicon glyphicon-question-sign" aria-hidden="true">'+
+            '<span class="glyphicon glyphicon-question-sign" aria-hidden="true" style="margin-right: 10px">'+
             '</span>'+
             'No Results Found'+
             '</div>'
     );
     $table.find("tbody").html("");
+}
+
+function setSuccess($table, message){
+    $("#error-handle").html('<div class="alert alert-success none-found-wrapper" role="alert">'+
+            '<span class="glyphicon glyphicon-check" aria-hidden="true" style="margin-right: 10px">'+
+            '</span>'+
+            message+
+            '</div>'
+    );
 }
 
 function genCheckBox(num, disable, checkall) {

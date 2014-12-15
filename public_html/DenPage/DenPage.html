@@ -93,8 +93,12 @@ and open the template in the editor.
                 // }
                 var user = readJSONCookie("user");
                 $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
-                updateHeader($("#search-table"), "student", "Absent");
-                getRoster($("#search-table"), user.id);
+                var $st = $("#search-table");
+                $("#submission").click(function(){
+                    setSuccess($st, "Successfully Submitted Attendance");
+                });
+                updateHeader($st, "student", "Absent");
+                getRoster($st, user.id);
             });
         </script>
     </body>
