@@ -8,7 +8,7 @@ $(document).ready(function () {
     }
     $('#admin').on('click', function () {
         $('.flipper').addClass('flip');
-        $('#logintype').text("Administrator Login");
+        $('#logintype').text("Data Manager Login");
         setTimeout(function () {
             $('#username').focus();
         }, 500);
