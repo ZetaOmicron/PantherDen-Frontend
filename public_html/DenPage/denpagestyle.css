@@ -36,11 +36,20 @@
     margin: 0 auto;
     //height: 30vw;
 }
+
 #table-wrap{
     min-height: 10vw;
 }
+
 #search-table {
     width: 55vw;
     margin-left: auto;
     margin-right: auto;
+}
+
+#search-table th, #search-table td {
+    font-family: "Calibri", sans-serif;
+    font-size: 1.7vw;
+    color: #959595;
+    padding: 0 10px;
 }
