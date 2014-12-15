@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>  
+        <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
+        <link rel="stylesheet" href="ConflictPageStyle.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
+        <title>Panther Den - MyDen</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../vendor/jquery/jquery.js"></script>
+        <script src="../cookies.js"></script>
+        <script src="../ajax_helpers.js"></script>
+    </head>
+
+    <body>
+        <!-- This is the general table for the Popup/-->
+
+
+
+        <div id="headerwrapper">
+        <div id="titlez">
+            PANTHER DEN<div id="data-manager-label"><span class="label label-info">DataManager</span></div>
+        </div>
+        <div class="headerbox shadow">
+            <ul id="navcontainer">
+                <li id="welcome-user">
+                </li>
+                <li>
+                    <a href="../DenPage/DenPage.html">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                        Conflicts
+                    </a>
+                </li>
+                <li>
+                    <a href="../SearchPage/SearchPage.html">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="../LoginPage/LoginPage.html" onclick="logout()">  
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        Sign Out
+                    </a>
+                </li>
+            </ul>
+        </div>
+            </div>
+        <!--Work area for back end: /-->
+        <div id="titlewrapperp">
+            <div id="titlemyden">
+                Conflicts 
+            </div>
+        </div>
+
+
+        <!--        <div class="checkboxp">
+                    <input type="checkbox" value="None" id="checkmark" name="check" />
+                    <label for="checkmark"></label>
+                </div>-->
+        <div id="attendancewrapper">
+            <div id="mainbox" class="shadow">
+                <div id="table-wrap">
+                    <table class="table-hover" id="search-table">
+                        <thead>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="error-handle"></div>
+               
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+
+                //if(readCookie("user")==null){
+                //  location.href="../LoginPage/LoginPage.html";
+                // }
+                var user = readJSONCookie("user");
+                $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
+                var $st = $("#search-table");
+                $("#submission").click(function(){
+                    setSuccess($st, "Successfully Submitted Attendance");
+                });
+                updateHeader($st, "student", "Absent");
+                getRoster($st, user.id);
+            });
+        </script>
+    </body>
+</html>

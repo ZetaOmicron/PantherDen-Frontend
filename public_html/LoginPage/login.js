@@ -1,5 +1,7 @@
 var server_location = "http://localhost:8000";
 
+var isTeacher = true;
+
 $(document).ready(function () {
     init();
     if(readCookie("user")!=null){
@@ -7,6 +9,7 @@ $(document).ready(function () {
         return;
     }
     $('#admin').on('click', function () {
+        isTeacher=false;
         $('.flipper').addClass('flip');
         $('#logintype').text("Data Manager Login");
         setTimeout(function () {
@@ -14,6 +17,7 @@ $(document).ready(function () {
         }, 500);
     });
     $('#teach').on('click', function () {
+        isTeacher=true;
         $('.flipper').addClass('flip');
         $('#logintype').text("Teacher Login");
         setTimeout(function () {
@@ -43,7 +47,11 @@ function checkIfUserAndStoreCookie(){
         dataType: 'json',
         success: function (data) {
             createJSONCookie("user",data,5);
-            location.href="../DenPage/DenPage.html";
+            if(isTeacher){
+                location.href="../DenPage/DenPage.html";
+            }else{
+                location.href="../DataManagers/ConflictPage.html";
+            }
         },
         error: function(err){
             $("#error-container").fadeIn(600);
