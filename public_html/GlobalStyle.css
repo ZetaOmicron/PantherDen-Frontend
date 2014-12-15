@@ -159,7 +159,8 @@ input[type=checkbox] {
     -webkit-border-radius: 1vw;
     border-radius: 1vw;
     width: 59.1vw;
-    height: 30vw;
+    min-height: 15vw;
     margin: 0 auto;
-
+    //padding: 2vw 2vw 0 2vw;
+    padding-top: 20px;
 }

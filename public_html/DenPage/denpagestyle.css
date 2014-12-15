@@ -23,9 +23,8 @@
     margin-right: auto;
     font-size: 2.3vw;
     color: #a5a5a5;
-    top: 24vw;
-    left: -2vw;
     bottom: 0;
+    margin-top: 25px;
 }
 
 #submission:hover {
@@ -35,4 +34,13 @@
 #attendancewrapper {
     width: 59.1vw;
     margin: 0 auto;
+    //height: 30vw;
+}
+#table-wrap{
+    min-height: 10vw;
+}
+#search-table {
+    width: 55vw;
+    margin-left: auto;
+    margin-right: auto;
 }
