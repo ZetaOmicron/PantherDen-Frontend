@@ -24,6 +24,16 @@
     border: solid .2vw #7aaaca;
 }
 
+#search-table {
+    width: 55vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table-wrap{
+    padding-bottom: 25px;
+}
+
 #search-table th, #search-table td {
     font-family: "Calibri", sans-serif;
     font-size: 1.7vw;
