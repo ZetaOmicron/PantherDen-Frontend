@@ -5,7 +5,6 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-<<<<<<< Updated upstream
     <head>  
         <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
@@ -18,70 +17,55 @@ and open the template in the editor.
         <script src="../cookies.js"></script>
         <script src="../ajax_helpers.js"></script>
     </head>
-=======
-<head>
-    <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
-    <link rel="stylesheet" href="denpagestyle.css" type="text/css"/>
-    <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
-    <title>Panther Den - Search</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../vendor/jquery/jquery.js"></script>
-    <script src="../cookies.js"></script>
-    <script src="../ajax_helpers.js"></script>
-</head>
->>>>>>> Stashed changes
 
-<body>
-<!-- This is the general table for the Popup/-->
+    <body>
+        <!-- This is the general table for the Popup/-->
 
 
 
-<div id="headerwrapper">
-    <div id="titlez">
-        PANTHER DEN
-    </div>
-    <div class="headerbox shadow">
-        <ul id="navcontainer">
-            <li id="welcome-user">
-            </li>
-            <li>
-                <a href="../DenPage/DenPage.html">
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                    My Den
-                </a>
-            </li>
-            <li>
-                <a href="../SearchPage/SearchPage.html">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    Search
-                </a>
-            </li>
-            <li>
-                <a href="../CalendarPage/calendar.html">
-                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                    Calendar
-                </a>
-            </li>
-            <li>
-                <a href="../LoginPage/LoginPage.html" onclick="logout()">
-                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                    Sign Out
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-<!--Work area for back end: /-->
-<div id="titlewrapperp">
-    <div id="titlemyden">
-        Students In My Den Today
-    </div>
-</div>
+        <div id="headerwrapper">
+        <div id="titlez">
+            PANTHER DEN
+        </div>
+        <div class="headerbox shadow">
+            <ul id="navcontainer">
+                <li id="welcome-user">
+                </li>
+                <li>
+                    <a href="../DenPage/DenPage.html">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        My Den
+                    </a>
+                </li>
+                <li>
+                    <a href="../SearchPage/SearchPage.html">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        Search
+                    </a>
+                </li>
+                <li>
+                    <a href="../CalendarPage/calendar.html">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        Calendar
+                    </a>
+                </li>
+                <li>
+                    <a href="../LoginPage/LoginPage.html" onclick="logout()">  
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        Sign Out
+                    </a>
+                </li>
+            </ul>
+        </div>
+            </div>
+        <!--Work area for back end: /-->
+        <div id="titlewrapperp">
+            <div id="titlemyden">
+                Students In My Den Today
+            </div>
+        </div>
 
 
-<<<<<<< Updated upstream
         <!--        <div class="checkboxp">
                     <input type="checkbox" value="None" id="checkmark" name="check" />
                     <label for="checkmark"></label>
@@ -100,28 +84,10 @@ and open the template in the editor.
                 <input type="button" id="submission" value="Submit Attendance">
             </div>
         </div>
-=======
-<!--        <div class="checkboxp">
-            <input type="checkbox" value="None" id="checkmark" name="check" />
-            <label for="checkmark"></label>
-        </div>-->
-<div id="attendancewrapper">
-    <div id="mainbox" class="shadow" style="padding: 2vw;">
-        <table class="table-hover" id="search-table" style="width: 55vw">
-            <thead>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <input type="button" id="submission" value="Submit Attendance"></input>
-    </div>
-</div>
->>>>>>> Stashed changes
 
-<script>
-    $(document).ready(function () {
+        <script>
+            $(document).ready(function () {
 
-<<<<<<< Updated upstream
                 //if(readCookie("user")==null){
                 //  location.href="../LoginPage/LoginPage.html";
                 // }
@@ -136,16 +102,4 @@ and open the template in the editor.
             });
         </script>
     </body>
-=======
-        //if(readCookie("user")==null){
-        //  location.href="../LoginPage/LoginPage.html";
-        // }
-        var user = readJSONCookie("user");
-        $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
-        updateHeader($("#search-table"), "student", "Absent");
-        getRoster($("#search-table"), user.id);
-    });
-</script>
-</body>
->>>>>>> Stashed changes
 </html>
