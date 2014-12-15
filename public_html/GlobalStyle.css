@@ -56,6 +56,10 @@ input:focus {
 }
 
 /* Header */
+#headerwrapper {
+    height: 5.8vw;
+}
+
 #titlez {
     position: relative;
     font-size: 5.7vw;
@@ -117,7 +121,9 @@ a {
     vertical-align: middle;
 }
 
-
+#navcontainer li a{
+    font-size: 1.8vw;
+}
 
 a:hover {
     text-decoration: none;

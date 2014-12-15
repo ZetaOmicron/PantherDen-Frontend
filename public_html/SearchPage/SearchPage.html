@@ -23,7 +23,7 @@ and open the template in the editor.
 
     <body>
         <!-- This is the general table for the Popup/-->
-
+        <div id="headerwrapper">
         <div id="titlez">
             PANTHER DEN
         </div>
@@ -58,22 +58,27 @@ and open the template in the editor.
                 </li>
             </ul>
         </div>
+        </div>
 
-
-        <div id="buttonwrapper">
+       <!-- <div id="buttonwrapper">
             <button class="btn btn-info" id = "actionbutton">
                 Edit
             </button>
-        </div>
+        </div> -->
         <!--Work area for back end: /-->
         <form id="searchcontainer" action="#">
-            <input type="text" id="query-box" class="shadow" placeholder="Search" autocomplete="off" autofocus="">
+            <div id="searchwrapper" class="shadow">
+                <select name="model" id="select-model">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+                <div id="buttonwrapper">
+                <button class="btn btn-info" id="actionbutton">Edit</button>
+                </div>
+                <input type="text" id="query-box" placeholder="Search" autocomplete="off" autofocus="">
+            </div>
             <!-- TODO: Style these to put them in the right place. -->
-            <select name="model" id="select-model">
-                <option value="student">Student</option>
-                <option value="teacher">Teacher</option>
-            </select>
-            <select name="property" id="select-property">
+            <select name="property" id="select-property" hidden="hidden">
                 <option value="last_name">Last Name</option>
                 <option value="first_name">First Name</option>
             </select>
