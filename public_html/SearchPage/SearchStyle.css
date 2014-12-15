@@ -35,13 +35,13 @@
     position: absolute;
     display: inline;
     border: none;
-    border-radius: 3vw;
+    border-radius: .5vw;
     background-color: #7aaaca;
     font-size: 2.5vw;
     font-family: "Calibri", sans-serif;
     width: 12vw;
     height: 3.7vw;
-    top: 7.9vw;
+    top: 8vw;
     left: 25vw;
     color: #ffffff;
     z-index: 0;
@@ -60,7 +60,7 @@
     font-family: "Calibri", sans-serif;
     width: 12vw;
     height: 3.7vw;
-    top: 7.9vw;
+    top: 8vw;
     left: 63vw;
     color: #ffffff;
     border-radius: .5vw;
