@@ -5,138 +5,139 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>  
-        <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
-        <link rel="stylesheet" href="SearchStyle.css" type="text/css"/>
-        <link rel="stylesheet" href="action.css" type="text/css"/>
-        <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
-        <title>Panther Den - Search</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../../vendor/jquery/jquery.js"></script>
-        <script src="../../vendor/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-        <script src="../cookies.js"></script>
-        <script src="../ajax_helpers.js"></script>
-        <script src ="popup.js"></script>
-    </head>
+<head>
+    <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="SearchStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="action.css" type="text/css"/>
+    <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
+    <title>Panther Den - Search</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vendor/jquery/jquery.js"></script>
+    <script src="../../vendor/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script src="../cookies.js"></script>
+    <script src="../ajax_helpers.js"></script>
+    <script src ="popup.js"></script>
+</head>
 
-    <body>
-        <!-- This is the general table for the Popup/-->
-        <div id="headerwrapper">
-        <div id="titlez">
-            PANTHER DEN
-        </div>
-        <div class="headerbox shadow">
-            <ul id="navcontainer">
-                <li id="welcome-user">
-                </li>
-                <li>
-                    <a href="../DenPage/DenPage.html">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        My Den
-                    </a>
-                </li>
-                <li>
-                    <a href="../SearchPage/SearchPage.html">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        Search
-                    </a>
-                </li>
-                <li>
-                    <a href="../CalendarPage/calendar.html">
-                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                        Calendar
-                    </a>
-                </li>
-                <li>
-                    <a href="../LoginPage/LoginPage.html" onclick="logout()">
+<body>
+<!-- This is the general table for the Popup/-->
+<div id="headerwrapper">
+    <div id="titlez">
+        PANTHER DEN
+    </div>
+    <div class="headerbox shadow">
+        <ul id="navcontainer">
+            <li id="welcome-user">
+            </li>
+            <li>
+                <a href="../DenPage/DenPage.html">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    My Den
+                </a>
+            </li>
+            <li>
+                <a href="../SearchPage/SearchPage.html">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    Search
+                </a>
+            </li>
+            <li>
+                <a href="../CalendarPage/calendar.html">
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    Calendar
+                </a>
+            </li>
+            <li>
+                <a href="../LoginPage/LoginPage.html" onclick="logout()">
 
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        Sign Out
-                    </a>
-                </li>
-            </ul>
-        </div>
-        </div>
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    Sign Out
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-       <!-- <div id="buttonwrapper">
-            <button class="btn btn-info" id = "actionbutton">
-                Edit
-            </button>
-        </div> -->
-        <!--Work area for back end: /-->
-        <div id="searchwrapper" class="shadow">
-            <div id="buttonwrapper">
-                <button class="btn btn-info" id="actionbutton">Edit</button>
-            </div>
-        <form id="searchcontainer" action="#">
-                <select name="model" id="select-model">
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                </select>
-                <input type="text" id="query-box" placeholder="Search" autocomplete="off" autofocus="">
-            <!-- TODO: Style these to put them in the right place. -->
-            <select name="property" id="select-property" hidden="hidden">
-                <option value="last_name">Last Name</option>
-                <option value="first_name">First Name</option>
-            </select>
-        </form>
-        </div>
+<!-- <div id="buttonwrapper">
+     <button class="btn btn-info" id = "actionbutton">
+         Edit
+     </button>
+ </div> -->
+<!--Work area for back end: /-->
+<div id="searchwrapper" class="shadow">
+    <div id="buttonwrapper">
+        <button class="btn btn-info" id="actionbutton">Edit</button>
+    </div>
+    <form id="searchcontainer" action="#">
+        <select name="model" id="select-model">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select>
+        <input type="text" id="query-box" placeholder="Search" autocomplete="off" autofocus="">
+        <!-- TODO: Style these to put them in the right place. -->
+        <select name="property" id="select-property" hidden="hidden">
+            <option value="last_name">Last Name</option>
+            <option value="first_name">First Name</option>
+        </select>
+    </form>
+</div>
 
 
-        <div id="cover"></div>
-        <div id = "actionLabelWrapper">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <table class="table table-condensed table-responsive">
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="actionDropDown" data-toggle="dropdown">
-                                Action
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="actionDropDown">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Request Student</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other Action...</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other Action...</a></li>
-                            </ul>
-                        </div>
-                        <div id="tablewrapper">
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Current Room</th>
-                            <th>Home Room</th>
+<div id="cover"></div>
+<div id = "actionLabelWrapper">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-condensed table-responsive">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="actionDropDown" data-toggle="dropdown">
+                        Action
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="actionDropDown">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Request Student</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other Action...</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other Action...</a></li>
+                    </ul>
+                </div>
+                <div id="tablewrapper">
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Current Room</th>
+                    <th>Home Room</th>
 
-                            <!-- Data to be Changed/added: -->
-                            <tr>
-                                <td>Ryan Wells</td>
-                                <td>Nov 4</td>
-                                <td>212</td>
-                                <td>237</td>
-                            </tr>
-                        </div>
-                    </table>
-                    <div class="alright">
-                        <!-- Place ajax requests here: /-->
-                        <button type="button" href="" class="btn btn-info">
-                            Request
+                    <!-- Data to be Changed/added: -->
+                    <tr>
+                        <td>Ryan Wells</td>
+                        <td>Nov 4</td>
+                        <td>212</td>
+                        <td>237</td>
+                    </tr>
+                </div>
+            </table>
+            <div class="alright">
+                <!-- Place ajax requests here: /-->
+                <button type="button" href="" class="btn btn-info">
+                    Request
                             <span class ="glyphicon glyphicon-chevron-right">
 
                             </span>
 
-                        </button>
-                    </div>
-                </div>
-            </div> 
+                </button>
+            </div>
         </div>
+    </div>
+</div>
 
 
 
-        <!--        <div class="checkboxp">
-                    <input type="checkbox" value="None" id="checkmark" name="check" />
-                    <label for="checkmark"></label>
-                </div>-->
+<!--        <div class="checkboxp">
+            <input type="checkbox" value="None" id="checkmark" name="check" />
+            <label for="checkmark"></label>
+        </div>-->
 
+<<<<<<< Updated upstream
         <div id="mainbox" class="shadow">
             <div id="table-wrap">
                 <table class="table-hover" id="search-table">
@@ -148,21 +149,33 @@ and open the template in the editor.
             </div>
             <div id="error-handle"></div>
         </div>
+=======
+<div id="mainbox" class="shadow" style="padding: 2vw;">
+    <table class="table-hover" id="search-table" style="width: 55vw">
+        <thead>
+        </thead>
+        <tbody>
 
-        <script>
-            $(document).ready(function () {
-           /*
-                if(readCookie("user")==null){
-                  location.href="../LoginPage/LoginPage.html";
-                }*/
-                var user = readJSONCookie("user");
-                $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
-                updateHeader($("#search-table"), "student");
-                $("#searchcontainer").submit(function () {
-                    appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
-                    return false;
-                });
-            });
-        </script>
-    </body>
+        </tbody>
+    </table>
+    <div id="error-handle"></div>
+</div>
+>>>>>>> Stashed changes
+
+<script>
+    $(document).ready(function () {
+        /*
+         if(readCookie("user")==null){
+         location.href="../LoginPage/LoginPage.html";
+         }*/
+        var user = readJSONCookie("user");
+        $("#welcome-user").html("<a>Welcome, "+ user.first_name +"!</a>");
+        updateHeader($("#search-table"), "student");
+        $("#searchcontainer").submit(function () {
+            appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
+            return false;
+        });
+    });
+</script>
+</body>
 </html>
