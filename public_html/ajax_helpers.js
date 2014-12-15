@@ -13,6 +13,35 @@ var headers = {student: [
     ]
 };
 
+var data_on_table = [];
+var selected = {};
+
+function clickCheck(pos){
+    if(pos in selected){
+        delete selected[pos];
+    }else{
+        selected[pos]=true;
+    }
+    if(data_on_table.length == Object.keys(selected).length){
+        $("#checkbox0").prop("checked",true);
+    }else{
+        $("#checkbox0").prop("checked",false);
+    }
+}
+
+function clickAll(){
+    var unsa = data_on_table.length == Object.keys(selected).length;
+    for(var i=1; i<=data_on_table.length; i++){
+        if(unsa){
+            delete selected[i];
+            $("#checkbox"+i).prop("checked",false);
+        }
+        else if(!(i in selected)){
+            selected[i]=true;
+            $("#checkbox"+i).prop("checked",true);
+        }
+    }
+}
 
 function setNoneFound($table){
     $("#error-handle").html('<div class="alert alert-warning none-found-wrapper" role="alert">'+
@@ -24,8 +53,10 @@ function setNoneFound($table){
     $table.find("tbody").html("");
 }
 
-function genCheckBox(num, disable) {
-    return "<div class='checkboxp'><input type='checkbox' value='None' name='check' id='checkbox" + num + "' "
+function genCheckBox(num, disable, checkall) {
+    return "<div class='checkboxp'>" +
+        "<input onclick='"+(checkall ? "clickAll()" : "clickCheck("+num+")")+"'" +
+        "type='checkbox' value='None' name='check' id='checkbox" + num + "' "
         +(disable ? "disabled" : "")+"/><label for='checkbox" + num + "'></label></div>";
 }
 function appendSearchResults($table, model, field, query, page) {
@@ -59,6 +90,8 @@ function getRoster($table, tid) {
 }
 
 function appendHRRes($table, data) {
+    data_on_table = [];
+    selected={};
     var model = "student";
     var types = ["moved:pink", "default:lightgray", "new:lightgreen"];
     var $results = $table.find("tbody");
@@ -71,6 +104,7 @@ function appendHRRes($table, data) {
         var sect = data[ps[0]];
         for (var i = 0; i < sect.length; i++) {
             li = sect[i];
+            data_on_table.push(li);
             treshtml = "<tr style='background-color: "+ps[1]+"'>";
             for (var j = 0; j < heads.length; j++) {
                 treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
@@ -90,6 +124,8 @@ function appendHRRes($table, data) {
 }
 
 function appendRes($table, model, data) {
+    data_on_table = [];
+    selected={};
     var $results = $table.find("tbody");
     var heads = headers[model];
     updateHeader($table, model);
@@ -102,6 +138,7 @@ function appendRes($table, model, data) {
     var reshtml = "";
     for (var i = 0; i < list.length; i++) {
         li = list[i];
+        data_on_table.push(li);
         treshtml = "<tr>";
         for (var j = 0; j < heads.length; j++) {
             treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
@@ -125,7 +162,7 @@ function updateHeader($table, model, strInsteadOfCheck) {
         hhtml += "<th>" + strInsteadOfCheck + "</th>";
 
     }else{
-        hhtml += "<th>" + genCheckBox(0) + "</th>";
+        hhtml += "<th>" + genCheckBox(0, false, true) + "</th>";
     }
     $header.html(hhtml);
 }
