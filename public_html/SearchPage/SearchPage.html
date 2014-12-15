@@ -66,23 +66,24 @@ and open the template in the editor.
             </button>
         </div> -->
         <!--Work area for back end: /-->
+        <div id="searchwrapper" class="shadow">
+            <div id="buttonwrapper">
+                <button class="btn btn-info" id="actionbutton">Edit</button>
+            </div>
         <form id="searchcontainer" action="#">
-            <div id="searchwrapper" class="shadow">
                 <select name="model" id="select-model">
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
                 </select>
-                <div id="buttonwrapper">
-                <button class="btn btn-info" id="actionbutton">Edit</button>
-                </div>
                 <input type="text" id="query-box" placeholder="Search" autocomplete="off" autofocus="">
-            </div>
             <!-- TODO: Style these to put them in the right place. -->
             <select name="property" id="select-property" hidden="hidden">
                 <option value="last_name">Last Name</option>
                 <option value="first_name">First Name</option>
             </select>
         </form>
+        </div>
+
 
         <div id="cover"></div>
         <div id = "actionLabelWrapper">
