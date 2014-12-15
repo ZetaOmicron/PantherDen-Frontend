@@ -52,6 +52,7 @@
     left: 25vw;
     color: #ffffff;
     z-index: 0;
+    padding-left: .2vw;
 }
 
 #select-model:focus {
@@ -71,6 +72,7 @@
     left: 63vw;
     color: #ffffff;
     border-radius: .5vw;
+    padding-left: 2vw;
 }
 
 #actionbutton:focus {
@@ -93,3 +95,4 @@ input::-webkit-input-placeholder{
     left: 50vw;
     margin-left: -15vw;
 }
+
