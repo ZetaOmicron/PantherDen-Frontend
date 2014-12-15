@@ -10,10 +10,12 @@ var headers = {student: [
         {title: "Last Name", valuename: "last_name"},
         {title: "First Name", valuename: "first_name"},
         {title: "Homeroom", valuename: "room_id"}
-    ]};
+    ]
+};
+
 
 function setNoneFound($table){
-    $("#error-handle").html('<div class="alert alert-warning" role="alert" id="none-found-wrapper">'+
+    $("#error-handle").html('<div class="alert alert-warning none-found-wrapper" role="alert">'+
             '<span class="glyphicon glyphicon-question-sign" aria-hidden="true">'+
             '</span>'+
             'No Results Found'+
@@ -50,6 +52,7 @@ function getRoster($table, tid) {
             appendHRRes($table, data);
         },
         error: function (err) {
+            setNoneFound($table);
             console.log(err);
         }
     });
@@ -78,6 +81,11 @@ function appendHRRes($table, data) {
             reshtml += treshtml;
         }
     }
+    if (reshtml.length == 0) {
+        setNoneFound($table);
+        return;
+    }
+    $("#error-handle").html("");
     $results.html(reshtml);
 }
 

@@ -152,6 +152,11 @@ input[type=checkbox] {
     left: -2vw;
 }
 
+.none-found-wrapper{
+    text-align: center;
+    font-size: 24px;
+}
+
 /* Boxes */
 #mainbox {
     background-color: #f0f1f3;
