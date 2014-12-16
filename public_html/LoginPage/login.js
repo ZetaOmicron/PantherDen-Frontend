@@ -48,7 +48,7 @@ function checkIfUserAndStoreCookie(){
         success: function (data) {
             createJSONCookie("user",data,5);
             if(isTeacher){
-                location.href="../DenPage/DenPage.html";
+                location.href="../Teachers/DenPage/DenPage.html";
             }else{
                 location.href="../DataManagers/ConflictPage.html";
             }
