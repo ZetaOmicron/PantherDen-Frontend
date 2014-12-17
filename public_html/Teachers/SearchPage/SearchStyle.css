@@ -1,5 +1,4 @@
 #query-box {
-    display: inline;
     position: relative;
     width: 32vw;
     height: 3.7vw;
@@ -48,7 +47,6 @@
     font-family: "Calibri", sans-serif;
     width: 12vw;
     height: 3.7vw;
-    top: 8vw;
     left: 25vw;
     color: #ffffff;
     z-index: 0;
@@ -68,7 +66,6 @@
     font-family: "Calibri", sans-serif;
     width: 12vw;
     height: 3.7vw;
-    top: 8vw;
     left: 63vw;
     color: #ffffff;
     border-radius: .5vw;
