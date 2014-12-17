@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../CalendarPage/calendar.html">
+                    <a href="../CalendarPage/CalendarPage.html">
                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                         Calendar
                     </a>
@@ -61,7 +61,7 @@
     </div>
 
         <!--Work area for back end: /-->
-   <!--     <div id="titlewrapperp">
+    <!--     <div id="titlewrapperp">
             <div id = 'titlemycal'> Choose Date: <input type = 'date' id = 'datepicker'><input type= 'button' id = 'datepickerbutton' value = 'Pick' onclick = 'gotodate()'></div>
             <div id = 'errordisplay'>
                 You have input a date with no Panther Den. Please input another date.
@@ -133,13 +133,10 @@
         </div>
 
         <script>
-            $('#errordisplay').hide();
-            $('#changebox').hide();
             function gotodate() {
-                var desiredDate = $('#datepicker').val();
+                var desiredDate = $('#query-box').val();
                 var getDate = $.fullCalendar.moment(desiredDate);
-                
-                 
+
                 alert($('#calendar').fullCalendar.date.isValid());
 
                 /*checks to see if date is an actual date*/
@@ -160,6 +157,8 @@
                 $('#calendar').css('opacity', '1');
             }
             $(document).ready(function() {
+                $('#errordisplay').hide();
+                $('#changebox').hide();
                 $("#titlewrapperp").keyup(function(event) {
                     if (event.keyCode === 13) {
                         gotodate();

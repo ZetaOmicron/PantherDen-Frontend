@@ -29,6 +29,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('#username').val("");
             $('#password').val("");
+            $("#error-container").fadeOut(0);
         }, 500);
     });
 });

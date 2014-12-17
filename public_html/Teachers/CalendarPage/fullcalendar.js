@@ -1120,7 +1120,7 @@ function Header(calendar, options) {
 					var button;
 
 					if (buttonName == 'title') {
-						groupChildren = groupChildren.add($('<h2>&nbsp;</h2>')); // we always want it to take up height
+						groupChildren = groupChildren.add($('<h2 style="font-size: 2vw">&nbsp;</h2>')); // we always want it to take up height
 						isOnlyButtons = false;
 					}
 					else {
