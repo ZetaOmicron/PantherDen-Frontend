@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<HTML style="overflow: hidden;">
+    <HEAD>
+        <link rel='stylesheet' href='fullcalendar.css' />
+        <link rel='stylesheet' href='CalendarStyle.css' />
+
+        <script src='../../../vendor/jquery/jquery.min.js'></script>
+
+        <script src='moment.min.js'></script>
+        <script src='fullcalendar.js'></script>
+        <link href="../../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <!--This is broken  <link rel="stylesheet" href="denpagestyle.css" type="text/css"/>-->
+        <link rel="stylesheet" href="../../GlobalStyle.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
+
+        <title>Panther Den - Calender</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="../cookies.js"></script>
+        <script src="../ajax_helpers.js"></script>
+    </HEAD>
+    <BODY>
+
+    <div id="headerwrapper">
+        <div id="titlez">
+            PANTHER DEN
+        </div>
+        <div class="headerbox shadow">
+            <ul id="navcontainer">
+                <li id="welcome-user">
+                </li>
+                <li>
+                    <a href="../DenPage/DenPage.html">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        My Den
+                    </a>
+                </li>
+                <li>
+                    <a href="../SearchPage/SearchPage.html">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        Search
+                    </a>
+                </li>
+                <li>
+                    <a href="../CalendarPage/CalendarPage.html">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        Calendar
+                    </a>
+                </li>
+                <li>
+                    <a href="../../LoginPage/LoginPage.html" onclick="logout()">
+
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        Sign Out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+        <!--Work area for back end: /-->
+    <!--     <div id="titlewrapperp">
+            <div id = 'titlemycal'> Choose Date: <input type = 'date' id = 'datepicker'><input type= 'button' id = 'datepickerbutton' value = 'Pick' onclick = 'gotodate()'></div>
+            <div id = 'errordisplay'>
+                You have input a date with no Panther Den. Please input another date.
+            </div>
+        </div> -->
+    <div id="searchwrapper" class="shadow">
+        <div id="buttonwrapper">
+            <button id = 'datepickerbutton' value = 'Pick' onclick = 'gotodate()'>Pick</button>
+        </div>
+            <div name="model" id="select-model">Date:</div>
+            <input type = 'date' id = 'query-box'>
+    </div>
+    <div id = 'errordisplay'>
+        You have input a date with no Panther Den. Please input another date.
+    </div>
+
+
+    <div id="cover"></div>
+        <div id="actionLabelWrapper" style="display: block;">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="actionDropDown" data-toggle="dropdown">
+                            Action
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="actionDropDown">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Request Student</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Event Name</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other Action...</a></li>
+                        </ul>
+                    </div>
+
+                    <div id = 'dateplace'></div>
+
+                    <div id="tablewrapper">
+                    </div><table class="table table-condensed table-responsive">
+
+                        <tbody><tr><th>Name</th>
+                                <th>Date</th>
+                                <th>Current Room</th>
+                                <th>Home Room</th>
+
+                                <!-- Data to be Changed/added: -->
+                            </tr><tr>
+                                <td>Ryan Wells</td>
+                                <td>Nov 4</td>
+                                <td>212</td>
+                                <td>237</td>
+                            </tr>
+
+                        </tbody></table>
+                    <div class="alright">
+                        <!-- Place ajax requests here: /-->
+                        <button type="button" class="btn btn-info">
+                            Save
+                            <span class="glyphicon glyphicon-chevron-right">
+
+                            </span>
+
+                        </button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <div id="main_div" class="shadow" style = 'padding:2vw'>
+            <div id='calendar'></div>
+        </div>
+
+        <script>
+<<<<<<< HEAD:public_html/Teachers/CalendarPage/calendar.html
+            
+            $('#calendar').bind("DOMSubtreeModified", function() {
+                var currentdate = $('#calendar').fullCalendar('getDate');
+                if (currentdate.isValid() === false) {
+                    $('#calendar').fullCalendar('gotoDate', moment());
+                    $('#errordisplay').slideDown(700);
+                    $('#errordisplay').delay(3000).slideUp(700);
+                    $('#errordisplay').html('You have input a Date with no Panther Den. Please Input Another Date.');
+                }
+            });
+
+            $('#errordisplay').hide();
+            $('#changebox').hide();
+            function gotodate() {
+                var desiredDate = $('#query-box').val();
+                var getDate = $.fullCalendar.moment(desiredDate);
+=======
+            function gotodate() {
+                var desiredDate = $('#query-box').val();
+                var getDate = $.fullCalendar.moment(desiredDate);
+
+                alert($('#calendar').fullCalendar.date.isValid());
+>>>>>>> origin/master:public_html/Teachers/CalendarPage/CalendarPage.html
+
+                /*checks to see if date is an actual date*/
+                if (getDate.day() === 1 || getDate.day() === 3 || getDate.day() === 6 || getDate.day() === 7) {
+                    $('#errordisplay').slideDown(700);
+                    $('#errordisplay').delay(3000).slideUp(1000);
+                } else if (getDate.isValid() === false) {
+                    $('#errordisplay').slideDown(700);
+                    $('#errordisplay').delay(3000).slideUp(1000);
+                } else {
+                    $('#calendar').fullCalendar('gotoDate', getDate);
+                }
+            }
+
+            function exitchangebox() {
+                $('#changebox').remove();
+                $('#calendar').css('opacity', '1');
+            }
+            $(document).ready(function() {
+                $('#errordisplay').hide();
+                $('#changebox').hide();
+                $("#titlewrapperp").keyup(function(event) {
+                    if (event.keyCode === 13) {
+                        gotodate();
+                    }
+                });
+
+                $("#calendar").fullCalendar({
+                    eventColor: 'red',
+                    events: [
+                        {
+                            title: "Classroom",
+                            start: moment().format('YYYY-MM-DD'),
+                            allDay: false,
+                            editable: false
+                        }
+                    ],
+                    eventClick: function(calEvent, jsEvent, view) {
+                        //$('body').append('<div id = "changebox" class="shadow"><input type="text" value = "' + calEvent.title + '" style ="width:auto"><br>Total Number of Students Today:<input type = "text" id = "numberstudents" readonly><br><table class="table-hover" id="search-table" style="width: auto;max-width: 480px"><thead> </thead><tbody></tbody> </table><input type = "button" id = "savebutton" onclick = "exitchangebox()" value = "Save"></div>');
+                        //$('#calendar').css('opacity','0.4');
+
+                        wraperbutton(calEvent);
+                    },
+                    hiddenDays: [1, 3],
+                    weekends: false,
+                    fixedWeekCount: true
+                });
+
+
+
+                $("#actionLabelWrapper").hide();
+                $("#cover").hide();
+                var flag = 0;
+                function wraperbutton(object) {
+                    flag = 1;
+                    $("#actionLabelWrapper").fadeIn(300);
+                    $("#cover").fadeIn(300);
+                    $('#dateplace').html("Number of Students on " + moment(object.start).format('MM/DD/YY') + " : 12");
+                }
+                ;
+
+                $("#cover").click(function() {
+                    $("#actionLabelWrapper").fadeOut(300);
+                    $("#cover").fadeOut(300);
+                });
+
+
+                $("#actionDropDown").click(function() {
+                    $(this).dropdown();
+                });
+
+
+                /*Get desired date to display on table function*/
+
+
+                var user = readJSONCookie("user");
+                $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
+                updateHeader($("#search-table"), "student", "Absent");
+                getRoster($("#search-table"), user.id);
+            });
+
+        </script>
+    </BODY>
+</HTML>
