@@ -133,22 +133,14 @@
         </div>
 
         <script>
-            
-            $('#calendar').bind("DOMSubtreeModified", function() {
-                var currentdate = $('#calendar').fullCalendar('getDate');
-                if (currentdate.isValid() === false) {
-                    $('#calendar').fullCalendar('gotoDate', moment());
-                    $('#errordisplay').slideDown(700);
-                    $('#errordisplay').delay(3000).slideUp(700);
-                    $('#errordisplay').html('You have input a Date with no Panther Den. Please Input Another Date.');
-                }
-            });
-
             $('#errordisplay').hide();
             $('#changebox').hide();
             function gotodate() {
-                var desiredDate = $('#query-box').val();
+                var desiredDate = $('#datepicker').val();
                 var getDate = $.fullCalendar.moment(desiredDate);
+                
+                 
+                alert($('#calendar').fullCalendar.date.isValid());
 
                 /*checks to see if date is an actual date*/
                 if (getDate.day() === 1 || getDate.day() === 3 || getDate.day() === 6 || getDate.day() === 7) {
@@ -160,6 +152,7 @@
                 } else {
                     $('#calendar').fullCalendar('gotoDate', getDate);
                 }
+
             }
 
             function exitchangebox() {
@@ -226,7 +219,6 @@
                 updateHeader($("#search-table"), "student", "Absent");
                 getRoster($("#search-table"), user.id);
             });
-
         </script>
     </BODY>
 </HTML>
