@@ -25,7 +25,7 @@ and open the template in the editor.
 
         <div id="headerwrapper">
         <div id="titlez">
-            PANTHER DEN<div id="data-manager-label"><span class="label label-info">DataManager</span></div>
+            PANTHER DEN
         </div>
         <div class="headerbox shadow">
             <ul id="navcontainer">
@@ -87,7 +87,9 @@ and open the template in the editor.
                 //  location.href="../LoginPage/LoginPage.html";
                 // }
                 var user = readJSONCookie("user");
-                $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
+                var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
+                $("#welcome-user").html(manager);
+                $("#welcome-user").html("<a>Welcome, " + user.first_name +manager+"!</a>");
                 var $st = $("#search-table");
                 $("#submission").click(function(){
                     setSuccess($st, "Successfully Submitted Attendance");
