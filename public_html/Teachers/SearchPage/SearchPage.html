@@ -5,7 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>  
+    <head>
         <link href="../../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="../../GlobalStyle.css" type="text/css"/>
         <link rel="stylesheet" href="SearchStyle.css" type="text/css"/>
@@ -18,6 +18,7 @@ and open the template in the editor.
         <script src="../../../vendor/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
         <script src="../../cookies.js"></script>
         <script src="../../ajax_helpers.js"></script>
+        <script src="SearchScript.js"></script>
         <script src ="popup.js"></script>
     </head>
 
@@ -140,7 +141,7 @@ and open the template in the editor.
                         </button>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
 
 
@@ -149,6 +150,7 @@ and open the template in the editor.
                     <input type="checkbox" value="None" id="checkmark" name="check" />
                     <label for="checkmark"></label>
                 </div>-->
+
 
         <div id="mainbox" class="shadow">
             <div id="table-wrap">
@@ -160,6 +162,10 @@ and open the template in the editor.
                 </table>
             </div>
             <div id="error-handle"></div>
+        </div>
+
+        <div id="queuebox" class="shadow">
+            <input type="text" placeholder="Title" id="queuetitle">
         </div>
 
         <script>

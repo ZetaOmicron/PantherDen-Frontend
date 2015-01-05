@@ -93,3 +93,34 @@ input::-webkit-input-placeholder{
     margin-left: -15vw;
 }
 
+/*Queue Box*/
+
+#queuebox {
+    position: absolute;
+    background-color: #f0f1f3;
+    width: 17vw;
+    height: 70vh;
+    top: 10vw;
+    right: -17vw;
+    z-index: 4;
+    border-radius: 1vw 0 0 1vw;
+    -webkit-transition: position .3s;
+    -moz-transition: position .3s;
+    -ms-transition: position .3s;
+    -o-transition: position .3s;
+    transition: position .3s;
+}
+
+#queuetitle {
+    width: inherit;
+    height: 3vw;
+    text-align: center;
+    font-size: 2vw;
+    border: none;
+    color: #7aaaca;
+    border-radius: 1vw 0 0 0;
+}
+
+.enter {
+    right: 0;
+}
