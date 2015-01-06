@@ -1,0 +1,128 @@
+#query-box {
+    position: relative;
+    width: 32vw;
+    height: 3.7vw;
+    padding-left: 1.2vw;
+  /*  border: solid .25vw #cecfd1;*/
+    border: solid .25vw #7aaaca;
+    border-radius: .5vw;
+    background-color: #fefefe;
+    font-size: 2.3vw;
+    color: #7aaaca;
+    left: -2vw;
+}
+
+#data-manager-label{
+    font-size: 16px;
+}
+#searchwrapper {
+    margin: 2vw auto;
+    width: 50vw;
+    border-radius: .5vw;
+    border: solid .2vw #7aaaca;
+}
+
+#search-table {
+    width: 55vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table-wrap{
+    padding-bottom: 25px;
+}
+
+#search-table th, #search-table td {
+    font-family: "Calibri", sans-serif;
+    font-size: 1.7vw;
+    color: #959595;
+    padding: 0 10px;
+}
+
+#select-model {
+    position: absolute;
+    display: inline;
+    border: none;
+    border-radius: .5vw;
+    background-color: #7aaaca;
+    font-size: 2.5vw;
+    font-family: "Calibri", sans-serif;
+    width: 12vw;
+    height: 3.7vw;
+    left: 25vw;
+    color: #ffffff;
+    z-index: 0;
+    padding-left: .2vw;
+}
+
+#select-model:focus {
+    outline: none;
+}
+
+#actionbutton {
+    position: absolute;
+    display: inline;
+    border: none;
+    background-color: #7aaaca;
+    font-size: 2.5vw;
+    font-family: "Calibri", sans-serif;
+    width: 12vw;
+    height: 3.7vw;
+    left: 63vw;
+    color: #ffffff;
+    border-radius: .5vw;
+    padding-left: 2vw;
+}
+
+#actionbutton:focus {
+    color: #ffffff !important;
+    outline: none;
+}
+
+input::-webkit-input-placeholder{
+//color: black;
+    color: #7aaaca !important;
+}
+
+/*Info Popup*/
+
+#infowrapper {
+    z-index: 101;
+    position: fixed;
+    width: 30vw;
+    top: 25vh;
+    left: 50vw;
+    margin-left: -15vw;
+}
+
+/*Queue Box*/
+
+#queuebox {
+    position: absolute;
+    background-color: #f0f1f3;
+    width: 17vw;
+    height: 70vh;
+    top: 10vw;
+    right: -17vw;
+    z-index: 4;
+    border-radius: 1vw 0 0 1vw;
+    -webkit-transition: position .3s;
+    -moz-transition: position .3s;
+    -ms-transition: position .3s;
+    -o-transition: position .3s;
+    transition: position .3s;
+}
+
+#queuetitle {
+    width: inherit;
+    height: 3vw;
+    text-align: center;
+    font-size: 2vw;
+    border: none;
+    color: #7aaaca;
+    border-radius: 1vw 0 0 0;
+}
+
+.enter {
+    right: 0;
+}

@@ -7,30 +7,31 @@
 .hidden{
     display: none;
 }
-#actionbutton{
-    z-index: 1;
-    position: absolute;
-    padding-top: .8%;
+#buttonwrapper{
+    
+    z-index: 4;
 }
+
 #actionLabelWrapper{
 
     width: 40vw;
     margin: 0 auto;
-    position: relative;
+    position: fixed;
+    top: 25vh;
+    left: 50vw;
+    margin-left: -20vw;
     z-index: 100;
 
-}
-
-#dropdownmenu{
-    position: relative;
-    
 }
 
 #cover {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,.3);
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left:0;
+
     z-index: 50;
 }
 
