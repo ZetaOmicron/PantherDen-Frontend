@@ -75,7 +75,16 @@
 
     color:  #57C794;
 }
-.decline{
+.accept:hover{
+    
+    transition: transform .5s ease-out;
+    transform: rotate(360deg);
+}
 
+.decline{
     color: #FF966F;
+}
+.decline:hover{
+    transition: transform .5s ease-out;
+    transform: rotate(360deg);
 }
