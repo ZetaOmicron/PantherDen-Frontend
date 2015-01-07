@@ -34,10 +34,10 @@
     background-color: #e2e2e2;
 }
 
-#attendancewrapper {
+#conflictwrapper{
     width: 59.1vw;
     margin: 0 auto;
-    //height: 30vw;
+    
 }
 #data-manager-label{
     font-size: 16px;
@@ -46,15 +46,36 @@
     min-height: 10vw;
 }
 
-#search-table {
+#conflict-table {
     width: 55vw;
     margin-left: auto;
     margin-right: auto;
 }
 
-#search-table th, #search-table td {
+#table-content{
+    padding-bottom: 10px;   
+}
+
+#conflict-table th, #conflict-table td{
+    vertical-align: center;
     font-family: "Calibri", sans-serif;
+    text-align: left;
     font-size: 1.7vw;
     color: #959595;
     padding: 0 10px;
+}
+#conflict-table-body{
+    font-family: "Calibri", sans-serif;
+}
+.accept-decline-pair{
+    font-size: 23px;
+    
+}
+.accept{
+
+    color:  #57C794;
+}
+.decline{
+
+    color: #FF966F;
 }

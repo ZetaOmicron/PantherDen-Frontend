@@ -24,59 +24,76 @@ and open the template in the editor.
 
 
         <div id="headerwrapper">
-        <div id="titlez">
-            PANTHER DEN
-        </div>
-        <div class="headerbox shadow">
-            <ul id="navcontainer">
-                <li id="welcome-user">
-                </li>
-                <li>
-                    <a href="../ConflictPage/ConflictPage.html">
-                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                        Conflicts
-                    </a>
-                </li>
-                <li>
-                    <a href="../SearchPage/SearchPage.html">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        Search
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="../LoginPage/LoginPage.html" onclick="logout()">  
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        Sign Out
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <div id="titlez">
+                PANTHER DEN
             </div>
+            <div class="headerbox shadow">
+                <ul id="navcontainer">
+                    <li id="welcome-user">
+                    </li>
+                    <li>
+                        <a href="../ConflictPage/ConflictPage.html">
+                            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                            Conflicts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../SearchPage/SearchPage.html">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            Search
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../LoginPage/LoginPage.html" onclick="logout()">  
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            Sign Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!--Work area for back end: /-->
         <div id="titlewrapperp">
             <div id="titlemyden">
                 Conflicts 
             </div>
         </div>
-
-
-        <!--        <div class="checkboxp">
+        <!--<div class="checkboxp">
                     <input type="checkbox" value="None" id="checkmark" name="check" />
                     <label for="checkmark"></label>
                 </div>-->
-        <div id="attendancewrapper">
+        <div id="conflictwrapper">
             <div id="mainbox" class="shadow">
                 <div id="table-wrap">
-                    <table class="table-hover" id="search-table">
-                        <thead>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <div id="table-content">
+                        <table class="table table-striped" id="conflict-table">
+                            <thead>
+                            <th>Student</th>
+                            <th>Transfer</th>
+                            <th>Date</th>
+                            <th></th>
+                            </thead>
+                            <tbody id="conflict-table-body">
+                                <!--This will be appended for each subsequent student added. /-->
+                                <tr>
+                                    <td>Ryan Wells</td>
+                                    <td>Mielke &#8594; Westerduin</td>
+                                    <td>January 8th</td>
+                                    <td>
+                                        <div class="accept-decline-pair">
+                                                <span class="glyphicon glyphicon-ok-circle accept" aria-hidden="true"></span>
+                                                &nbsp;
+                                                <span class="glyphicon glyphicon-remove-circle decline" aria-hidden="true"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- End Appendage /-->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div id="error-handle"></div>
-               
             </div>
         </div>
 
@@ -89,9 +106,9 @@ and open the template in the editor.
                 var user = readJSONCookie("user");
                 var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
                 $("#welcome-user").html(manager);
-                $("#welcome-user").html("<a>Welcome, " + user.first_name +manager+"!</a>");
+                $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
                 var $st = $("#search-table");
-                $("#submission").click(function(){
+                $("#submission").click(function () {
                     setSuccess($st, "Successfully Submitted Attendance");
                 });
                 updateHeader($st, "student", "Absent");
