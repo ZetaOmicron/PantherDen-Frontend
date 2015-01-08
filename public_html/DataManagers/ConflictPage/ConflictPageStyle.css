@@ -62,7 +62,17 @@
     text-align: left;
     font-size: 1.7vw;
     color: #959595;
-    padding: 0 10px;
+
+}
+#conflict-table button{
+    vertical-align: center;
+    font-family: "Calibri", sans-serif;
+    clear: both;
+    float: right;
+    font-size: 17.5px;
+    color: #959595;
+    margin-left: -50px;
+    min-width: 100px;
 }
 #conflict-table-body{
     font-family: "Calibri", sans-serif;
@@ -72,11 +82,9 @@
     
 }
 .accept{
-
     color:  #57C794;
 }
 .accept:hover{
-    
     transition: transform .5s ease-out;
     transform: rotate(360deg);
 }
