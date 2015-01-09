@@ -13,7 +13,7 @@ $(document).ready(function () {
 function addConflict(student, startingClass, classesToTransfer, date, conflictID) {
     var toAppend = '<tr id="content-row' + conflictID + '"><td>' + student + '</td><td>' + startingClass + '&#8594;';
     for (var i = 0; i < classesToTransfer.length; i++) {
-        toAppend += '<button type="button" class="btn btn-default">' + classesToTransfer[i] + '</button>';
+        toAppend += '<button type="button" id ="teacher-button"' + conflictID + "." + i + ' class="btn btn-default">' + classesToTransfer[i] + '</button>';
     }
 
     toAppend = toAppend + '</td><td>' + date + '</td><td><div class="accept-decline-pair"><a href="#"><span  id= "accept-submission' + conflictID + '" class="glyphicon glyphicon-ok-circle accept" aria-hidden="true"></span></a></div></td></tr>';
