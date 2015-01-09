@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 //adds a new conflict bar to the page
 function addConflict(student, startingClass, classesToTransfer, date, conflictID) {
-    var toAppend = '<tr id="content-row' + conflictID + '"><td>' + student + '</td><td>' + startingClass + '&#8594;';
+    var toAppend = '<tr id="content-row' + conflictID + '"><td>' + student + '</td><td>' + startingClass + '&rarr;';
     for (var i = 0; i < classesToTransfer.length; i++) {
         toAppend += '<button type="button" id ="teacher-button"' + conflictID + "." + i + ' class="btn btn-default">' + classesToTransfer[i] + '</button>';
     }
