@@ -134,7 +134,7 @@
 
         <script>
 
-            $('#calendar').bind("DOMSubtreeModified", function() {
+            $('#calendar').bind("DOMSubtreeModified", function () {
                 var currentdate = $('#calendar').fullCalendar('getDate');
                 if (currentdate.isValid() === false) {
                     $('#calendar').fullCalendar('gotoDate', moment());
@@ -172,10 +172,10 @@
                 $('#changebox').remove();
                 $('#calendar').css('opacity', '1');
             }
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('#errordisplay').hide();
                 $('#changebox').hide();
-                $("#titlewrapperp").keyup(function(event) {
+                $("#titlewrapperp").keyup(function (event) {
                     if (event.keyCode === 13) {
                         gotodate();
                     }
@@ -191,7 +191,7 @@
                             editable: false
                         }
                     ],
-                    eventClick: function(calEvent, jsEvent, view) {
+                    eventClick: function (calEvent, jsEvent, view) {
                         //$('body').append('<div id = "changebox" class="shadow"><input type="text" value = "' + calEvent.title + '" style ="width:auto"><br>Total Number of Students Today:<input type = "text" id = "numberstudents" readonly><br><table class="table-hover" id="search-table" style="width: auto;max-width: 480px"><thead> </thead><tbody></tbody> </table><input type = "button" id = "savebutton" onclick = "exitchangebox()" value = "Save"></div>');
                         //$('#calendar').css('opacity','0.4');
 
@@ -215,13 +215,13 @@
                 }
                 ;
 
-                $("#cover").click(function() {
+                $("#cover").click(function () {
                     $("#actionLabelWrapper").fadeOut(300);
                     $("#cover").fadeOut(300);
                 });
 
 
-                $("#actionDropDown").click(function() {
+                $("#actionDropDown").click(function () {
                     $(this).dropdown();
                 });
 

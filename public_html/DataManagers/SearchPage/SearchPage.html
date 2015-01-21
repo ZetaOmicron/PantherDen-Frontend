@@ -25,58 +25,58 @@ and open the template in the editor.
     <body>
         <!-- This is the general table for the Popup/-->
         <div id="headerwrapper">
-        <div id="titlez">
-            PANTHER DEN
-        </div>
-        <div class="headerbox shadow">
-            <ul id="navcontainer">
-                <li id="welcome-user">
-                </li>
-                <li>
-                    <a href="../ConflictPage/ConflictPage.html">
-                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                        Conflicts
-                    </a>
-                </li>
-                <li>
-                    <a href="../SearchPage/SearchPage.html">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        Search
-                    </a>
-                </li>
-                <li>
-                    <a href="../../LoginPage/LoginPage.html" onclick="logout()">
+            <div id="titlez">
+                PANTHER DEN
+            </div>
+            <div class="headerbox shadow">
+                <ul id="navcontainer">
+                    <li id="welcome-user">
+                    </li>
+                    <li>
+                        <a href="../ConflictPage/ConflictPage.html">
+                            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                            Conflicts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../SearchPage/SearchPage.html">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../LoginPage/LoginPage.html" onclick="logout()">
 
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        Sign Out
-                    </a>
-                </li>
-            </ul>
-        </div>
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            Sign Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-       <!-- <div id="buttonwrapper">
-            <button class="btn btn-info" id = "actionbutton">
-                Edit
-            </button>
-        </div> -->
+        <!-- <div id="buttonwrapper">
+             <button class="btn btn-info" id = "actionbutton">
+                 Edit
+             </button>
+         </div> -->
         <!--Work area for back end: /-->
         <div id="searchwrapper" class="shadow">
             <div id="buttonwrapper">
                 <button id="actionbutton"><div class="glyphicon glyphicon-search" style="font-size: 2.3vw"></div></button>
             </div>
-        <form id="searchcontainer" action="#">
+            <form id="searchcontainer" action="#">
                 <select name="model" id="select-model">
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
                 </select>
                 <input type="text" id="query-box" placeholder="Search" autocomplete="off" autofocus="">
-            <!-- TODO: Style these to put them in the right place. -->
-            <select name="property" id="select-property" hidden="hidden">
-                <option value="last_name">Last Name</option>
-                <option value="first_name">First Name</option>
-            </select>
-        </form>
+                <!-- TODO: Style these to put them in the right place. -->
+                <select name="property" id="select-property" hidden="hidden">
+                    <option value="last_name">Last Name</option>
+                    <option value="first_name">First Name</option>
+                </select>
+            </form>
         </div>
 
 
@@ -160,15 +160,15 @@ and open the template in the editor.
 
         <script>
             $(document).ready(function () {
-           /*
-                if(readCookie("user")==null){
-                  location.href="../LoginPage/LoginPage.html";
-                }*/
+                /*
+                 if(readCookie("user")==null){
+                 location.href="../LoginPage/LoginPage.html";
+                 }*/
                 var user = readJSONCookie("user");
-                 var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
+                var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
                 $("#welcome-user").html(manager);
 
-                $("#welcome-user").html("<a>Welcome, " + user.first_name +manager+"!</a>");
+                $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
                 updateHeader($("#search-table"), "student");
                 $("#searchcontainer").submit(function () {
                     appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
