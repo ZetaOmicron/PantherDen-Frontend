@@ -57,7 +57,7 @@
 }
 
 #conflict-table th, #conflict-table td{
-    vertical-align: center;
+    //vertical-align: center;
     font-family: "Calibri", sans-serif;
     text-align: left;
     font-size: 1.7vw;

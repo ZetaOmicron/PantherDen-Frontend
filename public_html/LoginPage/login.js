@@ -5,7 +5,7 @@ var isTeacher = true;
 $(document).ready(function () {
     init();
     if(readCookie("user")!=null){
-        location.href="../SearchPage/SearchPage.html";
+        location.href="../Teachers/SearchPage/SearchPage.html";
         return;
     }
     $('#admin').on('click', function () {
@@ -49,9 +49,9 @@ function checkIfUserAndStoreCookie(){
         success: function (data) {
             createJSONCookie("user",data,5);
             if(isTeacher){
-                location.href="../Teachers/DenPage/DenPage.html";
+                location.href="../Teachers/SearchPage/SearchPage.html";
             }else{
-                location.href="../DataManagers/ConflictPage.html";
+                location.href="../DataManagers/ConflictPage/ConflictPage.html";
             }
         },
         error: function(err){

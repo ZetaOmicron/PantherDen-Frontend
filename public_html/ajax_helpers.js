@@ -16,7 +16,7 @@ var headers = {student: [
 var data_on_table = [];
 var selected = {};
 
-function clickCheck(pos){
+function toggleAdd(pos){
     if(pos in selected){
         delete selected[pos];
     }else{
