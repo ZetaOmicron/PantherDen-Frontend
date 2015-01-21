@@ -146,10 +146,15 @@
 
             $('#errordisplay').hide();
             $('#changebox').hide();
-            
             function gotodate() {
                 var desiredDate = $('#query-box').val();
                 var getDate = $.fullCalendar.moment(desiredDate);
+            }
+            function gotodate() {
+                var desiredDate = $('#query-box').val();
+                var getDate = $.fullCalendar.moment(desiredDate);
+
+                alert($('#calendar').fullCalendar.date.isValid());
 
                 /*checks to see if date is an actual date*/
                 if (getDate.day() === 1 || getDate.day() === 3 || getDate.day() === 6 || getDate.day() === 7) {
