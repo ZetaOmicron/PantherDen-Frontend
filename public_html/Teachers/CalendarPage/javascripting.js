@@ -5,13 +5,13 @@
  */
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#calendar").fullCalendar({
         eventColor: 'red',
         events: [
             {
                 title: "Classroom",
-                start: $.fullCalendar.moment().get('year')+"-"+($.fullCalendar.moment().get('month')+1)+"-"+$.fullCalendar.moment().get('day'),
+                start: $.fullCalendar.moment().get('year') + "-" + ($.fullCalendar.moment().get('month') + 1) + "-" + $.fullCalendar.moment().get('day'),
                 allDay: false,
                 editable: false
             }
@@ -20,22 +20,21 @@ $(document).ready(function() {
         weekends: false,
         fixedWeekCount: true
     });
-    
+
 
     /*Get desired date to display on table function*/
-    $('#Goto').click(function() {
-        
-        
+    $('#Goto').click(function () {
+
 
         var desiredDate = $('#datepicker').val();
         var getDate = $.fullCalendar.moment(desiredDate);
-        
+
         /*checks to see if date is an actual date*/
-        if (getDate.day() === 1 || getDate.day() ===  3 || getDate.day() === 6 || getDate.day() === 7) {
+        if (getDate.day() === 1 || getDate.day() === 3 || getDate.day() === 6 || getDate.day() === 7) {
             $('#idiot').html('There is no Panther Den on desired date.');
-        } else if (getDate.isValid() === false){
+        } else if (getDate.isValid() === false) {
             $('#idiot').html('This is an invalid date. Please choose another date');
-        }else {
+        } else {
             $('#calendar').fullCalendar('gotoDate', getDate);
         }
 

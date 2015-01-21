@@ -1,4 +1,4 @@
-#titlemycal{
+#titlemycal {
     font-family: "Calibri", sans-serif;
     color: #87a8c6;
     font-weight: bold;
@@ -7,14 +7,14 @@
     height: 6vw;
 }
 
-#datepicker{
+#datepicker {
     display: table-cell;
     background: blue;
     text-align: center;
     vertical-align: middle;
     width: 20vw;
     height: 3.7vw;
-    //background-color: #f0f1f3;
+/ / background-color : #f0f1f3;
     background-color: #fefefe;
     border: solid .25vw #cecfd1;
     -webkit-border-radius: .5vw;
@@ -25,7 +25,7 @@
     color: #a5a5a5;
 }
 
-#titlewrapperp{
+#titlewrapperp {
     display: table;
     text-align: center;
     width: 100vw;
@@ -33,12 +33,12 @@
 
 #errordisplay {
     position: relative;
-    top:-20px;
+    top: -20px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     height: 20px;
-    color:  #FF9696;
+    color: #FF9696;
     background-color: #96FFFF;
     font-weight: bold;
 }
@@ -48,23 +48,23 @@
     width: 500px;
     z-index: 50;
     position: absolute;
-    top:300px;
+    top: 300px;
     left: 30vw;
-    background-color:#96FFFF;
+    background-color: #96FFFF;
     border-radius: .5vw;
     padding: 10px;
 }
 
-#savebutton{
+#savebutton {
     clear: both;
-    float:right;
+    float: right;
 }
 
-#numberstudents{
+#numberstudents {
     width: 30px;
 }
 
-#actionLabelWrapper{
+#actionLabelWrapper {
 
     width: 40vw;
     margin: 0 auto;
@@ -79,10 +79,10 @@
 #cover {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, .3);
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
 
     z-index: 50;
 }
@@ -103,7 +103,6 @@
     left: -2vw;
 }
 
-
 #searchwrapper {
     margin: 2vw auto;
     width: 50vw;
@@ -117,7 +116,7 @@
     margin-right: auto;
 }
 
-#table-wrap{
+#table-wrap {
     padding-bottom: 25px;
 }
 
@@ -166,7 +165,7 @@
     outline: none;
 }
 
-input::-webkit-input-placeholder{
-//color: black;
+input::-webkit-input-placeholder {
+/ / color : black;
     color: #7aaaca !important;
 }

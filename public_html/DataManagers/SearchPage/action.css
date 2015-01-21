@@ -1,18 +1,19 @@
-#title{
-    font-family: "Calibri",  sans-serif;
+#title {
+    font-family: "Calibri", sans-serif;
     color: #87a8c6;
     font-weight: bold;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
-#buttonwrapper{
-    
+
+#buttonwrapper {
+
     z-index: 4;
 }
 
-#actionLabelWrapper{
+#actionLabelWrapper {
 
     width: 40vw;
     margin: 0 auto;
@@ -27,19 +28,19 @@
 #cover {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0, 0, 0, .3);
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
 
     z-index: 50;
 }
 
-.alright{
+.alright {
     float: right;
     margin-right: auto;
 }
 
-#tablewrapper{
+#tablewrapper {
     padding-top: 1.5%;
 }

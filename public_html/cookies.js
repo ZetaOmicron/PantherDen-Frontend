@@ -23,10 +23,10 @@ function eraseCookie(name) {
     createCookie(name, "", -1);
 }
 
-function createJSONCookie(name, json, days){
+function createJSONCookie(name, json, days) {
     createCookie(name, JSON.stringify(json), days);
 }
 
-function readJSONCookie(name){
+function readJSONCookie(name) {
     return JSON.parse(readCookie(name));
 }

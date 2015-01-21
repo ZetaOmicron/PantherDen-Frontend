@@ -5,57 +5,61 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
-        <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<head>
+    <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
+    <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-        <link rel="stylesheet" href="LoginStyle.css" type="text/css"/>
-        <title>Panther Den</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../../vendor/jquery/jquery.js" ></script>
-        <script src="../cookies.js"></script>
-        <script src="login.js"></script>
-    </head>
-    <body>
-        <div id="titlep">PANTHER DEN </div>
-        <div class="flip-container">
-            <div class="flipper" id="flipp">
-                <div class="front">
-                    <div class="loginbox shadow">
-                        <div class="dottedline">
-                            <button class="button at" id="teach">TEACHER</button>
-                            <br id="gap">
-                            <button class="button at" id="admin">DATA MANAGER</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="loginbox shadow">
-                        <div class="dottedline">
-                            <form id="login" onsubmit="return checkIfUserAndStoreCookie()">
-
-                                <p id="logintype">Teacher Login</p>
-                                <div id="login-interaction-wrapper">
-                                    <input id="username" placeholder="Username" autocomplete="off" required="" >
-                                    <!--<br id="userpassgap">
-                                    <input type="password" id="password" placeholder="Password" autocomplete="off" required="">-->
-
-                                    <!--Remove the inline css later -Davis-->
-
-                                    <div id ="error-container" class="alert alert-danger" role="alert"></div>
-                                    <br>
-                                    <div id="wrapper" style="text-align: center">
-                                        <input type="button" id="Back" class="button bl" style="float: left;" value="Back" name="back">
-
-                                        <input type="submit" id="Loginbutton" class="button bl" style="float: right;" value="Login" name="login" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>                
+    <link rel="stylesheet" href="LoginStyle.css" type="text/css"/>
+    <title>Panther Den</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../vendor/jquery/jquery.js"></script>
+    <script src="../cookies.js"></script>
+    <script src="login.js"></script>
+</head>
+<body>
+<div id="titlep">PANTHER DEN</div>
+<div class="flip-container">
+    <div class="flipper" id="flipp">
+        <div class="front">
+            <div class="loginbox shadow">
+                <div class="dottedline">
+                    <button class="button at" id="teach">TEACHER</button>
+                    <br id="gap">
+                    <button class="button at" id="admin">DATA MANAGER</button>
                 </div>
             </div>
         </div>
-    </body>
+        <div class="back">
+            <div class="loginbox shadow">
+                <div class="dottedline">
+                    <form id="login" onsubmit="return checkIfUserAndStoreCookie()">
+
+                        <p id="logintype">Teacher Login</p>
+
+                        <div id="login-interaction-wrapper">
+                            <input id="username" placeholder="Username" autocomplete="off" required="">
+                            <!--<br id="userpassgap">
+                            <input type="password" id="password" placeholder="Password" autocomplete="off" required="">-->
+
+                            <!--Remove the inline css later -Davis-->
+
+                            <div id="error-container" class="alert alert-danger" role="alert"></div>
+                            <br>
+
+                            <div id="wrapper" style="text-align: center">
+                                <input type="button" id="Back" class="button bl" style="float: left;" value="Back"
+                                       name="back">
+
+                                <input type="submit" id="Loginbutton" class="button bl" style="float: right;"
+                                       value="Login" name="login"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>

@@ -1,13 +1,14 @@
-#titlewrapperp{
+#titlewrapperp {
     display: table;
     text-align: center;
     width: 100vw;
 }
-#data-manager-label{
+
+#data-manager-label {
     font-size: 20px;
 }
 
-#titlemyden{
+#titlemyden {
     font-family: "Calibri", sans-serif;
     color: #87a8c6;
     font-weight: bold;
@@ -15,7 +16,7 @@
     z-index: 500;
 }
 
-#submission{
+#submission {
     width: 59.1vw;
     height: 4vw;
     position: relative;
@@ -34,15 +35,17 @@
     background-color: #e2e2e2;
 }
 
-#conflictwrapper{
+#conflictwrapper {
     width: 59.1vw;
     margin: 0 auto;
-    
+
 }
-#data-manager-label{
+
+#data-manager-label {
     font-size: 16px;
 }
-#table-wrap{
+
+#table-wrap {
     min-height: 10vw;
 }
 
@@ -52,19 +55,20 @@
     margin-right: auto;
 }
 
-#table-content{
-    padding-bottom: 10px;   
+#table-content {
+    padding-bottom: 10px;
 }
 
-#conflict-table th, #conflict-table td{
-    //vertical-align: center;
+#conflict-table th, #conflict-table td {
+/ / vertical-align : center;
     font-family: "Calibri", sans-serif;
     text-align: left;
     font-size: 1.7vw;
     color: #959595;
 
 }
-#conflict-table button{
+
+#conflict-table button {
     vertical-align: center;
     font-family: "Calibri", sans-serif;
     clear: both;
@@ -74,25 +78,30 @@
     margin-left: -50px;
     min-width: 100px;
 }
-#conflict-table-body{
+
+#conflict-table-body {
     font-family: "Calibri", sans-serif;
 }
-.accept-decline-pair{
+
+.accept-decline-pair {
     font-size: 25px;
-    
+
 }
-.accept{
-    color:  #57C794;
+
+.accept {
+    color: #57C794;
 }
-.accept:hover{
+
+.accept:hover {
     transition: transform .5s ease-out;
     transform: rotate(360deg);
 }
 
-.decline{
+.decline {
     color: #FF966F;
 }
-.decline:hover{
+
+.decline:hover {
     transition: transform .5s ease-out;
     transform: rotate(360deg);
 }

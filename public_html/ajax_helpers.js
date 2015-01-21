@@ -16,57 +16,57 @@ var headers = {student: [
 var data_on_table = [];
 var selected = {};
 
-function toggleAdd(pos){
-    if(pos in selected){
+function toggleAdd(pos) {
+    if (pos in selected) {
         delete selected[pos];
-    }else{
-        selected[pos]=true;
+    } else {
+        selected[pos] = true;
     }
-    if(data_on_table.length == Object.keys(selected).length){
-        $("#checkbox0").prop("checked",true);
-    }else{
-        $("#checkbox0").prop("checked",false);
+    if (data_on_table.length == Object.keys(selected).length) {
+        $("#checkbox0").prop("checked", true);
+    } else {
+        $("#checkbox0").prop("checked", false);
     }
 }
 
-function clickAll(){
+function clickAll() {
     var unsa = data_on_table.length == Object.keys(selected).length;
-    for(var i=1; i<=data_on_table.length; i++){
-        if(unsa){
+    for (var i = 1; i <= data_on_table.length; i++) {
+        if (unsa) {
             delete selected[i];
-            $("#checkbox"+i).prop("checked",false);
+            $("#checkbox" + i).prop("checked", false);
         }
-        else if(!(i in selected)){
-            selected[i]=true;
-            $("#checkbox"+i).prop("checked",true);
+        else if (!(i in selected)) {
+            selected[i] = true;
+            $("#checkbox" + i).prop("checked", true);
         }
     }
 }
 
-function setNoneFound($table){
-    $("#error-handle").html('<div class="alert alert-warning none-found-wrapper" role="alert">'+
-            '<span class="glyphicon glyphicon-question-sign" aria-hidden="true" style="margin-right: 10px">'+
-            '</span>'+
-            'No Results Found'+
+function setNoneFound($table) {
+    $("#error-handle").html('<div class="alert alert-warning none-found-wrapper" role="alert">' +
+            '<span class="glyphicon glyphicon-question-sign" aria-hidden="true" style="margin-right: 10px">' +
+            '</span>' +
+            'No Results Found' +
             '</div>'
     );
     $table.find("tbody").html("");
 }
 
-function setSuccess($table, message){
-    $("#error-handle").html('<div class="alert alert-success none-found-wrapper" role="alert">'+
-            '<span class="glyphicon glyphicon-check" aria-hidden="true" style="margin-right: 10px">'+
-            '</span>'+
-            message+
+function setSuccess($table, message) {
+    $("#error-handle").html('<div class="alert alert-success none-found-wrapper" role="alert">' +
+            '<span class="glyphicon glyphicon-check" aria-hidden="true" style="margin-right: 10px">' +
+            '</span>' +
+            message +
             '</div>'
     );
 }
 
 function genCheckBox(num, disable, checkall) {
     return "<div class='checkboxp'>" +
-        "<input onclick='"+(checkall ? "clickAll()" : "clickCheck("+num+")")+"'" +
+        "<input onclick='" + (checkall ? "clickAll()" : "clickCheck(" + num + ")") + "'" +
         "type='checkbox' value='None' name='check' id='checkbox" + num + "' "
-        +(disable ? "disabled" : "")+"/><label for='checkbox" + num + "'></label></div>";
+        + (disable ? "disabled" : "") + "/><label for='checkbox" + num + "'></label></div>";
 }
 function appendSearchResults($table, model, field, query, page) {
     var req = $.ajax({
@@ -100,7 +100,7 @@ function getRoster($table, tid) {
 
 function appendHRRes($table, data) {
     data_on_table = [];
-    selected={};
+    selected = {};
     var model = "student";
     var types = ["moved:pink", "default:lightgray", "new:lightgreen"];
     var $results = $table.find("tbody");
@@ -114,12 +114,12 @@ function appendHRRes($table, data) {
         for (var i = 0; i < sect.length; i++) {
             li = sect[i];
             data_on_table.push(li);
-            treshtml = "<tr style='background-color: "+ps[1]+"'>";
+            treshtml = "<tr style='background-color: " + ps[1] + "'>";
             for (var j = 0; j < heads.length; j++) {
                 treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
             }
-            treshtml += "<td>" + genCheckBox(c, ps[0]=="moved") + "</td>";
-            c+=1;
+            treshtml += "<td>" + genCheckBox(c, ps[0] == "moved") + "</td>";
+            c += 1;
             treshtml += "</tr>";
             reshtml += treshtml;
         }
@@ -134,7 +134,7 @@ function appendHRRes($table, data) {
 
 function appendRes($table, model, data) {
     data_on_table = [];
-    selected={};
+    selected = {};
     var $results = $table.find("tbody");
     var heads = headers[model];
     updateHeader($table, model);
@@ -167,10 +167,10 @@ function updateHeader($table, model, strInsteadOfCheck) {
     for (var i = 0; i < heads.length; i++) {
         hhtml += "<th>" + heads[i]["title"] + "</th>";
     }
-    if(strInsteadOfCheck!=null){
+    if (strInsteadOfCheck != null) {
         hhtml += "<th>" + strInsteadOfCheck + "</th>";
 
-    }else{
+    } else {
         hhtml += "<th>" + genCheckBox(0, false, true) + "</th>";
     }
     $header.html(hhtml);

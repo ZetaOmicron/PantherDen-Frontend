@@ -5,117 +5,116 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>  
-        <link href="../../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="../../GlobalStyle.css" type="text/css"/>
-        <link rel="stylesheet" href="ConflictPageStyle.css" type="text/css"/>
-        <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
-        <title>Panther Den - MyDen</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../../../vendor/jquery/jquery.js"></script>
-        <script src="../../cookies.js"></script>
-        <script src="../../ajax_helpers.js"></script>
-        <script src="conflictapp.js"></script>
-    </head>
+<head>
+    <link href="../../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="../../GlobalStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="ConflictPageStyle.css" type="text/css"/>
+    <!--<link rel="stylesheet" href="action.css" type="text/css"/>-->
+    <title>Panther Den - MyDen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../../vendor/jquery/jquery.js"></script>
+    <script src="../../cookies.js"></script>
+    <script src="../../ajax_helpers.js"></script>
+    <script src="conflictapp.js"></script>
+</head>
 
-    <body>
-        <!-- This is the general table for the Popup/-->
+<body>
+<!-- This is the general table for the Popup/-->
 
 
+<div id="headerwrapper">
+    <div id="titlez">
+        PANTHER DEN
+    </div>
+    <div class="headerbox shadow">
+        <ul id="navcontainer">
+            <li id="welcome-user">
+            </li>
+            <li>
+                <a href="../ConflictPage/ConflictPage.html">
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    Conflicts
+                </a>
+            </li>
+            <li>
+                <a href="../SearchPage/SearchPage.html">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    Search
+                </a>
+            </li>
 
-        <div id="headerwrapper">
-            <div id="titlez">
-                PANTHER DEN
-            </div>
-            <div class="headerbox shadow">
-                <ul id="navcontainer">
-                    <li id="welcome-user">
-                    </li>
-                    <li>
-                        <a href="../ConflictPage/ConflictPage.html">
-                            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                            Conflicts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../SearchPage/SearchPage.html">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                            Search
-                        </a>
-                    </li>
+            <li>
+                <a href="../../LoginPage/LoginPage.html" onclick="logout()">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    Sign Out
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--Work area for back end: /-->
+<div id="titlewrapperp">
+    <div id="titlemyden">
+        Conflicts
+    </div>
+</div>
+<!--<div class="checkboxp">
+            <input type="checkbox" value="None" id="checkmark" name="check" />
+            <label for="checkmark"></label>
+        </div>-->
+<div id="conflictwrapper">
+    <div id="mainbox" class="shadow">
+        <div id="table-wrap">
+            <div id="table-content">
+                <table class="table table-striped" id="conflict-table">
+                    <thead>
+                    <th>Student</th>
+                    <th>Transfer</th>
+                    <th>Date</th>
+                    <th>Accept</th>
+                    </thead>
+                    <tbody id="conflict-table-body">
+                    <!--This will be appended for each subsequent student added.
+                        <tr id="content-row1">
+                            <td>Ryan Wells</td>
+                            <td>Mielke &#8594;Westerduin</td>
+                            <td>January 8th</td>
+                            <td>
+                                <div class="accept-decline-pair">
+                                    <a href="#">
+                                        <span  id= "accept-submission1" class="glyphicon glyphicon-ok-circle accept" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        /-->
+                    <!-- End Appendage /-->
 
-                    <li>
-                        <a href="../../LoginPage/LoginPage.html" onclick="logout()">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                            Sign Out
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--Work area for back end: /-->
-        <div id="titlewrapperp">
-            <div id="titlemyden">
-                Conflicts 
-            </div>
-        </div>
-        <!--<div class="checkboxp">
-                    <input type="checkbox" value="None" id="checkmark" name="check" />
-                    <label for="checkmark"></label>
-                </div>-->
-        <div id="conflictwrapper">
-            <div id="mainbox" class="shadow">
-                <div id="table-wrap">
-                    <div id="table-content">
-                        <table class="table table-striped" id="conflict-table">
-                            <thead>
-                            <th>Student</th>
-                            <th>Transfer</th>
-                            <th>Date</th>
-                            <th>Accept</th>
-                            </thead>
-                            <tbody id="conflict-table-body">
-                                <!--This will be appended for each subsequent student added. 
-                                    <tr id="content-row1">
-                                        <td>Ryan Wells</td>
-                                        <td>Mielke &#8594;Westerduin</td>
-                                        <td>January 8th</td>
-                                        <td>
-                                            <div class="accept-decline-pair">
-                                                <a href="#">
-                                                    <span  id= "accept-submission1" class="glyphicon glyphicon-ok-circle accept" aria-hidden="true"></span>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    /-->
-                                <!-- End Appendage /-->
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
+</div>
 
-        <script>
-            $(document).ready(function () {
+<script>
+    $(document).ready(function () {
 
-                //if(readCookie("user")==null){
-                //  location.href="../LoginPage/LoginPage.html";
-                // }
-                var user = readJSONCookie("user");
-                var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
-                $("#welcome-user").html(manager);
-                $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
-                var $st = $("#search-table");
-                $("#submission").click(function () {
-                    setSuccess($st, "Successfully Submitted Attendance");
-                });
-                updateHeader($st, "student", "Absent");
-                getRoster($st, user.id);
-            });
-        </script>
-    </body>
+        //if(readCookie("user")==null){
+        //  location.href="../LoginPage/LoginPage.html";
+        // }
+        var user = readJSONCookie("user");
+        var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
+        $("#welcome-user").html(manager);
+        $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
+        var $st = $("#search-table");
+        $("#submission").click(function () {
+            setSuccess($st, "Successfully Submitted Attendance");
+        });
+        updateHeader($st, "student", "Absent");
+        getRoster($st, user.id);
+    });
+</script>
+</body>
 </html>

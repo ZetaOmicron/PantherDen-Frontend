@@ -1,10 +1,10 @@
-#titlewrapperp{
+#titlewrapperp {
     display: table;
     text-align: center;
     width: 100vw;
 }
 
-#titlemyden{
+#titlemyden {
     font-family: "Calibri", sans-serif;
     color: #87a8c6;
     font-weight: bold;
@@ -12,7 +12,7 @@
     z-index: 500;
 }
 
-#submission{
+#submission {
     width: 59.1vw;
     height: 4vw;
     position: relative;
@@ -34,10 +34,10 @@
 #attendancewrapper {
     width: 59.1vw;
     margin: 0 auto;
-    //height: 30vw;
+/ / height : 30 vw;
 }
 
-#table-wrap{
+#table-wrap {
     min-height: 10vw;
 }
 

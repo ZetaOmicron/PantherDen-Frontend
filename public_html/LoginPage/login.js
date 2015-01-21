@@ -4,12 +4,12 @@ var isTeacher = true;
 
 $(document).ready(function () {
     init();
-    if(readCookie("user")!=null){
-        location.href="../Teachers/SearchPage/SearchPage.html";
+    if (readCookie("user") != null) {
+        location.href = "../Teachers/SearchPage/SearchPage.html";
         return;
     }
     $('#admin').on('click', function () {
-        isTeacher=false;
+        isTeacher = false;
         $('.flipper').addClass('flip');
         $('#logintype').text("Data Manager Login");
         setTimeout(function () {
@@ -17,7 +17,7 @@ $(document).ready(function () {
         }, 500);
     });
     $('#teach').on('click', function () {
-        isTeacher=true;
+        isTeacher = true;
         $('.flipper').addClass('flip');
         $('#logintype').text("Teacher Login");
         setTimeout(function () {
@@ -35,28 +35,28 @@ $(document).ready(function () {
 });
 
 //initializes elements in their proper starting positions
-function init(){
+function init() {
     $("#error-container").hide();
 }
 
-function checkIfUserAndStoreCookie(){
+function checkIfUserAndStoreCookie() {
     var form = $("#login");
     var tid = form.find("#username").val();
     var req = $.ajax({
-        type:'GET',
-        url: server_location+"/teacher/"+tid,
+        type: 'GET',
+        url: server_location + "/teacher/" + tid,
         dataType: 'json',
         success: function (data) {
-            createJSONCookie("user",data,5);
-            if(isTeacher){
-                location.href="../Teachers/SearchPage/SearchPage.html";
-            }else{
-                location.href="../DataManagers/ConflictPage/ConflictPage.html";
+            createJSONCookie("user", data, 5);
+            if (isTeacher) {
+                location.href = "../Teachers/SearchPage/SearchPage.html";
+            } else {
+                location.href = "../DataManagers/ConflictPage/ConflictPage.html";
             }
         },
-        error: function(err){
+        error: function (err) {
             $("#error-container").fadeIn(600);
-            $("#error-container").html('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>  No teacher with the id of <strong>'+tid+'</strong> was found.');
+            $("#error-container").html('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>  No teacher with the id of <strong>' + tid + '</strong> was found.');
         }
     });
     return false;

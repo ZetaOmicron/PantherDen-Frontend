@@ -3,7 +3,7 @@
     width: 32vw;
     height: 3.7vw;
     padding-left: 1.2vw;
-  /*  border: solid .25vw #cecfd1;*/
+    /*  border: solid .25vw #cecfd1;*/
     border: solid .25vw #7aaaca;
     border-radius: .5vw;
     background-color: #fefefe;
@@ -12,9 +12,10 @@
     left: -2vw;
 }
 
-#data-manager-label{
+#data-manager-label {
     font-size: 16px;
 }
+
 #searchwrapper {
     margin: 2vw auto;
     width: 50vw;
@@ -28,7 +29,7 @@
     margin-right: auto;
 }
 
-#table-wrap{
+#table-wrap {
     padding-bottom: 25px;
 }
 
@@ -79,8 +80,8 @@
     outline: none;
 }
 
-input::-webkit-input-placeholder{
-//color: black;
+input::-webkit-input-placeholder {
+/ / color : black;
     color: #7aaaca !important;
 }
 

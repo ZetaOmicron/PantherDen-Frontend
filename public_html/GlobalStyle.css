@@ -4,13 +4,13 @@ html {
 
 body {
     background-image: linear-gradient(#b0d6f0, #dde8f0);
-    //background-color: black;
+/ / background-color : black;
 }
 
 #titlez {
     font-family: "Calibri", sans-serif;
     color: #87a8c6;
-    //color: gold;
+/ / color : gold;
     font-weight: bold;
 }
 
@@ -32,13 +32,13 @@ input:focus {
     color: #7aaaca !important;
 }
 
-.button:hover{
+.button:hover {
     color: #7aaaca;
     border-color: #7aaaca;
 
 }
 
-.button:hover{
+.button:hover {
     cursor: pointer;
 }
 
@@ -85,13 +85,13 @@ a {
     top: 2vw;
     overflow: hidden;
 }
-#welcome-user{
+
+#welcome-user {
     font-size: .7vw;
     text-wrap: normal;
     width: 12vw;
     line-height: 1.8vw;
 }
-
 
 #main_div {
     background-color: #f0f1f3;
@@ -110,14 +110,14 @@ a {
     vertical-align: middle;
 }
 
-#navcontainer li a{
+#navcontainer li a {
     font-size: 1.8vw;
 }
 
 a:hover {
     text-decoration: none;
     color: #7aaaca;
-//color: gold;
+/ / color : gold;
 }
 
 /* CheckBox */
@@ -141,13 +141,13 @@ input[type=checkbox] {
     left: -2vw;
 }
 
-.none-found-wrapper{
+.none-found-wrapper {
     text-align: center;
     font-size: 24px;
 
 }
 
-#error-handle{
+#error-handle {
     margin-top: 25px;
     padding-bottom: 0;
     margin-bottom: 0;
