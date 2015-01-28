@@ -27,11 +27,12 @@ and open the template in the editor.
         <div id="headerwrapper">
             <div id="titlez">
                 PANTHER DEN
+                <span id="welcome-user">
+                </span>
             </div>
             <div class="headerbox shadow">
                 <ul id="navcontainer">
-                    <li id="welcome-user">
-                    </li>
+
                     <li>
                         <a href="../ConflictPage/ConflictPage.html">
                             <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
@@ -42,6 +43,12 @@ and open the template in the editor.
                         <a href="../SearchPage/SearchPage.html">
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../AddStudentPage/AddStudentPage.html">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Add Student
                         </a>
                     </li>
                     <li>
@@ -159,7 +166,7 @@ and open the template in the editor.
         </div>
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 /*
                  if(readCookie("user")==null){
                  location.href="../LoginPage/LoginPage.html";
@@ -170,7 +177,7 @@ and open the template in the editor.
 
                 $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
                 updateHeader($("#search-table"), "student");
-                $("#searchcontainer").submit(function () {
+                $("#searchcontainer").submit(function() {
                     appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
                     return false;
                 });
