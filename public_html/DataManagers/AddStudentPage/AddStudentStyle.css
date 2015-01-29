@@ -11,3 +11,18 @@
     text-align: center;
     width: 100vw;
 }
+
+#addstudentwrapper{
+    width: 59.1vw;
+    margin: 0 auto;
+}
+
+#mainbox {
+    padding: 1vw;
+}
+
+#fieldtitle{
+    font-family: "Calibri", sans-serif;
+    font-size: 2vw;
+    padding-left: 2vw;
+}

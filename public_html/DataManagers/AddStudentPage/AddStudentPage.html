@@ -18,7 +18,7 @@ and open the template in the editor.
         <script src="../../../vendor/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
         <script src="../../cookies.js"></script>
         <script src="../../ajax_helpers.js"></script>
-        <script src="SearchScript.js"></script>
+        <script src="AddStudentScript.js"></script>
         <script src ="popup.js"></script>
     </head>
 
@@ -68,13 +68,44 @@ and open the template in the editor.
              </button>
          </div> -->
         <!--Work area for back end: /-->
-       
+
         <div id="titlewrapperp">
             <div id="titlemyden">
                 Add Student
             </div>
         </div>
-        
+
+        <div id="addstudentwrapper">
+            <div id = 'mainbox' class = 'shadow'>
+                <form class="form-horizontal">
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">First Name</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">Last Name</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">ID #</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">HR Teacher</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <script>
             $(document).ready(function() {
                 /*
