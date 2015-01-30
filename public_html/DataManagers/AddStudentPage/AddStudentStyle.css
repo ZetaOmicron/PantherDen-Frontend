@@ -21,6 +21,10 @@
     padding: 1vw;
 }
 
+#submitmenu{
+    text-align: center;
+}
+
 #fieldtitle{
     font-family: "Calibri", sans-serif;
     font-size: 2vw;
