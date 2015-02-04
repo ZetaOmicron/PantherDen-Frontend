@@ -113,7 +113,9 @@ and open the template in the editor.
                 var user = readJSONCookie("user");
                 var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
                 $("#welcome-user").html(manager);
-                $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
+                //$("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
+                addConflict("Ryan Wells", "Brian Mielke",["Amy Sheehan", "Wouter Westerduin"],"2/4/15",1);
+                addConflict("Davis Robertson", "Wouter Westerduin",["Brian Mielke", "Mindy Faber"],"2/4/15",2);
                 var $st = $("#search-table");
                 $("#submission").click(function() {
                     setSuccess($st, "Successfully Submitted Attendance");
