@@ -53,3 +53,35 @@
     color: #959595;
     padding: 0 10px;
 }
+
+#colorcode-wrapper{
+    width: inherit;
+    height: 30px;
+    text-align:center;
+}
+
+.colorswatch{
+    height: 1vw;
+    width: 1vw;
+    border-radius: .2vw;
+    display: inline-block;
+}
+
+.swatch-title{
+    font-family: "Calibri", sans-serif;
+    font-size: 1.4vw;
+    color: #a5a5a5;
+    display:inline-block;
+}
+
+.color1{
+    background-color: green;
+}
+
+.color2{
+    background-color: orange;
+}
+
+.color3{
+    background-color: purple;
+}

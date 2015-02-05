@@ -80,13 +80,19 @@ and open the template in the editor.
                         </tbody>
                     </table>
                 </div>
+                <div id = "colorcode-wrapper">
+                    <div class = 'colorswatch color1'></div><div class = 'swatch-title'>Attending Today</div>
+                    <div class = 'colorswatch color2'></div><div class = 'swatch-title'>Not Attending Today</div>
+                    <div class = 'colorswatch color3'></div><div class = 'swatch-title'>Cannot Attend</div>
+                </div >
                 <div id="error-handle"></div>
                 <input type="button" id="submission" value="Submit Attendance">
+                
             </div>
         </div>
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
 
                 //if(readCookie("user")==null){
                 //  location.href="../LoginPage/LoginPage.html";
@@ -94,7 +100,7 @@ and open the template in the editor.
                 var user = readJSONCookie("user");
                 $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
                 var $st = $("#search-table");
-                $("#submission").click(function () {
+                $("#submission").click(function() {
                     setSuccess($st, "Successfully Submitted Attendance");
                 });
                 updateHeader($st, "student", "Absent");
