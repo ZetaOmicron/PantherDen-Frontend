@@ -102,7 +102,7 @@ function appendHRRes($table, data) {
     data_on_table = [];
     selected={};
     var model = "student";
-    var types = ["moved:pink", "default:lightgray", "new:lightgreen"];
+    var types = ["moved:#D46A6A", "default:lightgray", "new:#7CB95C"];
     var $results = $table.find("tbody");
     var heads = headers[model];
     updateHeader($table, model, "Absent");
