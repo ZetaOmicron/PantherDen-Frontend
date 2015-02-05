@@ -65,6 +65,26 @@
     display: inline-block;
 }
 
+#classcountwrapper{
+    float:right;
+    padding-right:3vw;
+}
+
+#classcounttile{
+    font-family: "Calibri", sans-serif;
+    font-size: 1.4vw;
+    color: #a5a5a5;
+    display:inline-block;
+}
+
+#classcount {
+    font-family: "Calibri", sans-serif;
+    font-size: 1.4vw;
+    color: #a5a5a5;
+    display:inline-block;
+    text-indent: 5px;
+}
+
 .colorswatch{
     height: 1vw;
     width: 1vw;
