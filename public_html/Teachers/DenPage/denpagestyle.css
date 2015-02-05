@@ -60,6 +60,11 @@
     text-align:center;
 }
 
+#swatch-spacing{
+    width: 1vw;
+    display: inline-block;
+}
+
 .colorswatch{
     height: 1vw;
     width: 1vw;
@@ -72,6 +77,7 @@
     font-size: 1.4vw;
     color: #a5a5a5;
     display:inline-block;
+    text-indent: 4px;
 }
 
 .color1{
