@@ -46,7 +46,7 @@ and open the template in the editor.
                         </a>
                     </li>
                     <li>
-                        <a href="../AddStudnet/AddStudentPage.html">
+                        <a href="../AddStudentPage/AddStudentPage.html">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             Add Student
                         </a>
@@ -77,141 +77,126 @@ and open the template in the editor.
 
         <div id="addstudentwrapper">
             <div id = 'mainbox' class = 'shadow'>
-                <form class="form-horizontal">
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
-                        <div class="col-sm-3">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(First)">
-                        </div>
-                        <div class="col-sm-3">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(Last)">
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">ID #</label>
-                        <div class="col-sm-5">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">Grade Level</label>
-                        <div class="col-sm-8">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">9</button>
-                                <button type="button" class="btn btn-default">10</button>
-                                <button type="button" class="btn btn-default">11</button>
-                                <button type="button" class="btn btn-default">12</button>
-                                <button type="button" class="btn btn-default">Other</button>
-                                <!-- Temporarily Commented Out until we get this figured out
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Regulars
-                                        <span class="caret"></span>
-                                    </button>
-                                    
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Regulars</a></li>
-                                        <li><a href="#">Advanced Placement</a></li>
-                                        <li><a href="#">International Baccalaureate</a></li>
-                                        <li><a href="#">Special Education</a></li>
-                                        <li><a href="#">Critical Students</a></li>
-                                    </ul>
-                                     
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#student" aria-controls="home" role="tab" data-toggle="tab">Student</a></li>
+                        <li role="presentation"><a href="#teacher" aria-controls="profile" role="tab" data-toggle="tab">Teacher</a></li>
+                        <li role="presentation"><a href="#datamanager" aria-controls="messages" role="tab" data-toggle="tab">DataManager</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="student">
+                            <form class="form-horizontal">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
+                                    <div class="col-sm-3">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(First)">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(Last)">
+                                    </div>
                                 </div>
-                                /-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">HR Teacher</label>
-                        <div class="col-sm-5">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <div id = 'submitmenu'>
-                            <button type="button" class="btn btn-primary shadow">Clear</button> 
-                            <button type="button" class="btn btn-primary shadow">Add</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-        
-        
-        <div id="titlewrapperp">
-            <div id="titlemyden">
-                Add Teacher
-            </div>
-        </div>
-        
-        <div id="addteacherwrapper">
-            <div id = 'mainbox' class = 'shadow'>
-                <form class="form-horizontal">
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
-                        <div class="col-sm-3">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(First)">
-                        </div>
-                        <div class="col-sm-3">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(Last)">
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">User Name</label>
-                        <div class="col-sm-5">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">Room #</label>
-                        <div class="col-sm-5">
-                            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-2 control-label" for="formGroupInputSmall">Grade Level</label>
-                        <div class="col-sm-8">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">9</button>
-                                <button type="button" class="btn btn-default">10</button>
-                                <button type="button" class="btn btn-default">11</button>
-                                <button type="button" class="btn btn-default">12</button>
-                                <button type="button" class="btn btn-default">Other</button>
-                                <!-- Temporarily Commented Out until we get this figured out
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Regulars
-                                        <span class="caret"></span>
-                                    </button>
-                                    
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Regulars</a></li>
-                                        <li><a href="#">Advanced Placement</a></li>
-                                        <li><a href="#">International Baccalaureate</a></li>
-                                        <li><a href="#">Special Education</a></li>
-                                        <li><a href="#">Critical Students</a></li>
-                                    </ul>
-                                     
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">ID #</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                                    </div>
                                 </div>
-                                /-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <div id = 'submitmenu'>
-                            <button type="button" class="btn btn-primary shadow">Clear</button> 
-                            <button type="button" class="btn btn-primary shadow">Add</button>
-                        </div>
-                    </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Grade Level</label>
+                                    <div class="col-sm-8">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default">9</button>
+                                            <button type="button" class="btn btn-default">10</button>
+                                            <button type="button" class="btn btn-default">11</button>
+                                            <button type="button" class="btn btn-default">12</button>
+                                            <button type="button" class="btn btn-default">Other</button>
+                                            <!-- Temporarily Commented Out until we get this figured out
+                                            <div class="btn-group" role="group">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                    Regulars
+                                                    <span class="caret"></span>
+                                                </button>
+                                                
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Regulars</a></li>
+                                                    <li><a href="#">Advanced Placement</a></li>
+                                                    <li><a href="#">International Baccalaureate</a></li>
+                                                    <li><a href="#">Special Education</a></li>
+                                                    <li><a href="#">Critical Students</a></li>
+                                                </ul>
+                                                 
+                                            </div>
+                                            /-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">HR Teacher</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <div id = 'submitmenu'>
+                                        <button type="button" class="btn btn-primary shadow">Save</button> 
+                                        <button type="button" class="btn btn-primary shadow">Clear</button> 
+                                        <button type="button" class="btn btn-primary shadow">Add</button>
+                                    </div>
+                                </div>
 
-                </form>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="teacher">
+                        <form class="form-horizontal">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
+                                    <div class="col-sm-3">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(First)">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(Last)">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">ID/Login</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Room Number</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Subject</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <div id = 'submitmenu'>
+                                        <button type="button" class="btn btn-primary shadow">Save</button> 
+                                        <button type="button" class="btn btn-primary shadow">Clear</button> 
+                                        <button type="button" class="btn btn-primary shadow">Add</button>
+                                    </div>
+                                </div>
+
+                            </form></div>
+                        <div role="tabpanel" class="tab-pane" id="datamanager"></div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
 
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 /*
                  if(readCookie("user")==null){
                  location.href="../LoginPage/LoginPage.html";
@@ -222,7 +207,7 @@ and open the template in the editor.
 
                 //$("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
                 updateHeader($("#search-table"), "student");
-                $("#searchcontainer").submit(function() {
+                $("#searchcontainer").submit(function () {
                     appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
                     return false;
                 });
