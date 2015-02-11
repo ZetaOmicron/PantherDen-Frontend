@@ -87,9 +87,10 @@ and open the template in the editor.
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="student">
+                            <br>
                             <form class="form-horizontal">
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">Name</label>
                                     <div class="col-sm-3">
                                         <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(First)">
                                     </div>
@@ -98,13 +99,13 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">ID #</label>
-                                    <div class="col-sm-5">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">ID #</label>
+                                    <div class="col-sm-6">
                                         <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Grade Level</label>
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">Grade Level</label>
                                     <div class="col-sm-8">
                                         <div class="btn-group" role="group" aria-label="...">
                                             <button type="button" class="btn btn-default">9</button>
@@ -133,9 +134,19 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">HR Teacher</label>
-                                    <div class="col-sm-5">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">HR Teacher</label>
+                                    <div class="col-sm-6">
                                         <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">Home Room Type</label>
+                                    <div class="col-sm-8">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default">Regular</button>
+                                            <button type="button" class="btn btn-default">Intervention</button>
+                                            <button type="button" class="btn btn-default">Permanent</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group form-group-sm">
@@ -149,9 +160,10 @@ and open the template in the editor.
                             </form>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="teacher">
-                        <form class="form-horizontal">
+                            <form class="form-horizontal">
+                                <br>
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Name</label>
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">Name</label>
                                     <div class="col-sm-3">
                                         <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(First)">
                                     </div>
@@ -160,20 +172,20 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">ID/Login</label>
-                                    <div class="col-sm-5">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">ID/Login</label>
+                                    <div class="col-sm-6">
                                         <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Room Number</label>
-                                    <div class="col-sm-5">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">Room #</label>
+                                    <div class="col-sm-6">
                                         <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group form-group-sm">
-                                    <label class="col-sm-2 control-label" for="formGroupInputSmall">Subject</label>
-                                    <div class="col-sm-5">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">Subject</label>
+                                    <div class="col-sm-6">
                                         <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
                                     </div>
                                 </div>
@@ -186,17 +198,40 @@ and open the template in the editor.
                                 </div>
 
                             </form></div>
-                        <div role="tabpanel" class="tab-pane" id="datamanager"></div>
+                        <div role="tabpanel" class="tab-pane" id="datamanager">
+                            <br>
+                            <form class="form-horizontal">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">Name</label>
+                                    <div class="col-sm-3">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(First)">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="(Last)">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-3 control-label" for="formGroupInputSmall">ID/Login</label>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <div id = 'submitmenu'>
+                                        <button type="button" class="btn btn-primary shadow">Save</button> 
+                                        <button type="button" class="btn btn-primary shadow">Clear</button> 
+                                        <button type="button" class="btn btn-primary shadow">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 /*
                  if(readCookie("user")==null){
                  location.href="../LoginPage/LoginPage.html";
@@ -207,7 +242,7 @@ and open the template in the editor.
 
                 //$("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
                 updateHeader($("#search-table"), "student");
-                $("#searchcontainer").submit(function () {
+                $("#searchcontainer").submit(function() {
                     appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
                     return false;
                 });
