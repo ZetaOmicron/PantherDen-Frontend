@@ -110,6 +110,7 @@ input::-webkit-input-placeholder{
     right: -17vw;
     z-index: 4;
     border-radius: 1vw 0 0 1vw;
+     
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;

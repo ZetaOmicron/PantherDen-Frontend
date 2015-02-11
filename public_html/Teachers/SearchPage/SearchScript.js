@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#mainbox').hover(function () {
+    $('#mainbox').mouseenter(function () {
         $('#queuebox').toggleClass("enter");
     });
 });
