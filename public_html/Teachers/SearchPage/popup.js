@@ -13,7 +13,7 @@ $(document).ready(function () {
     $("#cover").click(function () {
      //  $("#actionLabelWrapper").fadeOut(300);
        $("#infowrapper").fadeOut(300);
-        $("#cover").fadeOut(300);
+       $("#cover").fadeOut(300 );
     });
     $(document).bind('keydown', function (e) {
         if(e.which = 27){
