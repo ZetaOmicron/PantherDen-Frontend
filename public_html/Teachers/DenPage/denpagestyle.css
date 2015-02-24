@@ -100,14 +100,14 @@
     text-indent: 4px;
 }
 
-.color1{
-    background-color: #7CB95C;
+.new-color {
+    background-color: lightgreen;
 }
 
-.color2{
+.default-color {
     background-color: lightgrey;
 }
 
-.color3{
-    background-color: #D46A6A;
+.moved-color {
+    background-color: lightpink;
 }

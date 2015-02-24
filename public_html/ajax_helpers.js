@@ -102,23 +102,22 @@ function appendHRRes($table, data) {
     data_on_table = [];
     selected={};
     var model = "student";
-    var types = ["moved:#D46A6A", "default:lightgray", "new:#7CB95C"];
+    var types = ["moved", "default", "new"];
     var $results = $table.find("tbody");
     var heads = headers[model];
     updateHeader($table, model, "Absent");
     var reshtml = "";
     var c = 1;
     for (var k = 0; k < types.length; k++) {
-        var ps = types[k].split(":");
-        var sect = data[ps[0]];
+        var sect = data[types[k]];
         for (var i = 0; i < sect.length; i++) {
             li = sect[i];
             data_on_table.push(li);
-            treshtml = "<tr style='background-color: "+ps[1]+"'>";
+            treshtml = "<tr class='"+types[k]+"-color'>";
             for (var j = 0; j < heads.length; j++) {
                 treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
             }
-            treshtml += "<td>" + genCheckBox(c, ps[0]=="moved") + "</td>";
+            treshtml += "<td>" + genCheckBox(c, types[k]=="moved") + "</td>";
             c+=1;
             treshtml += "</tr>";
             reshtml += treshtml;
