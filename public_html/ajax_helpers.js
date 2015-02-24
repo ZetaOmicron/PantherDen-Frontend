@@ -128,6 +128,7 @@ function appendHRRes($table, data) {
         return;
     }
     $("#error-handle").html("");
+    $("#classcount").html(c-1-data["moved"].length);
     $results.html(reshtml);
 }
 
