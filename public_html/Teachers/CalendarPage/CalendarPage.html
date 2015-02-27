@@ -201,7 +201,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                 {
                     events: function (start, end, timezone, callback) {
                         $.ajax({
-                            url: 'http://localhost:8000/schedules/teacher/' + user.id + '/newroom/',
+                            url: server_location+'schedules/teacher/' + user.id + '/newroom/',
                             dataType: 'json',
                             success: function (data) {
                                 var events = [];
@@ -222,7 +222,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                 },{
                     events: function (start, end, timezone, callback) {
                         $.ajax({
-                            url: 'http://localhost:8000/schedules/teacher/' + user.id + '/homeroom/',
+                            url: server_location+'schedules/teacher/' + user.id + '/homeroom/',
                             dataType: 'json',
                             success: function (data) {
                                 var events = [];

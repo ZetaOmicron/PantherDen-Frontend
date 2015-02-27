@@ -43,6 +43,16 @@ function clickAll(){
     }
 }
 
+function checkAbsents(){
+    for(var i=1; i<=data_on_table.length; i++){
+        if(data_on_table[i-1]["absent"]){
+            selected[i]=true;
+            $("#checkbox"+i).prop("checked",true);
+        }
+
+    }
+}
+
 function setNoneFound($table){
     $("#error-handle").html('<div class="alert alert-warning none-found-wrapper" role="alert">'+
             '<span class="glyphicon glyphicon-question-sign" aria-hidden="true" style="margin-right: 10px">'+
@@ -64,7 +74,7 @@ function setSuccess($table, message){
 
 function genCheckBox(num, disable, checkall) {
     return "<div class='checkboxp'>" +
-        "<input onclick='"+(checkall ? "clickAll()" : "clickCheck("+num+")")+"'" +
+        "<input onclick='"+(checkall ? "clickAll()" : "toggleAdd("+num+")")+"'" +
         "type='checkbox' value='None' name='check' id='checkbox" + num + "' "
         +(disable ? "disabled" : "")+"/><label for='checkbox" + num + "'></label></div>";
 }
@@ -130,6 +140,7 @@ function appendHRRes($table, data) {
     $("#error-handle").html("");
     $("#classcount").html(c-1-data["moved"].length);
     $results.html(reshtml);
+    checkAbsents($table);
 }
 
 function appendRes($table, model, data) {

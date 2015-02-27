@@ -107,7 +107,36 @@ and open the template in the editor.
                 $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
                 var $st = $("#search-table");
                 $("#submission").click(function() {
-                    setSuccess($st, "Successfully Submitted Attendance");
+                    var indices = [];
+                    for(var ind in selected){
+                        indices.push(ind-1);
+                    }
+                    var absent = [];
+                    var present = [];
+                    for(var i = 0; i < data_on_table.length; i++){
+                        if(indices.indexOf(i)>-1){ //is absent
+                            absent.push(data_on_table[i]["id"]);
+                        }else{
+                            present.push(data_on_table[i]["id"]);
+                        }
+                    }
+                    console.log(absent.toString());
+                    var req = $.ajax({
+                        type: 'POST',
+                        url: server_location + "students/absent/today",
+                        dataType: "text",
+                        data: {
+                            absent: absent.toString(),
+                            present: present.toString()
+                        },
+                        success: function (data) {
+                            console.log("hello");
+                            setSuccess($st, "Successfully Submitted Attendance");
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
                 });
                 updateHeader($st, "student", "Absent");
                 getRoster($st, user.id);
