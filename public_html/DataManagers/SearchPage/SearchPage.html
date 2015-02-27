@@ -73,16 +73,17 @@ and open the template in the editor.
                 <button id="actionbutton"><div class="glyphicon glyphicon-search" style="font-size: 2.3vw"></div></button>
             </div>
             <form id="searchcontainer" action="#">
-                <select name="model" id="select-model">
+                <select name="model" id="select-model" class="select-drop">
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
                 </select>
-                <input type="text" id="query-box" placeholder="Search" autocomplete="off" autofocus="">
                 <!-- TODO: Style these to put them in the right place. -->
-                <select name="property" id="select-property" hidden="hidden">
+                <select name="property" id="select-property" class="select-drop">
                     <option value="last_name">Last Name</option>
                     <option value="first_name">First Name</option>
+                    <option value="id">ID</option>
                 </select>
+                <input type="text" id="query-box" placeholder="Search" autocomplete="off" autofocus="">
             </form>
         </div>
 
@@ -175,7 +176,7 @@ and open the template in the editor.
                 var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
                 $("#welcome-user").html(manager);
 
-                //$("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
+//                $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
                 updateHeader($("#search-table"), "student");
                 $("#searchcontainer").submit(function() {
                     appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');

@@ -3,30 +3,27 @@
     width: 32vw;
     height: 3.7vw;
     padding-left: 1.2vw;
-  /*  border: solid .25vw #cecfd1;*/
+    /*  border: solid .25vw #cecfd1;*/
     border: solid .25vw #7aaaca;
     border-radius: .5vw;
     background-color: #fefefe;
     font-size: 2.3vw;
     color: #7aaaca;
-    left: -2vw;
+    left: 4vw;
 }
 
-#data-manager-label{
-    font-size: 16px;
-}
+
 #searchwrapper {
     margin: 2vw auto;
-    width: 50vw;
+    width: 65vw;
     border-radius: .5vw;
-    margin-top: 3vw;
-    margin-bottom: 3vw;
-    /*border: solid .2vw #7aaaca;*/
+    border: solid .2vw #7aaaca;
 }
 
 #search-table {
     width: 55vw;
-    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #table-wrap{
@@ -40,7 +37,7 @@
     padding: 0 10px;
 }
 
-#select-model {
+.select-drop {
     position: absolute;
     display: inline;
     border: none;
@@ -56,8 +53,17 @@
     padding-left: .2vw;
 }
 
-#select-model:focus {
+.select-drop:focus {
     outline: none;
+}
+
+#select-model{
+    left:17vw;
+}
+
+#select-property{
+    width: 16vw;
+    left: 27vw;
 }
 
 #actionbutton {
@@ -69,7 +75,7 @@
     font-family: "Calibri", sans-serif;
     width: 12vw;
     height: 3.7vw;
-    left: 63vw;
+    left: 70.5vw;
     color: #ffffff;
     border-radius: .5vw;
     padding-left: 2vw;
@@ -96,10 +102,16 @@ input::-webkit-input-placeholder{
     margin-left: -15vw;
 }
 
+#infoname {
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: "Calibri", sans-serif;
+}
+
 /*Queue Box*/
 
 #queuebox {
-    position: absolute;
+    position: fixed;
     background-color: #f0f1f3;
     width: 17vw;
     height: 70vh;
@@ -107,11 +119,12 @@ input::-webkit-input-placeholder{
     right: -17vw;
     z-index: 4;
     border-radius: 1vw 0 0 1vw;
-    -webkit-transition: position .3s;
-    -moz-transition: position .3s;
-    -ms-transition: position .3s;
-    -o-transition: position .3s;
-    transition: position .3s;
+
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
 }
 
 #queuetitle {
@@ -124,6 +137,6 @@ input::-webkit-input-placeholder{
     border-radius: 1vw 0 0 0;
 }
 
-.enter {
-    right: 0;
+#queuebox.enter {
+    right: 0 !important;
 }

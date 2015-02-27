@@ -40,11 +40,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="../cookies.js"></script>
-    <script src="../ajax_helpers.js"></script>
+    <script src="../../cookies.js"></script>
+    <script src="../../ajax_helpers.js"></script>
 </HEAD>
 <BODY>
-
 <div id="headerwrapper">
     <div id="titlez">
         PANTHER DEN
@@ -161,103 +160,137 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
 </div>
 
 <script>
-            $('#calendar').bind("DOMSubtreeModified", function() {
-                var currentdate = $('#calendar').fullCalendar('getDate');
-                if (currentdate.isValid() === false) {
-                    $('#calendar').fullCalendar('gotoDate', moment());
-                    $('#errordisplay').slideDown(700);
-                    $('#errordisplay').delay(3000).slideUp(700);
-                    $('#errordisplay').html('You have input a Date with no Panther Den. Please Input Another Date.');
-                }
-            });
-            
-            function gotodate() {
-                    var desiredDate = $('#query-box').val();
-                    var getDate = $.fullCalendar.moment(desiredDate);
+    $('#calendar').bind("DOMSubtreeModified", function () {
+        var currentdate = $('#calendar').fullCalendar('getDate');
+        if (currentdate.isValid() === false) {
+            $('#calendar').fullCalendar('gotoDate', moment());
+            $('#errordisplay').slideDown(700);
+            $('#errordisplay').delay(3000).slideUp(700);
+            $('#errordisplay').html('You have input a Date with no Panther Den. Please Input Another Date.');
+        }
+    });
 
-                    /*checks to see if date is an actual date*/
-                    if (getDate.day() === 1 || getDate.day() === 3 || getDate.day() === 6 || getDate.day() === 7) {
-                        $('#errordisplay').slideDown(700);
-                        $('#errordisplay').delay(3000).slideUp(1000);
-                    } else if (getDate.isValid() === false) {
-                        $('#errordisplay').slideDown(700);
-                        $('#errordisplay').delay(3000).slideUp(1000);
-                    } else {
-                        $('#calendar').fullCalendar('gotoDate', getDate);
-                    }
-                }
+    function gotodate() {
+        var desiredDate = $('#query-box').val();
+        var getDate = $.fullCalendar.moment(desiredDate);
+
+        /*checks to see if date is an actual date*/
+        if (getDate.day() === 1 || getDate.day() === 3 || getDate.day() === 6 || getDate.day() === 7) {
+            $('#errordisplay').slideDown(700);
+            $('#errordisplay').delay(3000).slideUp(1000);
+        } else if (getDate.isValid() === false) {
+            $('#errordisplay').slideDown(700);
+            $('#errordisplay').delay(3000).slideUp(1000);
+        } else {
+            $('#calendar').fullCalendar('gotoDate', getDate);
+        }
+    }
 
 
-            $(document).ready(function() {
-                $('#errordisplay').hide();
-                $('#changebox').hide();
+    $(document).ready(function () {
 
-                $("#calendar").fullCalendar({
-                    eventColor: 'red',
-                    events: [
-                        {
-                            title: "Classroom",
-                            start: moment().format('YYYY-MM-DD'),
-                            allDay: false,
-                            editable: false
-                        }
-                    ],
-                    eventClick: function(calEvent, jsEvent, view) {
-                        //$('body').append('<div id = "changebox" class="shadow"><input type="text" value = "' + calEvent.title + '" style ="width:auto"><br>Total Number of Students Today:<input type = "text" id = "numberstudents" readonly><br><table class="table-hover" id="search-table" style="width: auto;max-width: 480px"><thead> </thead><tbody></tbody> </table><input type = "button" id = "savebutton" onclick = "exitchangebox()" value = "Save"></div>');
-                        //$('#calendar').css('opacity','0.4');
+        var user = readJSONCookie("user");
+        $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
 
-                        wraperbutton(calEvent);
+
+        $('#errordisplay').hide();
+        $('#changebox').hide();
+
+        $("#calendar").fullCalendar({
+            eventSources: [
+                {
+                    events: function (start, end, timezone, callback) {
+                        $.ajax({
+                            url: 'http://localhost:8000/schedules/teacher/' + user.id + '/newroom/',
+                            dataType: 'json',
+                            success: function (data) {
+                                var events = [];
+                                for (var i = 0; i < data.length; i++) {
+                                    events.push({
+                                        title: data[i]["student_id"] + "",
+                                        start: data[i]["date"],
+                                        allDay: false,
+                                        editable: false
+                                    });
+                                }
+                                callback(events);
+                            }
+                        });
                     },
-                    hiddenDays: [1, 3],
-                    weekends: false,
-                    fixedWeekCount: true
-                });
-
-
-
-                
-                function exitchangebox() {
-                    $('#changebox').remove();
-                    $('#calendar').css('opacity', '1');
+                    color: 'green',
+                    lazyFetching: true
+                },{
+                    events: function (start, end, timezone, callback) {
+                        $.ajax({
+                            url: 'http://localhost:8000/schedules/teacher/' + user.id + '/homeroom/',
+                            dataType: 'json',
+                            success: function (data) {
+                                var events = [];
+                                for (var i = 0; i < data.length; i++) {
+                                    events.push({
+                                        title: data[i]["student_id"].toString(),
+                                        start: data[i]["date"],
+                                        allDay: false,
+                                        editable: false
+                                    });
+                                }
+                                callback(events);
+                            }
+                        });
+                    },
+                    color: 'red',
+                    lazyFetching: true
                 }
+            ],
+            eventClick: function (calEvent, jsEvent, view) {
+                //$('body').append('<div id = "changebox" class="shadow"><input type="text" value = "' + calEvent.title + '" style ="width:auto"><br>Total Number of Students Today:<input type = "text" id = "numberstudents" readonly><br><table class="table-hover" id="search-table" style="width: auto;max-width: 480px"><thead> </thead><tbody></tbody> </table><input type = "button" id = "savebutton" onclick = "exitchangebox()" value = "Save"></div>');
+                //$('#calendar').css('opacity','0.4');
 
-                $("#titlewrapperp").keyup(function(event) {
-                    if (event.keyCode === 13) {
-                        gotodate();
-                    }
-                });
-
-
-
-                $("#actionLabelWrapper").hide();
-                $("#cover").hide();
-                var flag = 0;
-                function wraperbutton(object) {
-                    flag = 1;
-                    $("#actionLabelWrapper").fadeIn(300);
-                    $("#cover").fadeIn(300);
-                    $('#dateplace').html("Number of Students on " + moment(object.start).format('MM/DD/YY') + " : 12");
-                }
-
-                $("#cover").click(function() {
-                    $("#actionLabelWrapper").fadeOut(300);
-                    $("#cover").fadeOut(300);
-                });
+                wraperbutton(calEvent);
+            },
+            hiddenDays: [1, 3],
+            weekends: false,
+            fixedWeekCount: true
+        });
 
 
-                $("#actionDropDown").click(function() {
-                    $(this).dropdown();
-                });
+        function exitchangebox() {
+            $('#changebox').remove();
+            $('#calendar').css('opacity', '1');
+        }
+
+        $("#titlewrapperp").keyup(function (event) {
+            if (event.keyCode === 13) {
+                gotodate();
+            }
+        });
 
 
-                /*Get desired date to display on table function*/
+        $("#actionLabelWrapper").hide();
+        $("#cover").hide();
+        var flag = 0;
+
+        function wraperbutton(object) {
+            flag = 1;
+            $("#actionLabelWrapper").fadeIn(300);
+            $("#cover").fadeIn(300);
+            $('#dateplace').html("Number of Students on " + moment(object.start).format('MM/DD/YY') + " : 12");
+        }
+
+        $("#cover").click(function () {
+            $("#actionLabelWrapper").fadeOut(300);
+            $("#cover").fadeOut(300);
+        });
 
 
-                var user = readJSONCookie("user");
-                $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
-                updateHeader($("#search-table"), "student", "Absent");
-                getRoster($("#search-table"), user.id);
-            });
+        $("#actionDropDown").click(function () {
+            $(this).dropdown();
+        });
+
+
+        /*Get desired date to display on table function*/
+
+    });
 
 </script>
 </BODY>
