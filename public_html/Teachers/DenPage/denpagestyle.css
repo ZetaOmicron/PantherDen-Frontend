@@ -12,6 +12,12 @@
     z-index: 500;
 }
 
+#teacherstitlez{
+    width: 36vw;
+    height: 7vw;
+    margin-top: 1vw;
+}
+
 #submission{
     width: 59.1vw;
     height: 4vw;

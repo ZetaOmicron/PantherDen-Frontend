@@ -20,6 +20,12 @@
     border: solid .2vw #7aaaca;
 }
 
+#teacherstitlez{
+    width: 36vw;
+    height: 7vw;
+    margin-top: 1vw;
+}
+
 #search-table {
     width: 55vw;
     margin-left: auto;

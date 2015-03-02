@@ -46,7 +46,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
 <BODY>
 <div id="headerwrapper">
     <div id="titlez">
-        PANTHER DEN
+        <img id = "teacherstitlez" src = "Panther-Den-Teachers-PNG.png" alt = "Image Not Found.">
     </div>
     <div class="headerbox shadow">
         <ul id="navcontainer">
@@ -169,7 +169,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
             $('#errordisplay').html('You have input a Date with no Panther Den. Please Input Another Date.');
         }
     });
-
+    $("#cover").hide();
     function gotodate() {
         var desiredDate = $('#query-box').val();
         var getDate = $.fullCalendar.moment(desiredDate);
@@ -265,7 +265,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
             }
         });
 
-
         $("#actionLabelWrapper").hide();
         $("#cover").hide();
         var flag = 0;
@@ -289,7 +288,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
 
 
         /*Get desired date to display on table function*/
-
     });
 
 </script>
