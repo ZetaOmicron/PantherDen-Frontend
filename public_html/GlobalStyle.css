@@ -7,11 +7,23 @@ body {
     //background-color: black;
 }
 
-#titlez {
+/*#titlez {
     font-family: "Calibri", sans-serif;
     color: #87a8c6;
     //color: gold;
     font-weight: bold;
+}*/
+
+#teacherstitlez{
+    width: 36vw;
+    height: 7vw;
+    margin-top: 1vw;
+}
+
+#datamanagertitlez{
+    width: 36vw;
+    height: 7vw;
+    margin-top: 1vw;
 }
 
 .button {
