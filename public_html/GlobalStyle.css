@@ -95,7 +95,9 @@ a {
     height: 100%;
     padding-top: 1.5vw;
     top: 2vw;
+    font-size: 1vw;
     overflow: hidden;
+    white-space: nowrap;
 }
 #welcome-user{
     font-size: .7vw;
