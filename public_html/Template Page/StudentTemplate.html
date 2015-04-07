@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link rel="stylesheet" href="../../GlobalStyle.css" type="text/css"/>
+<link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="StudentTemplateStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="../../vendor/calendar/fullcalendar.css"/>
+
 </head>
 <body>
+
+<input type="checkbox"></input>
+
 	<div id = "popup-window">
-		Name: Ryan Wells
-	</div>
+		Name: Ryan Wells <br>
+        ID #: 542530<br>
+        H.R.: Dr. Mason
+</div>
+    <div id = "calendar"></div>
+
+<script>
+    $(document).ready(
+            $("#calendar").html("It's Doing Something");
+    );
+</script>
 </body>
 </html>
