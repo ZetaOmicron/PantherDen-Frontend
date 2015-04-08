@@ -6,7 +6,8 @@
 
 
 $(document).ready(function() {
-    $("#calendar").fullCalendar({
+    $("").html("What's up?");
+    /*$("#calendar").fullCalendar({
         eventColor: 'red',
         events: [
             {
@@ -18,5 +19,5 @@ $(document).ready(function() {
         ],
         hiddenDays: [1, 3],
         weekends: false
-    });
+    });*/
 });

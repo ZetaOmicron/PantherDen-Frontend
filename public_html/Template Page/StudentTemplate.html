@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="StudentTemplateStyle.css" type="text/css"/>
     <link rel="stylesheet" href="../GlobalStyle.css" type="text/css"/>
-    <link rel="stylesheet" href="../../vendor/calendar/fullcalendar.css"/>
+    <link rel="stylesheet" href="../../vendor/calendar/fullcalendar.css" type = "text/css"/>
+    <javascript type = "text/javascript" src = "javascripting.js"></javascript>
+    <javascript type = "text/javascript" src = "../../vendor/calendar/fullcalendar.js"></javascript>
 
 </head>
 <body>
 
-<input type="checkbox"></input>
+<div id = "popup-window">
 
-	<div id = "popup-window">
-		Name: Ryan Wells <br>
-        ID #: 542530<br>
-        H.R.: Dr. Mason
+    <input type="checkbox" id = "addCheck"></input>
+    <form class="form-horizontal">
+        <div class="form-group form-group-sm">
+            <label class="col-sm-3 control-label" for="formGroupInputSmall">Name:</label>
+            <div class="col-sm-3" id = "studentName">
+                Patrick Wlazlo
+            </div>
+        </div>
+        <div class="form-group form-group-sm" id = "studentID">
+            <label class="col-sm-3 control-label" for="formGroupInputSmall">ID #:</label>
+            <div class="col-sm-3">
+                542530
+            </div>
+        </div>
+        <div class="form-group form-group-sm" id = "studentHR">
+            <label class="col-sm-3 control-label" for="formGroupInputSmall">Home Room:</label>
+            <div class="col-sm-3">
+                Dr. Mason
+            </div>
+        </div>
+    </form>
 </div>
-    <div id = "calendar"></div>
+<div id = "calendar"></div>
 
 <script>
     $(document).ready(
