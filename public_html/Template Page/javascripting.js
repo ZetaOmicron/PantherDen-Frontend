@@ -6,7 +6,6 @@
 
 
 $(document).ready(function() {
-    $("").html("What's up?");
     /*$("#calendar").fullCalendar({
         eventColor: 'red',
         events: [

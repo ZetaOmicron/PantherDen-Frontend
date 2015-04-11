@@ -14,6 +14,21 @@ body {
     font-weight: bold;
 }*/
 
+#popup-window {
+    width: 40vw;
+    height: 30vw;
+    border-radius: 3vw;
+
+    background-color: #245269;
+
+    padding: 2vw;
+    text-align: center;
+
+}
+
+#addCheck{
+}
+
 #teacherstitlez{
     width: 36vw;
     height: 7vw;
