@@ -1,0 +1,19 @@
+Very bad rough draft. Grammer, formatting, and correctness is lacking.
+
+Intro: Explain our who we are, state our names
+- Hi, we are the Panther Den Development Team. my name is Ryan Wells, David Robertson, and Patrick Wlazlo
+Body:
+Give background info for what panther den is
+-Panther Den is a 30 min period every Tuesday, Thursday, and Friday that’s purpose is to give help to those in need of some extra tutoring, test retakes, finish make up work. phrasing
+Tell the problems that arise from panther den - Inefficient, old Spreadsheet, Duplicates, Hard to know when conflicts, no attendance, teachers have to use a period 
+Tell what the original intentions of panther den was, what functionality we were originally supposed to program into the Panther Den Management System. - Track Attendance, Able to request students, Sort out conflicts, search students, look up info.
+Explain the front end and back end of panther den. - front end - design and such, data managers and teachers.
+Explain how we used github to team organization. Github - Code sharing and collaboration. Version Control System. Remote backups. Bugs issues sorting.
+Daivis discuss what he has done with the back end or server side of the project
+Ryan and Patrick discuss 
+Discuss ethics and copy writes - Copyrights - All libraries used are open source and used in correct licensing. Ethics - Serve community and help teachers. Who has access to data?
+what problems does this address with the issues that panther den had
+
+
+Conclusion: what we have learned, who we collaborated together using github.
+
