@@ -194,3 +194,9 @@ input[type=checkbox] {
     padding-top: 20px;
     z-index: 2;
 }
+
+.queuebox-list>li{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px;
+}

@@ -16,6 +16,37 @@ var headers = {student: [
 var data_on_table = [];
 var selected = {};
 
+function updateQueueBox(){
+    var keys = Object.keys(selected);
+    var toadd = "<ul class='queuebox-list'>";
+    for(var i = 0; i<keys.length; i++){
+        var obj = data_on_table[keys[i]-1];
+        toadd+="<li><a href='#'>"+obj.last_name+", "+obj.first_name+"</a></li>";
+    }
+    toadd+="</ul>";
+    $("#queuebody").html(toadd);
+}
+
+function toggleQueue(pos){
+    if(Object.keys(selected).length==0){
+        $("#queuebox").toggleClass("enter");
+        //console.log("dank");
+    }
+    if(pos in selected){
+        delete selected[pos];
+    }else{
+        selected[pos]=true;
+    }
+    if(Object.keys(selected).length==0){
+        $("#queuebox").toggleClass("enter");
+        //console.log("dank");
+    }
+    updateQueueBox();
+    //console.log(pos);
+    //console.log(data_on_table);
+    //console.log(selected);
+}
+
 function toggleAdd(pos){
     if(pos in selected){
         delete selected[pos];
@@ -78,13 +109,23 @@ function genCheckBox(num, disable, checkall) {
         "type='checkbox' value='None' name='check' id='checkbox" + num + "' "
         +(disable ? "disabled" : "")+"/><label for='checkbox" + num + "'></label></div>";
 }
-function appendSearchResults($table, model, field, query, page) {
+
+function genAddQueueButton(num){
+    //return "<div class='checkboxp'>" +
+    //    "<input onclick='"+(checkall ? "clickAll()" : "toggleQueue("+num+")")+"'" +
+    //    "type='checkbox' value='None' name='check' id='checkbox" + num + "' "
+    //    +(disable ? "disabled" : "")+"/><label for='checkbox" + num + "'></label></div>";
+    return "<div><a href='#' onclick='toggleQueue("+num+")'><span class='glyphicon glyphicon-plus'' aria-hidden='true'></a></div>";
+}
+
+
+function appendSearchResults($table, model, field, query, page, queueBool) {
     var req = $.ajax({
         type: 'GET',
         url: server_location + model + '/search/?f=' + field + '&q=' + query + '&p=' + page,
         dataType: 'json',
         success: function (data) {
-            appendRes($table, model, data);
+            appendRes($table, model, data, queueBool);
         },
         error: function (err) {
             setNoneFound($table);
@@ -143,7 +184,7 @@ function appendHRRes($table, data) {
     checkAbsents($table);
 }
 
-function appendRes($table, model, data) {
+function appendRes($table, model, data, queueBool) {
     data_on_table = [];
     selected={};
     var $results = $table.find("tbody");
@@ -163,7 +204,11 @@ function appendRes($table, model, data) {
         for (var j = 0; j < heads.length; j++) {
             treshtml += '<td>' + li[heads[j]["valuename"]] + '</td>';
         }
-        treshtml += "<td>" + genCheckBox(i + 1) + "</td>";
+        if(queueBool){
+            treshtml+="<td>"+genAddQueueButton(i+1)+"</td>";
+        }else {
+            treshtml += "<td>" + genCheckBox(i + 1) + "</td>";
+        }
         treshtml += "</tr>";
         reshtml += treshtml;
     }
@@ -189,5 +234,5 @@ function updateHeader($table, model, strInsteadOfCheck) {
 
 function logout() {
     eraseCookie("user");
-    location.href = "LoginPage/LoginPage.html";
+    //location.href = "LoginPage/LoginPage.html";
 }

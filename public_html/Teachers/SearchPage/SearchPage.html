@@ -18,7 +18,6 @@ and open the template in the editor.
         <script src="../../../vendor/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
         <script src="../../cookies.js"></script>
         <script src="../../ajax_helpers.js"></script>
-        <script src="SearchScript.js"></script>
         <script src="popup.js"></script>
     </head>
 
@@ -175,6 +174,7 @@ and open the template in the editor.
         <div class="outside">
             <div id="queuebox" class="shadow">
                 <input type="text" placeholder="Title" id="queuetitle">
+                <div id="queuebody"></div>
             </div>
         </div>
         <script>
@@ -185,9 +185,9 @@ and open the template in the editor.
                  }*/
                 var user = readJSONCookie("user");
                 $("#welcome-user").html("<a>Welcome, " + user.first_name + "!</a>");
-                updateHeader($("#search-table"), "student");
+                updateHeader($("#search-table"), "student", "");
                 $("#searchcontainer").submit(function() {
-                    appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1');
+                    appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1', true);
                     return false;
                 });
             });
