@@ -16,35 +16,57 @@ var headers = {student: [
 var data_on_table = [];
 var selected = {};
 
+var queue_selected = [];
+
 function updateQueueBox(){
-    var keys = Object.keys(selected);
     var toadd = "<ul class='queuebox-list'>";
-    for(var i = 0; i<keys.length; i++){
-        var obj = data_on_table[keys[i]-1];
-        toadd+="<li><a href='#'>"+obj.last_name+", "+obj.first_name+"</a></li>";
+    for(var i = 0; i<queue_selected.length; i++){
+        var obj = queue_selected[i];
+        toadd+="<li>"+genAddQueueButton(i, true)+"<a href='#'>"+obj.last_name+", "+obj.first_name+"</a></li>";
     }
     toadd+="</ul>";
     $("#queuebody").html(toadd);
 }
 
 function toggleQueue(pos){
-    if(Object.keys(selected).length==0){
+    if(queue_selected.length==0){
         $("#queuebox").toggleClass("enter");
         //console.log("dank");
     }
-    if(pos in selected){
-        delete selected[pos];
-    }else{
-        selected[pos]=true;
+    var stringarr = [];
+    for(var i = 0; i< queue_selected.length; i++){
+        stringarr.push(JSON.stringify(queue_selected[i]));
     }
-    if(Object.keys(selected).length==0){
+    var stringcur = JSON.stringify(data_on_table[pos-1]);
+    var ind = stringarr.indexOf(stringcur);
+    if(ind>-1){
+        removeQueueElem(ind);
+    }else{
+        queue_selected.push(data_on_table[pos-1]);
+        updateQueueBox();
+        if(queue_selected.length==0){
+            $("#queuebox").toggleClass("enter");
+            //console.log("dank");
+        }
+    }
+
+    //console.log(pos);
+    //console.log(data_on_table);
+    //console.log(selected);
+}
+
+function removeQueueElem(pos){
+    //console.log('test'+pos)
+    //console.log(queue_selected.length)
+    queue_selected.splice(pos, 1);
+    //console.log(queue_selected.length)
+    if(queue_selected.length==0){
         $("#queuebox").toggleClass("enter");
         //console.log("dank");
     }
     updateQueueBox();
-    //console.log(pos);
-    //console.log(data_on_table);
-    //console.log(selected);
+
+
 }
 
 function toggleAdd(pos){
@@ -110,11 +132,14 @@ function genCheckBox(num, disable, checkall) {
         +(disable ? "disabled" : "")+"/><label for='checkbox" + num + "'></label></div>";
 }
 
-function genAddQueueButton(num){
+function genAddQueueButton(num, minusbool){
     //return "<div class='checkboxp'>" +
     //    "<input onclick='"+(checkall ? "clickAll()" : "toggleQueue("+num+")")+"'" +
     //    "type='checkbox' value='None' name='check' id='checkbox" + num + "' "
     //    +(disable ? "disabled" : "")+"/><label for='checkbox" + num + "'></label></div>";
+    if(minusbool){
+        return "<a href='#' onclick='removeQueueElem("+num+")'><span style='margin-right: 5px' class='glyphicon glyphicon-minus'' aria-hidden='true'></a>";
+    }
     return "<div><a href='#' onclick='toggleQueue("+num+")'><span class='glyphicon glyphicon-plus'' aria-hidden='true'></a></div>";
 }
 

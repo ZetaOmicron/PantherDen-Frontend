@@ -195,6 +195,9 @@ input[type=checkbox] {
     z-index: 2;
 }
 
+.queuebox-list{
+    list-style: none;
+}
 .queuebox-list>li{
     font-size: 16px;
     font-weight: bold;
