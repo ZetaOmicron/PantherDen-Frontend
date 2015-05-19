@@ -25,9 +25,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
 <head>
     <link rel='stylesheet' href='fullcalendar.css'/>
     <link rel='stylesheet' href='CalendarStyle.css'/>
-
     <script src='../../../vendor/jquery/jquery.min.js'></script>
-
     <script src='moment.min.js'></script>
     <script src='fullcalendar.js'></script>
     <link href="../../../vendor/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -127,8 +125,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                 <tr>
                     <th>Name</th>
                     <th>Date</th>
-                    <th>Current Room</th>
                     <th>Home Room</th>
+                    <th>New Room</th>
 
                     <!-- Data to be Changed/added: -->
                 </tr>
@@ -205,9 +203,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                                 var events = [];
                                 for (var i = 0; i < data.length; i++) {
                                     events.push({
-                                        title: data[i]["student_id"] + "",
+                                        title: data[i]["student_id"] + " -> "+data[i]["teacher_id"],
                                         start: data[i]["date"],
-                                        allDay: false,
+                                        allDay: true,
                                         editable: false,
                                         _schedule_data: data[i]
                                     });
@@ -227,9 +225,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                                 var events = [];
                                 for (var i = 0; i < data.length; i++) {
                                     events.push({
-                                        title: data[i]["student_id"].toString(),
+                                        title: data[i]["student_id"] + " -> "+data[i]["teacher_id"],
                                         start: data[i]["date"],
-                                        allDay: false,
+                                        allDay: true,
                                         editable: false,
                                         _schedule_data: data[i]
                                     });
@@ -272,10 +270,31 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
         function wraperbutton(object) {
             var sched = object._schedule_data;
             flag = 1;
-            $("#table-data-holder").html("<td>"+sched.student_id+"</td>" +
-            "<td>"+sched.date+"</td>" +
-            "<td>212</td>" +
-            "<td>237</td>");
+            var req = $.ajax({
+                type:'GET',
+                url: server_location+"schedule/",
+                dataType: 'json',
+                data: {
+                    date: sched.date,
+                    student_id: sched.student_id,
+                    teacher_id: sched.teacher_id
+                },
+                success: function (data) {
+                    $("#table-data-holder").html(
+                            "<td>"+data.student.last_name+", "+data.student.first_name+"</td>" +
+                            "<td>"+sched.date+"</td>" +
+                            "<td>"+data.old_teacher.last_name+", " +
+                                data.old_teacher.first_name+" ("+data.old_teacher.room_id+")</td>"+
+                            "<td>"+data.new_teacher.last_name+", " +
+                                data.new_teacher.first_name+" ("+data.new_teacher.room_id+")</td>"
+                    );
+                },
+                error: function(err){
+                    console.log("An error has occurred.")
+                    console.log(err);
+                }
+            });
+
             $("#actionLabelWrapper").fadeIn(300);
             $("#cover").fadeIn(300);
             $('#dateplace').html("Number of Students on " + moment(object.start).format('MM/DD/YY') + " : 12");

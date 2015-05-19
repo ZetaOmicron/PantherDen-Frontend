@@ -49,7 +49,7 @@ function checkIfUserAndStoreCookie(){
         success: function (data) {
             createJSONCookie("user",data,5);
             if(isTeacher){
-                location.href="../Teachers/SearchPage/SearchPage.html";
+                location.href="../Teachers/DenPage/DenPage.html";
             }else{
                 location.href="../DataManagers/ConflictPage/ConflictPage.html";
             }
