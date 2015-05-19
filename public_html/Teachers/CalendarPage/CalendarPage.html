@@ -131,11 +131,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                     <!-- Data to be Changed/added: -->
                 </tr>
                 <tr id="table-data-holder">
-
                 </tr>
 
                 </tbody>
             </table>
+            <div><b>Comment:</b></div>
+            <div id="comment-box"></div>
+            <br/>
             <div class="alright">
                 <!-- Place ajax requests here: /-->
                 <button type="button" class="btn btn-info">
@@ -282,15 +284,16 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                 success: function (data) {
                     $("#table-data-holder").html(
                             "<td>"+data.student.last_name+", "+data.student.first_name+"</td>" +
-                            "<td>"+sched.date+"</td>" +
+                            "<td>"+data.date+"</td>" +
                             "<td>"+data.old_teacher.last_name+", " +
                                 data.old_teacher.first_name+" ("+data.old_teacher.room_id+")</td>"+
                             "<td>"+data.new_teacher.last_name+", " +
                                 data.new_teacher.first_name+" ("+data.new_teacher.room_id+")</td>"
                     );
+                    $("#comment-box").html(data.comment);
                 },
                 error: function(err){
-                    console.log("An error has occurred.")
+                    console.log("An error has occurred.");
                     console.log(err);
                 }
             });
