@@ -181,7 +181,7 @@ and open the template in the editor.
                 var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
                 $("#welcome-user").html(manager);
 
-//                $("#welcome-user").html("<a>Welcome, " + user.first_name + manager + "!</a>");
+                $("#welcome-user").html("<a>" + user.first_name + manager + "</a>");
                 updateHeader($("#search-table"), "student", "");
                 $("#searchcontainer").submit(function() {
                     appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1', true);
