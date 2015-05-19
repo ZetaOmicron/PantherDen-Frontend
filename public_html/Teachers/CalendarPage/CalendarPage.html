@@ -132,11 +132,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
 
                     <!-- Data to be Changed/added: -->
                 </tr>
-                <tr>
-                    <td>Ryan Wells</td>
-                    <td>Nov 4</td>
-                    <td>212</td>
-                    <td>237</td>
+                <tr id="table-data-holder">
+
                 </tr>
 
                 </tbody>
@@ -187,6 +184,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
     }
 
 
+
     $(document).ready(function () {
 
         var user = readJSONCookie("user");
@@ -210,7 +208,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                                         title: data[i]["student_id"] + "",
                                         start: data[i]["date"],
                                         allDay: false,
-                                        editable: false
+                                        editable: false,
+                                        _schedule_data: data[i]
                                     });
                                 }
                                 callback(events);
@@ -231,7 +230,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
                                         title: data[i]["student_id"].toString(),
                                         start: data[i]["date"],
                                         allDay: false,
-                                        editable: false
+                                        editable: false,
+                                        _schedule_data: data[i]
                                     });
                                 }
                                 callback(events);
@@ -270,7 +270,12 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
         var flag = 0;
 
         function wraperbutton(object) {
+            var sched = object._schedule_data;
             flag = 1;
+            $("#table-data-holder").html("<td>"+sched.student_id+"</td>" +
+            "<td>"+sched.date+"</td>" +
+            "<td>212</td>" +
+            "<td>237</td>");
             $("#actionLabelWrapper").fadeIn(300);
             $("#cover").fadeIn(300);
             $('#dateplace').html("Number of Students on " + moment(object.start).format('MM/DD/YY') + " : 12");
