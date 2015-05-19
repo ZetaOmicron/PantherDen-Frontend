@@ -104,7 +104,7 @@ and open the template in the editor.
                 //  location.href="../LoginPage/LoginPage.html";
                 // }
                 var user = readJSONCookie("user");
-                $("#welcome-user").html("<a>" + user.first_name + "</a>");
+                $("#welcome-user").html("<a>" + user.id + "</a>");
                 var $st = $("#search-table");
                 $("#submission").click(function() {
                     var indices = [];
