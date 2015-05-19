@@ -261,3 +261,26 @@ function logout() {
     eraseCookie("user");
     //location.href = "LoginPage/LoginPage.html";
 }
+function showStudentPopUp(name, id, homeRoom){
+
+    var html = '';
+    html += '<input type="checkbox" id = "addCheck"></input><form class="form-horizontal"><div class="form-group form-group-sm"><label class="col-sm-4 control-label" for="formGroupInputSmall">Name:</label><div class="col-sm-5" id = "studentName">';
+    html += name;
+    html += '</div></div><div class="form-group form-group-sm" id = "studentID"><label class="col-sm-4 control-label" for="formGroupInputSmall">ID #:</label><div class="col-sm-5">';
+    html += id;
+    html += '</div></div><div class="form-group form-group-sm" id = "studentHR"><label class="col-sm-4 control-label" for="formGroupInputSmall">Home Room:</label><div class="col-sm-5">';
+    html += homeRoom;
+    html += '</div></div></form><div id= "student-calendar"></div></div>';
+
+    $("#divSection").html(html);
+
+    $("#student-calendar").fullCalendar(
+                {
+                    hiddenDays: [1, 3],
+                    weekends: false,
+                    fixedWeekCount: true,
+                    defaultView: 'basicWeek',
+                    aspectRatio: 4
+                }
+        );
+}
