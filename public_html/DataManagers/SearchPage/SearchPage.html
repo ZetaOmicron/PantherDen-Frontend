@@ -30,6 +30,8 @@ and open the template in the editor.
             </div>
             <div class="headerbox shadow">
                 <ul id="navcontainer">
+                    <li id="welcome-user"></li>
+
 
                     <li>
                         <a href="../ConflictPage/ConflictPage.html">
@@ -178,10 +180,10 @@ and open the template in the editor.
                  location.href="../LoginPage/LoginPage.html";
                  }*/
                 var user = readJSONCookie("user");
-                var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
-                $("#welcome-user").html(manager);
+//                var manager = '<div id="data-manager-label"><span class="label label-info">Manager</span></div>';
+//                $("#welcome-user").html(manager);
 
-                $("#welcome-user").html("<a>" + user.id + manager + "</a>");
+                $("#welcome-user").html("<a>" + user.id+"</a>");
                 updateHeader($("#search-table"), "student", "");
                 $("#searchcontainer").submit(function() {
                     appendSearchResults($('#search-table'), $("#select-model").val(), $("#select-property").val(), $("#query-box").val(), '1', true);
